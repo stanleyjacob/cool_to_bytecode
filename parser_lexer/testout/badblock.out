@@ -1,0 +1,24 @@
+#1
+_program
+  #1
+  _class
+    A
+    Object
+    "badblock.cl"
+    (
+    #2
+    _method
+      f
+      Object
+      #2
+      _block
+        #3
+        _int
+          5
+        : _no_type
+        #4
+        _int
+          3
+        : _no_type
+      : _no_type
+    )

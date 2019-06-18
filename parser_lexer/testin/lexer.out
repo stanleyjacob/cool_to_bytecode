@@ -1,0 +1,68 @@
+#name "cond.cl"
+#1 CLASS
+#1 TYPEID Main
+#1 INHERITS
+#1 TYPEID IO
+#1 '{'
+#2 OBJECTID i
+#2 ':'
+#2 TYPEID Int
+#2 ';'
+#4 OBJECTID init
+#4 '('
+#4 ')'
+#4 ':'
+#4 TYPEID SELF_TYPE
+#4 '{'
+#4 '{'
+#5 OBJECTID i
+#5 ASSIGN
+#5 INT_CONST 1
+#5 ';'
+#6 OBJECTID self
+#6 ';'
+#7 '}'
+#7 '}'
+#7 ';'
+#9 OBJECTID main
+#9 '('
+#9 ')'
+#9 ':'
+#9 TYPEID SELF_TYPE
+#9 '{'
+#9 '{'
+#10 OBJECTID init
+#10 '('
+#10 ')'
+#10 ';'
+#11 OBJECTID i
+#11 ASSIGN
+#11 IF
+#11 OBJECTID i
+#11 '<'
+#11 INT_CONST 0
+#11 THEN
+#11 INT_CONST 5
+#11 ELSE
+#11 INT_CONST 3
+#11 FI
+#11 ';'
+#12 OBJECTID out_int
+#12 '('
+#12 OBJECTID i
+#12 ')'
+#12 ';'
+#13 OBJECTID k
+#13 '/'
+#13 INT_CONST 2
+#13 ';'
+#14 OBJECTID out_string
+#14 '('
+#16 STR_CONST "\n{^~''\"d\"\\\"''1df\tt\n                ddf\n                df"
+#16 ')'
+#16 ';'
+#17 '}'
+#17 '}'
+#17 ';'
+#19 '}'
+#19 ';'
