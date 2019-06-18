@@ -1,0 +1,38 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      x
+      :: Main
+      : String
+      self
+      :: Main
+      : SELF_TYPE
+      1
+      :: null
+      : String
+    _methodmap
+      _mov tmp#1, imm#"Hello\n"
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : SELF_TYPE
+        2
+        : String
+        3
+        : Int
+        4
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, param#self
+        _load_attr tmp#2, attr#x, attr#x
+        tmp#3 = _dispatch tmp#2, length, ()
+        tmp#4 = _dispatch tmp#1, out_int, (tmp#3)
+        _return tmp#4

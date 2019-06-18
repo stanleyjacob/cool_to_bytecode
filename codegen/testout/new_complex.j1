@@ -1,0 +1,576 @@
+.class public Complex
+.super IO
+
+.field private x LInt;
+.field private y LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 9
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Complex/x LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Complex/y LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 9
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Complex/x LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Complex/y LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public init(LInt;LInt;)LComplex;
+
+.limit stack 18
+.limit locals 18
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 3
+
+; Move Inst start
+aload 1
+astore 4
+
+; Binop Inst start
+aload 3
+aload 4
+invokevirtual Int/eq(LInt;)LBool;
+astore 5
+
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 6
+
+; Move Inst start
+aload 2
+astore 7
+
+; Binop Inst start
+aload 6
+aload 7
+invokevirtual Int/eq(LInt;)LBool;
+astore 8
+
+
+; Move Inst start
+aload 0
+astore 9
+
+; Return Inst start
+aload 9
+checkcast Complex
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 34
+.limit locals 34
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Binop Inst start
+aload 1
+aload 2
+invokevirtual Int/eq(LInt;)LBool;
+astore 3
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 17
+
+; CondBranch Inst start
+aload 3
+aload 17
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label4
+
+
+; Move Inst start
+aload 0
+astore 4
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 5
+
+; Dispatch Inst start
+aload 4
+aload 5
+invokevirtual IO/out_int(LInt;)LIO;
+astore 6
+
+; Move Inst start
+aload 6
+astore 16
+
+; Goto Inst start
+goto label5
+
+; Label Inst start
+label4:
+
+; Move Inst start
+aload 0
+astore 7
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 8
+
+; Dispatch Inst start
+aload 7
+aload 8
+invokevirtual IO/out_int(LInt;)LIO;
+astore 9
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "+"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 10
+
+; Dispatch Inst start
+aload 9
+aload 10
+invokevirtual IO/out_string(LString;)LIO;
+astore 11
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 12
+
+; Dispatch Inst start
+aload 11
+aload 12
+invokevirtual IO/out_int(LInt;)LIO;
+astore 13
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "I"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 14
+
+; Dispatch Inst start
+aload 13
+aload 14
+invokevirtual IO/out_string(LString;)LIO;
+astore 15
+
+; Move Inst start
+aload 15
+astore 16
+
+; Label Inst start
+label5:
+
+; Return Inst start
+aload 16
+checkcast Complex
+areturn
+
+.end method
+
+
+.method public reflect_0()LComplex;
+
+.limit stack 18
+.limit locals 18
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 1
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 2
+
+; Unop Inst start
+aload 2
+invokevirtual Int/neg()LInt;
+astore 3
+
+
+
+; Binop Inst start
+aload 1
+aload 3
+invokevirtual Int/eq(LInt;)LBool;
+astore 4
+
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 5
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 6
+
+; Unop Inst start
+aload 6
+invokevirtual Int/neg()LInt;
+astore 7
+
+
+
+; Binop Inst start
+aload 5
+aload 7
+invokevirtual Int/eq(LInt;)LBool;
+astore 8
+
+
+; Move Inst start
+aload 0
+astore 9
+
+; Return Inst start
+aload 9
+checkcast Complex
+areturn
+
+.end method
+
+
+.method public reflect_X()LComplex;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 1
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 2
+
+; Unop Inst start
+aload 2
+invokevirtual Int/neg()LInt;
+astore 3
+
+
+
+; Binop Inst start
+aload 1
+aload 3
+invokevirtual Int/eq(LInt;)LBool;
+astore 4
+
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast Complex
+areturn
+
+.end method
+
+
+.method public reflect_Y()LComplex;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 1
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 2
+
+; Unop Inst start
+aload 2
+invokevirtual Int/neg()LInt;
+astore 3
+
+
+
+; Binop Inst start
+aload 1
+aload 3
+invokevirtual Int/eq(LInt;)LBool;
+astore 4
+
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast Complex
+areturn
+
+.end method
+
+
+.method public equal(LComplex;)LBool;
+
+.limit stack 32
+.limit locals 32
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual Complex/x_value()LInt;
+astore 4
+
+; Binop Inst start
+aload 2
+aload 4
+invokevirtual Int/eq(LInt;)LBool;
+astore 5
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 16
+
+; CondBranch Inst start
+aload 5
+aload 16
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label8
+
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 6
+
+; Move Inst start
+aload 1
+astore 7
+
+; Dispatch Inst start
+aload 7
+invokevirtual Complex/y_value()LInt;
+astore 8
+
+; Binop Inst start
+aload 6
+aload 8
+invokevirtual Int/eq(LInt;)LBool;
+astore 9
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 13
+
+; CondBranch Inst start
+aload 9
+aload 13
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label6
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 10
+
+; Move Inst start
+aload 10
+astore 12
+
+; Goto Inst start
+goto label7
+
+; Label Inst start
+label6:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 11
+
+; Move Inst start
+aload 11
+astore 12
+
+; Label Inst start
+label7:
+
+; Move Inst start
+aload 12
+astore 15
+
+; Goto Inst start
+goto label9
+
+; Label Inst start
+label8:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 14
+
+; Move Inst start
+aload 14
+astore 15
+
+; Label Inst start
+label9:
+
+; Return Inst start
+aload 15
+
+areturn
+
+.end method
+
+
+.method public x_value()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Complex/x LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public y_value()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Complex/y LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+

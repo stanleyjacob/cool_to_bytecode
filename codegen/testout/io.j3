@@ -1,0 +1,79 @@
+.class public D
+.super C
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial C/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial C/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public out_d()LObject;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "D: Hello world\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Return Inst start
+aload 3
+checkcast D
+areturn
+
+.end method
+
+

@@ -1,0 +1,99 @@
+.class public B
+.super A
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual B/foo()LInt;
+astore 2
+
+aload 0
+aload 2
+putfield A/x LInt;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public foo()LInt;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield A/x LInt;
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Binop Inst start
+aload 1
+aload 2
+invokevirtual Int/add(LInt;)LInt;
+astore 3
+
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield A/x LInt;
+
+; Return Inst start
+aload 0
+getfield A/x LInt;
+areturn
+
+.end method
+
+

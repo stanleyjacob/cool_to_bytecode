@@ -1,0 +1,75 @@
+_program
+  _klass
+    A
+    <: Object
+    _attrs
+      x
+      :: A
+      : SELF_TYPE
+      self
+      :: A
+      : SELF_TYPE
+    _methodmap
+  _klass
+    B
+    <: A
+    _attrs
+      self
+      :: B
+      : SELF_TYPE
+    _methodmap
+      getme
+      :: B
+      : SELF_TYPE
+    _method
+      getme
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : SELF_TYPE
+      _expr
+        tmp#1 = new SELF_TYPE
+        _store_attr attr#x, attr#x, tmp#1
+        _return attr#x
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        2
+        : B
+        3
+        : B
+        self
+        : SELF_TYPE
+        b
+        : B
+        6
+        : String
+        7
+        : SELF_TYPE
+        8
+        : SELF_TYPE
+      _expr
+        _mov letvar#b, null
+        tmp#2 = new B
+        tmp#3 = _dispatch tmp#2, getme, ()
+        _mov letvar#b, tmp#3
+        _mov tmp#self, param#self
+        _mov tmp#b, letvar#b
+        tmp#6 = _dispatch tmp#b, type_name, ()
+        tmp#7 = _dispatch tmp#self, out_string, (tmp#6)
+        _mov tmp#8, tmp#7
+        _return tmp#8

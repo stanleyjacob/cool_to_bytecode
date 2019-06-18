@@ -1,0 +1,350 @@
+.class public Main
+.super IO
+
+.field private mylist LList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public print_list(LList;)LObject;
+
+.limit stack 38
+.limit locals 38
+
+; Move Inst start
+aload 1
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual List/isNil()LBool;
+astore 3
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 19
+
+; CondBranch Inst start
+aload 3
+aload 19
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label0
+
+
+; Move Inst start
+aload 0
+astore 4
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 5
+
+; Dispatch Inst start
+aload 4
+aload 5
+invokevirtual IO/out_string(LString;)LIO;
+astore 6
+
+; Move Inst start
+aload 6
+astore 18
+
+; Goto Inst start
+goto label1
+
+; Label Inst start
+label0:
+
+; Move Inst start
+aload 0
+astore 7
+
+; Move Inst start
+aload 1
+astore 8
+
+; Dispatch Inst start
+aload 8
+invokevirtual List/head()LInt;
+astore 9
+
+; Dispatch Inst start
+aload 7
+aload 9
+invokevirtual IO/out_int(LInt;)LIO;
+astore 10
+
+; Move Inst start
+aload 0
+astore 11
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc " "
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 12
+
+; Dispatch Inst start
+aload 11
+aload 12
+invokevirtual IO/out_string(LString;)LIO;
+astore 13
+
+; Move Inst start
+aload 0
+astore 14
+
+; Move Inst start
+aload 1
+astore 15
+
+; Dispatch Inst start
+aload 15
+invokevirtual List/tail()LList;
+astore 16
+
+; Dispatch Inst start
+aload 14
+aload 16
+invokevirtual Main/print_list(LList;)LObject;
+astore 17
+
+; Move Inst start
+aload 17
+astore 18
+
+; Label Inst start
+label1:
+
+; Return Inst start
+aload 18
+
+areturn
+
+.end method
+
+
+.method public main()LObject;
+
+.limit stack 40
+.limit locals 40
+
+; Alloc Inst start
+new List
+dup
+invokespecial List/<init>()V
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual List/cons(LInt;)LList;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 2
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+; Dispatch Inst start
+aload 3
+aload 4
+invokevirtual List/cons(LInt;)LList;
+astore 5
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 6
+
+; Dispatch Inst start
+aload 5
+aload 6
+invokevirtual List/cons(LInt;)LList;
+astore 7
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 8
+
+; Dispatch Inst start
+aload 7
+aload 8
+invokevirtual List/cons(LInt;)LList;
+astore 9
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 10
+
+; Dispatch Inst start
+aload 9
+aload 10
+invokevirtual List/cons(LInt;)LList;
+astore 11
+
+; Store Attr Inst start
+aload 0
+aload 11
+putfield Main/mylist LList;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 20
+
+; Label Inst start
+label2:
+
+; Load Inst start
+aload 0
+getfield Main/mylist LList;
+astore 12
+
+; Dispatch Inst start
+aload 12
+invokevirtual List/isNil()LBool;
+astore 13
+
+; Unop Inst start
+
+
+; CondBranch Inst start
+aload 14
+aload 20
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label3
+
+
+; Move Inst start
+aload 0
+astore 15
+
+; Load Inst start
+aload 0
+getfield Main/mylist LList;
+astore 16
+
+; Dispatch Inst start
+aload 15
+aload 16
+invokevirtual Main/print_list(LList;)LObject;
+astore 17
+
+; Load Inst start
+aload 0
+getfield Main/mylist LList;
+astore 18
+
+; Dispatch Inst start
+aload 18
+invokevirtual List/tail()LList;
+astore 19
+
+; Store Attr Inst start
+aload 0
+aload 19
+putfield Main/mylist LList;
+
+; Goto Inst start
+goto label2
+
+; Label Inst start
+label3:
+
+; Return Inst start
+aload 0
+getfield Main/mylist LList;
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LObject;
+pop
+
+return
+
+.end method
+
+

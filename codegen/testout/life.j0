@@ -1,0 +1,693 @@
+.class public Board
+.super IO
+
+.field private rows LInt;
+.field private columns LInt;
+.field private board_size LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/rows LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/columns LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/board_size LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/rows LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/columns LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Board/board_size LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public size_of_board(LString;)LInt;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 1
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual String/length()LInt;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public board_init(LString;)LBoard;
+
+.limit stack 114
+.limit locals 114
+
+; Move Inst start
+aload 0
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Dispatch Inst start
+aload 2
+aload 3
+invokevirtual Board/size_of_board(LString;)LInt;
+astore 4
+
+; Move Inst start
+aload 4
+astore 5
+
+; Move Inst start
+aload 5
+astore 6
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 15
+invokevirtual Int/putval(I)LInt;
+astore 7
+
+; Binop Inst start
+aload 6
+aload 7
+invokevirtual Int/eq(LInt;)LBool;
+astore 8
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 56
+
+; CondBranch Inst start
+aload 8
+aload 56
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label10
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 9
+
+; Store Attr Inst start
+aload 0
+aload 9
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 10
+
+; Store Attr Inst start
+aload 0
+aload 10
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 11
+
+; Store Attr Inst start
+aload 0
+aload 11
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 55
+
+; Goto Inst start
+goto label11
+
+; Label Inst start
+label10:
+
+; Move Inst start
+aload 5
+astore 12
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 16
+invokevirtual Int/putval(I)LInt;
+astore 13
+
+; Binop Inst start
+aload 12
+aload 13
+invokevirtual Int/eq(LInt;)LBool;
+astore 14
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 54
+
+; CondBranch Inst start
+aload 14
+aload 54
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label8
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 15
+
+; Store Attr Inst start
+aload 0
+aload 15
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 16
+
+; Store Attr Inst start
+aload 0
+aload 16
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 17
+
+; Store Attr Inst start
+aload 0
+aload 17
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 53
+
+; Goto Inst start
+goto label9
+
+; Label Inst start
+label8:
+
+; Move Inst start
+aload 5
+astore 18
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 20
+invokevirtual Int/putval(I)LInt;
+astore 19
+
+; Binop Inst start
+aload 18
+aload 19
+invokevirtual Int/eq(LInt;)LBool;
+astore 20
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 52
+
+; CondBranch Inst start
+aload 20
+aload 52
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label6
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 21
+
+; Store Attr Inst start
+aload 0
+aload 21
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 22
+
+; Store Attr Inst start
+aload 0
+aload 22
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 23
+
+; Store Attr Inst start
+aload 0
+aload 23
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 51
+
+; Goto Inst start
+goto label7
+
+; Label Inst start
+label6:
+
+; Move Inst start
+aload 5
+astore 24
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 21
+invokevirtual Int/putval(I)LInt;
+astore 25
+
+; Binop Inst start
+aload 24
+aload 25
+invokevirtual Int/eq(LInt;)LBool;
+astore 26
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 50
+
+; CondBranch Inst start
+aload 26
+aload 50
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label4
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 27
+
+; Store Attr Inst start
+aload 0
+aload 27
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 7
+invokevirtual Int/putval(I)LInt;
+astore 28
+
+; Store Attr Inst start
+aload 0
+aload 28
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 29
+
+; Store Attr Inst start
+aload 0
+aload 29
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 49
+
+; Goto Inst start
+goto label5
+
+; Label Inst start
+label4:
+
+; Move Inst start
+aload 5
+astore 30
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 25
+invokevirtual Int/putval(I)LInt;
+astore 31
+
+; Binop Inst start
+aload 30
+aload 31
+invokevirtual Int/eq(LInt;)LBool;
+astore 32
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 48
+
+; CondBranch Inst start
+aload 32
+aload 48
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label2
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 33
+
+; Store Attr Inst start
+aload 0
+aload 33
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 34
+
+; Store Attr Inst start
+aload 0
+aload 34
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 35
+
+; Store Attr Inst start
+aload 0
+aload 35
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 47
+
+; Goto Inst start
+goto label3
+
+; Label Inst start
+label2:
+
+; Move Inst start
+aload 5
+astore 36
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 28
+invokevirtual Int/putval(I)LInt;
+astore 37
+
+; Binop Inst start
+aload 36
+aload 37
+invokevirtual Int/eq(LInt;)LBool;
+astore 38
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 46
+
+; CondBranch Inst start
+aload 38
+aload 46
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label0
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 7
+invokevirtual Int/putval(I)LInt;
+astore 39
+
+; Store Attr Inst start
+aload 0
+aload 39
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 40
+
+; Store Attr Inst start
+aload 0
+aload 40
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 41
+
+; Store Attr Inst start
+aload 0
+aload 41
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 45
+
+; Goto Inst start
+goto label1
+
+; Label Inst start
+label0:
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 42
+
+; Store Attr Inst start
+aload 0
+aload 42
+putfield Board/rows LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 43
+
+; Store Attr Inst start
+aload 0
+aload 43
+putfield Board/columns LInt;
+
+; Move Inst start
+aload 5
+astore 44
+
+; Store Attr Inst start
+aload 0
+aload 44
+putfield Board/board_size LInt;
+
+; Move Inst start
+getfield Board/board_size LInt;
+astore 45
+
+; Label Inst start
+label1:
+
+; Move Inst start
+aload 45
+astore 47
+
+; Label Inst start
+label3:
+
+; Move Inst start
+aload 47
+astore 49
+
+; Label Inst start
+label5:
+
+; Move Inst start
+aload 49
+astore 51
+
+; Label Inst start
+label7:
+
+; Move Inst start
+aload 51
+astore 53
+
+; Label Inst start
+label9:
+
+; Move Inst start
+aload 53
+astore 55
+
+; Label Inst start
+label11:
+
+; Move Inst start
+aload 0
+astore 57
+
+; Move Inst start
+aload 57
+astore 58
+
+; Return Inst start
+aload 58
+checkcast Board
+areturn
+
+.end method
+
+

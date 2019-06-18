@@ -1,0 +1,39 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      i
+      :: Main
+      : Int
+      v
+      :: Main
+      : Bool
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : Bool
+    _method
+      main
+      : Bool
+      _formals
+      _locals
+        i
+        : Int
+        2
+        : Bool
+        3
+        : Bool
+        4
+        : Object
+        v
+        : Bool
+      _expr
+        _load_attr tmp#i, attr#i, attr#i
+        _mov tmp#3, imm#0
+        _store_attr attr#v, attr#v, tmp#3
+        _load_attr tmp#v, attr#v, attr#v
+        _return tmp#v

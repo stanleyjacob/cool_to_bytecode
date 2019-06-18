@@ -1,0 +1,1783 @@
+_program
+  _klass
+    Graph
+    <: Object
+    _attrs
+      vertices
+      :: Graph
+      : VList
+      edges
+      :: Graph
+      : EList
+      self
+      :: Graph
+      : SELF_TYPE
+      1
+      :: null
+      : VList
+      2
+      :: null
+      : EList
+    _methodmap
+      tmp#1 = new VList
+      tmp#2 = new EList
+      add_vertice
+      :: Graph
+      : Object
+      print_E
+      :: Graph
+      : Object
+      print_V
+      :: Graph
+      : Object
+    _method
+      add_vertice
+      : Object
+      _formals
+        v
+        : Vertice
+      _locals
+        v
+        : Vertice
+        3
+        : EList
+        edges
+        : EList
+        5
+        : EList
+        vertices
+        : VList
+        v
+        : Vertice
+        8
+        : VList
+      _expr
+        _mov tmp#v, param#v
+        tmp#3 = _dispatch tmp#v, outgoing, ()
+        _load_attr tmp#edges, attr#edges, attr#edges
+        tmp#5 = _dispatch tmp#3, append, (tmp#edges)
+        _store_attr attr#edges, attr#edges, tmp#5
+        _load_attr tmp#vertices, attr#vertices, attr#vertices
+        _mov tmp#v, param#v
+        tmp#8 = _dispatch tmp#vertices, cons, (tmp#v)
+        _store_attr attr#vertices, attr#vertices, tmp#8
+        _return attr#vertices
+    _method
+      print_E
+      : Object
+      _formals
+      _locals
+        edges
+        : EList
+        2
+        : Object
+      _expr
+        _load_attr tmp#edges, attr#edges, attr#edges
+        tmp#2 = _dispatch tmp#edges, print, ()
+        _return tmp#2
+    _method
+      print_V
+      : Object
+      _formals
+      _locals
+        vertices
+        : VList
+        2
+        : Object
+      _expr
+        _load_attr tmp#vertices, attr#vertices, attr#vertices
+        tmp#2 = _dispatch tmp#vertices, print, ()
+        _return tmp#2
+  _klass
+    Vertice
+    <: IO
+    _attrs
+      num
+      :: Vertice
+      : Int
+      out
+      :: Vertice
+      : EList
+      self
+      :: Vertice
+      : SELF_TYPE
+      1
+      :: null
+      : EList
+    _methodmap
+      tmp#1 = new EList
+      outgoing
+      :: Vertice
+      : EList
+      number
+      :: Vertice
+      : Int
+      init
+      :: Vertice
+      : SELF_TYPE
+      add_out
+      :: Vertice
+      : SELF_TYPE
+      print
+      :: Vertice
+      : Object
+    _method
+      outgoing
+      : EList
+      _formals
+      _locals
+        1
+        : VList
+        2
+        : EList
+        out
+        : EList
+      _expr
+        _load_attr tmp#out, attr#out, attr#out
+        _return tmp#out
+    _method
+      number
+      : Int
+      _formals
+      _locals
+        num
+        : Int
+      _expr
+        _load_attr tmp#num, attr#num, attr#num
+        _return tmp#num
+    _method
+      init
+      : SELF_TYPE
+      _formals
+        n
+        : Int
+      _locals
+        n
+        : Int
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#n, param#n
+        _store_attr attr#num, attr#num, tmp#n
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      add_out
+      : SELF_TYPE
+      _formals
+        s
+        : Edge
+      _locals
+        out
+        : EList
+        s
+        : Edge
+        4
+        : EList
+        self
+        : SELF_TYPE
+      _expr
+        _load_attr tmp#out, attr#out, attr#out
+        _mov tmp#s, param#s
+        tmp#4 = _dispatch tmp#out, cons, (tmp#s)
+        _store_attr attr#out, attr#out, tmp#4
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        num
+        : Int
+        3
+        : SELF_TYPE
+        out
+        : EList
+        5
+        : Object
+      _expr
+        _mov tmp#self, param#self
+        _load_attr tmp#num, attr#num, attr#num
+        tmp#3 = _dispatch tmp#self, out_int, (tmp#num)
+        _load_attr tmp#out, attr#out, attr#out
+        tmp#5 = _dispatch tmp#out, print, ()
+        _return tmp#5
+  _klass
+    Edge
+    <: IO
+    _attrs
+      from
+      :: Edge
+      : Int
+      to
+      :: Edge
+      : Int
+      weight
+      :: Edge
+      : Int
+      self
+      :: Edge
+      : SELF_TYPE
+    _methodmap
+      init
+      :: Edge
+      : SELF_TYPE
+      print
+      :: Edge
+      : Object
+    _method
+      init
+      : SELF_TYPE
+      _formals
+        f
+        : Int
+        t
+        : Int
+        w
+        : Int
+      _locals
+        1
+        : EList
+        f
+        : Int
+        t
+        : Int
+        w
+        : Int
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#f, param#f
+        _store_attr attr#from, attr#from, tmp#f
+        _mov tmp#t, param#t
+        _store_attr attr#to, attr#to, tmp#t
+        _mov tmp#w, param#w
+        _store_attr attr#weight, attr#weight, tmp#w
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : String
+        3
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        from
+        : Int
+        6
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        8
+        : String
+        9
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        to
+        : Int
+        12
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        14
+        : String
+        15
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        weight
+        : Int
+        18
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#2, imm#" ("
+        tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+        _mov tmp#self, param#self
+        _load_attr tmp#from, attr#from, attr#from
+        tmp#6 = _dispatch tmp#self, out_int, (tmp#from)
+        _mov tmp#self, param#self
+        _mov tmp#8, imm#","
+        tmp#9 = _dispatch tmp#self, out_string, (tmp#8)
+        _mov tmp#self, param#self
+        _load_attr tmp#to, attr#to, attr#to
+        tmp#12 = _dispatch tmp#self, out_int, (tmp#to)
+        _mov tmp#self, param#self
+        _mov tmp#14, imm#")"
+        tmp#15 = _dispatch tmp#self, out_string, (tmp#14)
+        _mov tmp#self, param#self
+        _load_attr tmp#weight, attr#weight, attr#weight
+        tmp#18 = _dispatch tmp#self, out_int, (tmp#weight)
+        _return tmp#18
+  _klass
+    EList
+    <: IO
+    _attrs
+      car
+      :: EList
+      : Edge
+      self
+      :: EList
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: EList
+      : Bool
+      head
+      :: EList
+      : Edge
+      tail
+      :: EList
+      : EList
+      cons
+      :: EList
+      : EList
+      append
+      :: EList
+      : EList
+      print
+      :: EList
+      : Object
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#1
+        _return tmp#1
+    _method
+      head
+      : Edge
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        car
+        : Edge
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _load_attr tmp#car, attr#car, attr#car
+        _return tmp#car
+    _method
+      tail
+      : EList
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      cons
+      : EList
+      _formals
+        e
+        : Edge
+      _locals
+        2
+        : ECons
+        e
+        : Edge
+        self
+        : SELF_TYPE
+        5
+        : EList
+      _expr
+        tmp#2 = new ECons
+        _mov tmp#e, param#e
+        _mov tmp#self, param#self
+        tmp#5 = _dispatch tmp#2, init, (tmp#e, tmp#self)
+        _return tmp#5
+    _method
+      append
+      : EList
+      _formals
+        l
+        : EList
+      _locals
+        self
+        : SELF_TYPE
+        3
+        : Bool
+        l
+        : EList
+        self
+        : SELF_TYPE
+        6
+        : EList
+        l
+        : EList
+        8
+        : EList
+        self
+        : SELF_TYPE
+        10
+        : Edge
+        11
+        : EList
+        12
+        : EList
+        13
+        : Bool
+      _expr
+        _mov tmp#self, param#self
+        tmp#3 = _dispatch tmp#self, isNil, ()
+        _mov tmp#13, imm#null
+        _if tmp#3 _eq tmp#13 _goto 0
+        _mov tmp#l, param#l
+        _mov tmp#12, tmp#l
+        _goto 1
+        _label 0
+        _mov tmp#self, param#self
+        tmp#6 = _dispatch tmp#self, tail, ()
+        _mov tmp#l, param#l
+        tmp#8 = _dispatch tmp#6, append, (tmp#l)
+        _mov tmp#self, param#self
+        tmp#10 = _dispatch tmp#self, head, ()
+        tmp#11 = _dispatch tmp#8, cons, (tmp#10)
+        _mov tmp#12, tmp#11
+        _label 1
+        _return tmp#12
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : String
+        3
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#2, imm#"\n"
+        tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    ECons
+    <: EList
+    _attrs
+      cdr
+      :: ECons
+      : EList
+      self
+      :: ECons
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: ECons
+      : Bool
+      head
+      :: ECons
+      : Edge
+      tail
+      :: ECons
+      : EList
+      init
+      :: ECons
+      : EList
+      print
+      :: ECons
+      : Object
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#0
+        _return tmp#1
+    _method
+      head
+      : Edge
+      _formals
+      _locals
+        car
+        : Edge
+      _expr
+        _load_attr tmp#car, attr#car, attr#car
+        _return tmp#car
+    _method
+      tail
+      : EList
+      _formals
+      _locals
+        cdr
+        : EList
+      _expr
+        _load_attr tmp#cdr, attr#cdr, attr#cdr
+        _return tmp#cdr
+    _method
+      init
+      : EList
+      _formals
+        e
+        : Edge
+        rest
+        : EList
+      _locals
+        e
+        : Edge
+        rest
+        : EList
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#e, param#e
+        _store_attr attr#car, attr#car, tmp#e
+        _mov tmp#rest, param#rest
+        _store_attr attr#cdr, attr#cdr, tmp#rest
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        car
+        : Edge
+        2
+        : Object
+        cdr
+        : EList
+        4
+        : Object
+      _expr
+        _load_attr tmp#car, attr#car, attr#car
+        tmp#2 = _dispatch tmp#car, print, ()
+        _load_attr tmp#cdr, attr#cdr, attr#cdr
+        tmp#4 = _dispatch tmp#cdr, print, ()
+        _return tmp#4
+  _klass
+    VList
+    <: IO
+    _attrs
+      car
+      :: VList
+      : Vertice
+      self
+      :: VList
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: VList
+      : Bool
+      head
+      :: VList
+      : Vertice
+      tail
+      :: VList
+      : VList
+      cons
+      :: VList
+      : VList
+      print
+      :: VList
+      : Object
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#1
+        _return tmp#1
+    _method
+      head
+      : Vertice
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        car
+        : Vertice
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _load_attr tmp#car, attr#car, attr#car
+        _return tmp#car
+    _method
+      tail
+      : VList
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      cons
+      : VList
+      _formals
+        v
+        : Vertice
+      _locals
+        2
+        : VCons
+        v
+        : Vertice
+        self
+        : SELF_TYPE
+        5
+        : VList
+      _expr
+        tmp#2 = new VCons
+        _mov tmp#v, param#v
+        _mov tmp#self, param#self
+        tmp#5 = _dispatch tmp#2, init, (tmp#v, tmp#self)
+        _return tmp#5
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : String
+        3
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#2, imm#"\n"
+        tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    VCons
+    <: VList
+    _attrs
+      cdr
+      :: VCons
+      : VList
+      self
+      :: VCons
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: VCons
+      : Bool
+      head
+      :: VCons
+      : Vertice
+      tail
+      :: VCons
+      : VList
+      init
+      :: VCons
+      : VList
+      print
+      :: VCons
+      : Object
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#0
+        _return tmp#1
+    _method
+      head
+      : Vertice
+      _formals
+      _locals
+        car
+        : Vertice
+      _expr
+        _load_attr tmp#car, attr#car, attr#car
+        _return tmp#car
+    _method
+      tail
+      : VList
+      _formals
+      _locals
+        cdr
+        : VList
+      _expr
+        _load_attr tmp#cdr, attr#cdr, attr#cdr
+        _return tmp#cdr
+    _method
+      init
+      : VList
+      _formals
+        v
+        : Vertice
+        rest
+        : VList
+      _locals
+        v
+        : Vertice
+        rest
+        : VList
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#v, param#v
+        _store_attr attr#car, attr#car, tmp#v
+        _mov tmp#rest, param#rest
+        _store_attr attr#cdr, attr#cdr, tmp#rest
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        car
+        : Vertice
+        2
+        : Object
+        cdr
+        : VList
+        4
+        : Object
+      _expr
+        _load_attr tmp#car, attr#car, attr#car
+        tmp#2 = _dispatch tmp#car, print, ()
+        _load_attr tmp#cdr, attr#cdr, attr#cdr
+        tmp#4 = _dispatch tmp#cdr, print, ()
+        _return tmp#4
+  _klass
+    Parse
+    <: IO
+    _attrs
+      boolop
+      :: Parse
+      : BoolOp
+      rest
+      :: Parse
+      : String
+      self
+      :: Parse
+      : SELF_TYPE
+      1
+      :: null
+      : BoolOp
+    _methodmap
+      tmp#1 = new BoolOp
+      read_input
+      :: Parse
+      : Graph
+      parse_line
+      :: Parse
+      : Vertice
+      c2i
+      :: Parse
+      : Int
+      a2i
+      :: Parse
+      : Int
+      a2i_aux
+      :: Parse
+      : Int
+    _method
+      read_input
+      : Graph
+      _formals
+      _locals
+        1
+        : Graph
+        self
+        : SELF_TYPE
+        4
+        : String
+        boolop
+        : BoolOp
+        line
+        : String
+        8
+        : String
+        9
+        : Bool
+        10
+        : Bool
+        line
+        : String
+        12
+        : String
+        13
+        : Bool
+        14
+        : Bool
+        15
+        : Bool
+        g
+        : Graph
+        self
+        : SELF_TYPE
+        line
+        : String
+        19
+        : Vertice
+        20
+        : Object
+        self
+        : SELF_TYPE
+        22
+        : String
+        23
+        : Int
+        24
+        : Object
+        g
+        : Graph
+        26
+        : Graph
+      _expr
+        tmp#1 = new Graph
+        _mov letvar#g, tmp#1
+        _mov tmp#self, param#self
+        tmp#4 = _dispatch tmp#self, in_string, ()
+        _mov letvar#line, tmp#4
+        _mov tmp#23, imm#0
+        _label 2
+        _load_attr tmp#boolop, attr#boolop, attr#boolop
+        _mov tmp#line, letvar#line
+        _mov tmp#8, imm#"\n"
+        tmp#9 = tmp#line _eq tmp#8
+        tmp#10 = _comp tmp#9
+        _mov tmp#line, letvar#line
+        _mov tmp#12, imm#""
+        tmp#13 = tmp#line _eq tmp#12
+        tmp#14 = _comp tmp#13
+        tmp#15 = _dispatch tmp#boolop, and, (tmp#10, tmp#14)
+        _if tmp#15 _eq tmp#23 _goto 3
+        _mov tmp#g, letvar#g
+        _mov tmp#self, param#self
+        _mov tmp#line, letvar#line
+        tmp#19 = _dispatch tmp#self, parse_line, (tmp#line)
+        tmp#20 = _dispatch tmp#g, add_vertice, (tmp#19)
+        _mov tmp#self, param#self
+        tmp#22 = _dispatch tmp#self, in_string, ()
+        _mov letvar#line, tmp#22
+        _goto 2
+        _label 3
+        _mov tmp#24, letvar#line
+        _mov tmp#g, letvar#g
+        _mov tmp#26, tmp#g
+        _return tmp#26
+    _method
+      parse_line
+      : Vertice
+      _formals
+        s
+        : String
+      _locals
+        2
+        : Vertice
+        self
+        : SELF_TYPE
+        s
+        : String
+        5
+        : Int
+        6
+        : Vertice
+        rest
+        : String
+        9
+        : Int
+        10
+        : Int
+        11
+        : Bool
+        12
+        : Bool
+        self
+        : SELF_TYPE
+        rest
+        : String
+        15
+        : Int
+        self
+        : SELF_TYPE
+        rest
+        : String
+        19
+        : Int
+        v
+        : Vertice
+        22
+        : Edge
+        v
+        : Vertice
+        24
+        : Int
+        succ
+        : Int
+        weight
+        : Int
+        27
+        : Edge
+        28
+        : Vertice
+        29
+        : Vertice
+        30
+        : Vertice
+        31
+        : Int
+        v
+        : Vertice
+        33
+        : Vertice
+      _expr
+        tmp#2 = new Vertice
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        tmp#5 = _dispatch tmp#self, a2i, (tmp#s)
+        tmp#6 = _dispatch tmp#2, init, (tmp#5)
+        _mov letvar#v, tmp#6
+        _mov tmp#31, imm#0
+        _label 4
+        _load_attr tmp#rest, attr#rest, attr#rest
+        tmp#9 = _dispatch tmp#rest, length, ()
+        _mov tmp#10, imm#0
+        tmp#11 = tmp#9 _eq tmp#10
+        tmp#12 = _comp tmp#11
+        _if tmp#12 _eq tmp#31 _goto 5
+        _mov tmp#self, param#self
+        _load_attr tmp#rest, attr#rest, attr#rest
+        tmp#15 = _dispatch tmp#self, a2i, (tmp#rest)
+        _mov letvar#succ, tmp#15
+        _mov tmp#self, param#self
+        _load_attr tmp#rest, attr#rest, attr#rest
+        tmp#19 = _dispatch tmp#self, a2i, (tmp#rest)
+        _mov letvar#weight, tmp#19
+        _mov tmp#v, letvar#v
+        tmp#22 = new Edge
+        _mov tmp#v, letvar#v
+        tmp#24 = _dispatch tmp#v, number, ()
+        _mov tmp#succ, letvar#succ
+        _mov tmp#weight, letvar#weight
+        tmp#27 = _dispatch tmp#22, init, (tmp#24, tmp#succ, tmp#weight)
+        tmp#28 = _dispatch tmp#v, add_out, (tmp#27)
+        _mov tmp#29, tmp#28
+        _mov tmp#30, tmp#29
+        _goto 4
+        _label 5
+        _mov tmp#v, letvar#v
+        _mov tmp#33, tmp#v
+        _return tmp#33
+    _method
+      c2i
+      : Int
+      _formals
+        char
+        : String
+      _locals
+        char
+        : String
+        3
+        : String
+        4
+        : Bool
+        5
+        : Int
+        char
+        : String
+        7
+        : String
+        8
+        : Bool
+        9
+        : Int
+        char
+        : String
+        11
+        : String
+        12
+        : Bool
+        13
+        : Int
+        char
+        : String
+        15
+        : String
+        16
+        : Bool
+        17
+        : Int
+        char
+        : String
+        19
+        : String
+        20
+        : Bool
+        21
+        : Int
+        char
+        : String
+        23
+        : String
+        24
+        : Bool
+        25
+        : Int
+        char
+        : String
+        27
+        : String
+        28
+        : Bool
+        29
+        : Int
+        char
+        : String
+        31
+        : String
+        32
+        : Bool
+        33
+        : Int
+        char
+        : String
+        35
+        : String
+        36
+        : Bool
+        37
+        : Int
+        char
+        : String
+        39
+        : String
+        40
+        : Bool
+        41
+        : Int
+        self
+        : SELF_TYPE
+        43
+        : Object
+        44
+        : Int
+        45
+        : Int
+        46
+        : Bool
+        47
+        : Int
+        48
+        : Bool
+        49
+        : Int
+        50
+        : Bool
+        51
+        : Int
+        52
+        : Bool
+        53
+        : Int
+        54
+        : Bool
+        55
+        : Int
+        56
+        : Bool
+        57
+        : Int
+        58
+        : Bool
+        59
+        : Int
+        60
+        : Bool
+        61
+        : Int
+        62
+        : Bool
+        63
+        : Int
+        64
+        : Bool
+      _expr
+        _mov tmp#char, param#char
+        _mov tmp#3, imm#"0"
+        tmp#4 = tmp#char _eq tmp#3
+        _mov tmp#64, imm#null
+        _if tmp#4 _eq tmp#64 _goto 24
+        _mov tmp#5, imm#0
+        _mov tmp#63, tmp#5
+        _goto 25
+        _label 24
+        _mov tmp#char, param#char
+        _mov tmp#7, imm#"1"
+        tmp#8 = tmp#char _eq tmp#7
+        _mov tmp#62, imm#null
+        _if tmp#8 _eq tmp#62 _goto 22
+        _mov tmp#9, imm#1
+        _mov tmp#61, tmp#9
+        _goto 23
+        _label 22
+        _mov tmp#char, param#char
+        _mov tmp#11, imm#"2"
+        tmp#12 = tmp#char _eq tmp#11
+        _mov tmp#60, imm#null
+        _if tmp#12 _eq tmp#60 _goto 20
+        _mov tmp#13, imm#2
+        _mov tmp#59, tmp#13
+        _goto 21
+        _label 20
+        _mov tmp#char, param#char
+        _mov tmp#15, imm#"3"
+        tmp#16 = tmp#char _eq tmp#15
+        _mov tmp#58, imm#null
+        _if tmp#16 _eq tmp#58 _goto 18
+        _mov tmp#17, imm#3
+        _mov tmp#57, tmp#17
+        _goto 19
+        _label 18
+        _mov tmp#char, param#char
+        _mov tmp#19, imm#"4"
+        tmp#20 = tmp#char _eq tmp#19
+        _mov tmp#56, imm#null
+        _if tmp#20 _eq tmp#56 _goto 16
+        _mov tmp#21, imm#4
+        _mov tmp#55, tmp#21
+        _goto 17
+        _label 16
+        _mov tmp#char, param#char
+        _mov tmp#23, imm#"5"
+        tmp#24 = tmp#char _eq tmp#23
+        _mov tmp#54, imm#null
+        _if tmp#24 _eq tmp#54 _goto 14
+        _mov tmp#25, imm#5
+        _mov tmp#53, tmp#25
+        _goto 15
+        _label 14
+        _mov tmp#char, param#char
+        _mov tmp#27, imm#"6"
+        tmp#28 = tmp#char _eq tmp#27
+        _mov tmp#52, imm#null
+        _if tmp#28 _eq tmp#52 _goto 12
+        _mov tmp#29, imm#6
+        _mov tmp#51, tmp#29
+        _goto 13
+        _label 12
+        _mov tmp#char, param#char
+        _mov tmp#31, imm#"7"
+        tmp#32 = tmp#char _eq tmp#31
+        _mov tmp#50, imm#null
+        _if tmp#32 _eq tmp#50 _goto 10
+        _mov tmp#33, imm#7
+        _mov tmp#49, tmp#33
+        _goto 11
+        _label 10
+        _mov tmp#char, param#char
+        _mov tmp#35, imm#"8"
+        tmp#36 = tmp#char _eq tmp#35
+        _mov tmp#48, imm#null
+        _if tmp#36 _eq tmp#48 _goto 8
+        _mov tmp#37, imm#8
+        _mov tmp#47, tmp#37
+        _goto 9
+        _label 8
+        _mov tmp#char, param#char
+        _mov tmp#39, imm#"9"
+        tmp#40 = tmp#char _eq tmp#39
+        _mov tmp#46, imm#null
+        _if tmp#40 _eq tmp#46 _goto 6
+        _mov tmp#41, imm#9
+        _mov tmp#45, tmp#41
+        _goto 7
+        _label 6
+        _mov tmp#self, param#self
+        tmp#43 = _dispatch tmp#self, abort, ()
+        _mov tmp#44, imm#0
+        _mov tmp#45, tmp#44
+        _label 7
+        _mov tmp#47, tmp#45
+        _label 9
+        _mov tmp#49, tmp#47
+        _label 11
+        _mov tmp#51, tmp#49
+        _label 13
+        _mov tmp#53, tmp#51
+        _label 15
+        _mov tmp#55, tmp#53
+        _label 17
+        _mov tmp#57, tmp#55
+        _label 19
+        _mov tmp#59, tmp#57
+        _label 21
+        _mov tmp#61, tmp#59
+        _label 23
+        _mov tmp#63, tmp#61
+        _label 25
+        _return tmp#63
+    _method
+      a2i
+      : Int
+      _formals
+        s
+        : String
+      _locals
+        s
+        : String
+        3
+        : Int
+        4
+        : Int
+        5
+        : Bool
+        6
+        : Int
+        s
+        : String
+        8
+        : Int
+        9
+        : Int
+        10
+        : String
+        11
+        : String
+        12
+        : Bool
+        self
+        : SELF_TYPE
+        s
+        : String
+        15
+        : Int
+        s
+        : String
+        17
+        : Int
+        18
+        : Int
+        19
+        : Int
+        20
+        : String
+        21
+        : Int
+        22
+        : Int
+        s
+        : String
+        24
+        : Int
+        25
+        : Int
+        26
+        : String
+        27
+        : String
+        28
+        : Bool
+        self
+        : SELF_TYPE
+        s
+        : String
+        31
+        : Int
+        s
+        : String
+        33
+        : Int
+        34
+        : Int
+        35
+        : Int
+        36
+        : String
+        37
+        : Int
+        self
+        : SELF_TYPE
+        s
+        : String
+        40
+        : Int
+        41
+        : Int
+        42
+        : Bool
+        43
+        : Int
+        44
+        : Bool
+        45
+        : Int
+        46
+        : Bool
+      _expr
+        _mov tmp#s, param#s
+        tmp#3 = _dispatch tmp#s, length, ()
+        _mov tmp#4, imm#0
+        tmp#5 = tmp#3 _eq tmp#4
+        _mov tmp#46, imm#null
+        _if tmp#5 _eq tmp#46 _goto 30
+        _mov tmp#6, imm#0
+        _mov tmp#45, tmp#6
+        _goto 31
+        _label 30
+        _mov tmp#s, param#s
+        _mov tmp#8, imm#0
+        _mov tmp#9, imm#1
+        tmp#10 = _dispatch tmp#s, substr, (tmp#8, tmp#9)
+        _mov tmp#11, imm#"-"
+        tmp#12 = tmp#10 _eq tmp#11
+        _mov tmp#44, imm#null
+        _if tmp#12 _eq tmp#44 _goto 28
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        _mov tmp#15, imm#1
+        _mov tmp#s, param#s
+        tmp#17 = _dispatch tmp#s, length, ()
+        _mov tmp#18, imm#1
+        tmp#19 = tmp#17 _sub tmp#18
+        tmp#20 = _dispatch tmp#s, substr, (tmp#15, tmp#19)
+        tmp#21 = _dispatch tmp#self, a2i_aux, (tmp#20)
+        tmp#22 = _neg tmp#21
+        _mov tmp#43, tmp#22
+        _goto 29
+        _label 28
+        _mov tmp#s, param#s
+        _mov tmp#24, imm#0
+        _mov tmp#25, imm#1
+        tmp#26 = _dispatch tmp#s, substr, (tmp#24, tmp#25)
+        _mov tmp#27, imm#" "
+        tmp#28 = tmp#26 _eq tmp#27
+        _mov tmp#42, imm#null
+        _if tmp#28 _eq tmp#42 _goto 26
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        _mov tmp#31, imm#1
+        _mov tmp#s, param#s
+        tmp#33 = _dispatch tmp#s, length, ()
+        _mov tmp#34, imm#1
+        tmp#35 = tmp#33 _sub tmp#34
+        tmp#36 = _dispatch tmp#s, substr, (tmp#31, tmp#35)
+        tmp#37 = _dispatch tmp#self, a2i, (tmp#36)
+        _mov tmp#41, tmp#37
+        _goto 27
+        _label 26
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        tmp#40 = _dispatch tmp#self, a2i_aux, (tmp#s)
+        _mov tmp#41, tmp#40
+        _label 27
+        _mov tmp#43, tmp#41
+        _label 29
+        _mov tmp#45, tmp#43
+        _label 31
+        _return tmp#45
+    _method
+      a2i_aux
+      : Int
+      _formals
+        s
+        : String
+      _locals
+        2
+        : Int
+        s
+        : String
+        5
+        : Int
+        7
+        : Int
+        i
+        : Int
+        j
+        : Int
+        11
+        : Bool
+        s
+        : String
+        i
+        : Int
+        14
+        : Int
+        15
+        : String
+        c
+        : String
+        18
+        : String
+        19
+        : Bool
+        s
+        : String
+        i
+        : Int
+        22
+        : Int
+        23
+        : Int
+        s
+        : String
+        25
+        : Int
+        i
+        : Int
+        27
+        : Int
+        28
+        : Int
+        29
+        : Int
+        30
+        : String
+        j
+        : Int
+        c
+        : String
+        33
+        : String
+        34
+        : Bool
+        s
+        : String
+        i
+        : Int
+        37
+        : Int
+        38
+        : Int
+        s
+        : String
+        40
+        : Int
+        i
+        : Int
+        42
+        : Int
+        43
+        : Int
+        44
+        : Int
+        45
+        : String
+        j
+        : Int
+        int
+        : Int
+        48
+        : Int
+        49
+        : Int
+        self
+        : SELF_TYPE
+        s
+        : String
+        i
+        : Int
+        53
+        : Int
+        54
+        : String
+        55
+        : Int
+        56
+        : Int
+        i
+        : Int
+        58
+        : Int
+        59
+        : Int
+        i
+        : Int
+        j
+        : Int
+        62
+        : Bool
+        63
+        : String
+        64
+        : String
+        65
+        : String
+        66
+        : Bool
+        67
+        : Object
+        68
+        : Bool
+        69
+        : Object
+        70
+        : Bool
+        71
+        : Object
+        72
+        : Int
+        73
+        : Object
+        74
+        : Object
+        int
+        : Int
+        76
+        : Int
+      _expr
+        _mov tmp#2, imm#0
+        _mov letvar#int, tmp#2
+        _mov tmp#s, param#s
+        tmp#5 = _dispatch tmp#s, length, ()
+        _mov letvar#j, tmp#5
+        _mov tmp#7, imm#0
+        _mov letvar#i, tmp#7
+        _mov tmp#72, imm#0
+        _label 38
+        _mov tmp#i, letvar#i
+        _mov tmp#j, letvar#j
+        tmp#11 = tmp#i _lt tmp#j
+        _if tmp#11 _eq tmp#72 _goto 39
+        _mov tmp#s, param#s
+        _mov tmp#i, letvar#i
+        _mov tmp#14, imm#1
+        tmp#15 = _dispatch tmp#s, substr, (tmp#i, tmp#14)
+        _mov letvar#c, tmp#15
+        _mov tmp#c, letvar#c
+        _mov tmp#18, imm#" "
+        tmp#19 = tmp#c _eq tmp#18
+        _mov tmp#70, imm#null
+        _if tmp#19 _eq tmp#70 _goto 36
+        _mov tmp#s, param#s
+        _mov tmp#i, letvar#i
+        _mov tmp#22, imm#1
+        tmp#23 = tmp#i _plus tmp#22
+        _mov tmp#s, param#s
+        tmp#25 = _dispatch tmp#s, length, ()
+        _mov tmp#i, letvar#i
+        tmp#27 = tmp#25 _sub tmp#i
+        _mov tmp#28, imm#1
+        tmp#29 = tmp#27 _sub tmp#28
+        tmp#30 = _dispatch tmp#s, substr, (tmp#23, tmp#29)
+        _store_attr attr#rest, attr#rest, tmp#30
+        _mov tmp#j, letvar#j
+        _mov letvar#i, tmp#j
+        _mov tmp#69, letvar#i
+        _goto 37
+        _label 36
+        _mov tmp#c, letvar#c
+        _mov tmp#33, imm#","
+        tmp#34 = tmp#c _eq tmp#33
+        _mov tmp#68, imm#null
+        _if tmp#34 _eq tmp#68 _goto 34
+        _mov tmp#s, param#s
+        _mov tmp#i, letvar#i
+        _mov tmp#37, imm#1
+        tmp#38 = tmp#i _plus tmp#37
+        _mov tmp#s, param#s
+        tmp#40 = _dispatch tmp#s, length, ()
+        _mov tmp#i, letvar#i
+        tmp#42 = tmp#40 _sub tmp#i
+        _mov tmp#43, imm#1
+        tmp#44 = tmp#42 _sub tmp#43
+        tmp#45 = _dispatch tmp#s, substr, (tmp#38, tmp#44)
+        _store_attr attr#rest, attr#rest, tmp#45
+        _mov tmp#j, letvar#j
+        _mov letvar#i, tmp#j
+        _mov tmp#67, letvar#i
+        _goto 35
+        _label 34
+        _mov tmp#int, letvar#int
+        _mov tmp#48, imm#10
+        tmp#49 = tmp#int _mul tmp#48
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        _mov tmp#i, letvar#i
+        _mov tmp#53, imm#1
+        tmp#54 = _dispatch tmp#s, substr, (tmp#i, tmp#53)
+        tmp#55 = _dispatch tmp#self, c2i, (tmp#54)
+        tmp#56 = tmp#49 _plus tmp#55
+        _mov letvar#int, tmp#56
+        _mov tmp#i, letvar#i
+        _mov tmp#58, imm#1
+        tmp#59 = tmp#i _plus tmp#58
+        _mov letvar#i, tmp#59
+        _mov tmp#i, letvar#i
+        _mov tmp#j, letvar#j
+        tmp#62 = tmp#i _eq tmp#j
+        _mov tmp#66, imm#null
+        _if tmp#62 _eq tmp#66 _goto 32
+        _mov tmp#63, imm#""
+        _store_attr attr#rest, attr#rest, tmp#63
+        _mov tmp#65, attr#rest
+        _goto 33
+        _label 32
+        _mov tmp#64, imm#""
+        _mov tmp#65, tmp#64
+        _label 33
+        _mov tmp#67, tmp#65
+        _label 35
+        _mov tmp#69, tmp#67
+        _label 37
+        _mov tmp#71, tmp#69
+        _goto 38
+        _label 39
+        _mov tmp#73, tmp#71
+        _mov tmp#74, tmp#73
+        _mov tmp#int, letvar#int
+        _mov tmp#76, tmp#int
+        _return tmp#76
+  _klass
+    Main
+    <: Parse
+    _attrs
+      g
+      :: Main
+      : Graph
+      self
+      :: Main
+      : SELF_TYPE
+      self
+      :: null
+      : SELF_TYPE
+      2
+      :: null
+      : Graph
+    _methodmap
+      tmp#1 = new BoolOp
+      _mov tmp#self, param#self
+      tmp#3 = _dispatch tmp#self, read_input, ()
+      main
+      :: Main
+      : Object
+    _method
+      main
+      : Object
+      _formals
+      _locals
+        1
+        : BoolOp
+        g
+        : Graph
+        2
+        : Object
+        g
+        : Graph
+        4
+        : Object
+      _expr
+        _load_attr tmp#g, attr#g, attr#g
+        tmp#2 = _dispatch tmp#g, print_V, ()
+        _load_attr tmp#g, attr#g, attr#g
+        tmp#4 = _dispatch tmp#g, print_E, ()
+        _return tmp#4
+  _klass
+    BoolOp
+    <: Object
+    _attrs
+      self
+      :: BoolOp
+      : SELF_TYPE
+    _methodmap
+      and
+      :: BoolOp
+      : Bool
+      or
+      :: BoolOp
+      : Bool
+    _method
+      and
+      : Bool
+      _formals
+        b1
+        : Bool
+        b2
+        : Bool
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Graph
+        b1
+        : Bool
+        b2
+        : Bool
+        5
+        : Bool
+        6
+        : Bool
+        7
+        : Bool
+      _expr
+        _mov tmp#b1, param#b1
+        _mov tmp#7, imm#null
+        _if tmp#b1 _eq tmp#7 _goto 40
+        _mov tmp#b2, param#b2
+        _mov tmp#6, tmp#b2
+        _goto 41
+        _label 40
+        _mov tmp#5, imm#0
+        _mov tmp#6, tmp#5
+        _label 41
+        _return tmp#6
+    _method
+      or
+      : Bool
+      _formals
+        b1
+        : Bool
+        b2
+        : Bool
+      _locals
+        b1
+        : Bool
+        4
+        : Bool
+        b2
+        : Bool
+        6
+        : Bool
+        7
+        : Bool
+      _expr
+        _mov tmp#b1, param#b1
+        _mov tmp#7, imm#null
+        _if tmp#b1 _eq tmp#7 _goto 42
+        _mov tmp#4, imm#1
+        _mov tmp#6, tmp#4
+        _goto 43
+        _label 42
+        _mov tmp#b2, param#b2
+        _mov tmp#6, tmp#b2
+        _label 43
+        _return tmp#6

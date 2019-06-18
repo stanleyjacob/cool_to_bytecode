@@ -1,0 +1,231 @@
+.class public Edge
+.super IO
+
+.field private from LInt;
+.field private to LInt;
+.field private weight LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/from LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/to LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/weight LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/from LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/to LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Edge/weight LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public init(LInt;LInt;LInt;)LEdge;
+
+.limit stack 16
+.limit locals 16
+
+; Move Inst start
+aload 1
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield Edge/from LInt;
+
+; Move Inst start
+aload 2
+astore 5
+
+; Store Attr Inst start
+aload 0
+aload 5
+putfield Edge/to LInt;
+
+; Move Inst start
+aload 3
+astore 6
+
+; Store Attr Inst start
+aload 0
+aload 6
+putfield Edge/weight LInt;
+
+; Move Inst start
+aload 0
+astore 7
+
+; Return Inst start
+aload 7
+checkcast Edge
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 36
+.limit locals 36
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc " ("
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Load Inst start
+aload 0
+getfield Edge/from LInt;
+astore 5
+
+; Dispatch Inst start
+aload 4
+aload 5
+invokevirtual IO/out_int(LInt;)LIO;
+astore 6
+
+; Move Inst start
+aload 0
+astore 7
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ","
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 8
+
+; Dispatch Inst start
+aload 7
+aload 8
+invokevirtual IO/out_string(LString;)LIO;
+astore 9
+
+; Move Inst start
+aload 0
+astore 10
+
+; Load Inst start
+aload 0
+getfield Edge/to LInt;
+astore 11
+
+; Dispatch Inst start
+aload 10
+aload 11
+invokevirtual IO/out_int(LInt;)LIO;
+astore 12
+
+; Move Inst start
+aload 0
+astore 13
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ")"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 14
+
+; Dispatch Inst start
+aload 13
+aload 14
+invokevirtual IO/out_string(LString;)LIO;
+astore 15
+
+; Move Inst start
+aload 0
+astore 16
+
+; Load Inst start
+aload 0
+getfield Edge/weight LInt;
+astore 17
+
+; Dispatch Inst start
+aload 16
+aload 17
+invokevirtual IO/out_int(LInt;)LIO;
+astore 18
+
+; Return Inst start
+aload 18
+checkcast Edge
+areturn
+
+.end method
+
+

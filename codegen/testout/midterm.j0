@@ -1,0 +1,63 @@
+.class public B
+.super Object
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public bar()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+

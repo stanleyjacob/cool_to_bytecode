@@ -1,0 +1,207 @@
+.class public Main
+.super IO
+
+.field private i LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 4
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/i LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/i LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public init()LMain;
+
+.limit stack 4
+.limit locals 4
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Store Attr Inst start
+aload 0
+aload 1
+putfield Main/i LInt;
+
+; Move Inst start
+aload 0
+astore 2
+
+; Return Inst start
+aload 2
+checkcast Main
+areturn
+
+.end method
+
+
+.method public main()LMain;
+
+.limit stack 24
+.limit locals 24
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Main/init()LMain;
+checkcast Main
+astore 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 9
+
+; Label Inst start
+label0:
+
+; Load Inst start
+aload 0
+getfield Main/i LInt;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 10
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+; Binop Inst start
+aload 3
+aload 4
+invokevirtual Int/lt(LInt;)LBool;
+astore 5
+
+
+; CondBranch Inst start
+aload 5
+aload 9
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label1
+
+
+; Load Inst start
+aload 0
+getfield Main/i LInt;
+astore 6
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 7
+
+; Binop Inst start
+aload 6
+aload 7
+invokevirtual Int/add(LInt;)LInt;
+astore 8
+
+
+; Store Attr Inst start
+aload 0
+aload 8
+putfield Main/i LInt;
+
+; Goto Inst start
+goto label0
+
+; Label Inst start
+label1:
+
+; Move Inst start
+aload 0
+astore 10
+
+; Load Inst start
+aload 0
+getfield Main/i LInt;
+astore 11
+
+; Dispatch Inst start
+aload 10
+aload 11
+invokevirtual IO/out_int(LInt;)LIO;
+astore 12
+
+; Return Inst start
+aload 12
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

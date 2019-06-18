@@ -1,0 +1,105 @@
+.class public A
+.super Object
+
+.field private x LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial Object/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/x LInt;
+
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual A/foo()LInt;
+astore 2
+
+aload 0
+aload 2
+putfield A/x LInt;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/x LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public foo()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public getX()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield A/x LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+

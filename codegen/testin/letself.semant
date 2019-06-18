@@ -1,0 +1,95 @@
+#7
+_program
+  #7
+  _class
+    A
+    IO
+    "letself.cl"
+    (
+    #8
+    _attr
+      x
+      Int
+      #8
+      _int
+        5
+      : Int
+    #9
+    _method
+      getX
+      Int
+      #9
+      _object
+        x
+      : Int
+    #10
+    _method
+      bar
+      SELF_TYPE
+      #11
+      _let
+        a
+        SELF_TYPE
+        #11
+        _new
+          SELF_TYPE
+        : SELF_TYPE
+        #12
+        _dispatch
+          #12
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #12
+          _dispatch
+            #12
+            _object
+              a
+            : SELF_TYPE
+            getX
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #16
+  _class
+    Main
+    A
+    "letself.cl"
+    (
+    #17
+    _method
+      main
+      SELF_TYPE
+      #18
+      _let
+        a
+        A
+        #18
+        _new
+          A
+        : A
+        #18
+        _block
+          #19
+          _dispatch
+            #19
+            _object
+              a
+            : A
+            bar
+            (
+            )
+          : A
+          #20
+          _object
+            self
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )

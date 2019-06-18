@@ -1,0 +1,209 @@
+.class public Main
+.super IO
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LMain;
+
+.limit stack 38
+.limit locals 38
+
+; Alloc Inst start
+new Complex
+dup
+invokespecial Complex/<init>()V
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 3
+
+; Dispatch Inst start
+aload 1
+aload 2
+aload 3
+invokevirtual Complex/init(LInt;LInt;)LComplex;
+astore 4
+
+; Move Inst start
+aload 4
+astore 5
+
+; Move Inst start
+aload 5
+astore 6
+
+; Dispatch Inst start
+aload 6
+invokevirtual Complex/reflect_X()LComplex;
+astore 7
+
+; Dispatch Inst start
+aload 7
+invokevirtual Complex/reflect_Y()LComplex;
+astore 8
+
+; Move Inst start
+aload 5
+astore 9
+
+; Dispatch Inst start
+aload 9
+invokevirtual Complex/reflect_0()LComplex;
+astore 10
+
+; Binop Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(Z)LBool;
+astore 11
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 19
+
+; CondBranch Inst start
+aload 11
+aload 19
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label0
+
+
+; Move Inst start
+aload 0
+astore 12
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "=)\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 13
+
+; Dispatch Inst start
+aload 12
+aload 13
+invokevirtual IO/out_string(LString;)LIO;
+astore 14
+
+; Move Inst start
+aload 14
+astore 18
+
+; Goto Inst start
+goto label1
+
+; Label Inst start
+label0:
+
+; Move Inst start
+aload 0
+astore 15
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "=(\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 16
+
+; Dispatch Inst start
+aload 15
+aload 16
+invokevirtual IO/out_string(LString;)LIO;
+astore 17
+
+; Move Inst start
+aload 17
+astore 18
+
+; Label Inst start
+label1:
+
+; Move Inst start
+aload 18
+astore 20
+
+; Return Inst start
+aload 20
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

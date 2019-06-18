@@ -1,0 +1,37 @@
+#7
+_program
+  #7
+  _class
+    Main
+    IO
+    "chain.cl"
+    (
+    #9
+    _method
+      main
+      SELF_TYPE
+      #11
+      _dispatch
+        #11
+        _dispatch
+          #11
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #11
+          _int
+            3
+          : Int
+          )
+        : SELF_TYPE
+        out_int
+        (
+        #11
+        _int
+          5
+        : Int
+        )
+      : SELF_TYPE
+    )

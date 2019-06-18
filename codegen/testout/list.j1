@@ -1,0 +1,152 @@
+.class public Cons
+.super List
+
+.field private car LInt;
+.field private cdr LList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial List/<init>(LObject;)V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Cons/car LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial List/<init>(LObject;)V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Cons/car LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Cons/car LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public tail()LList;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Cons/cdr LList;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public init(LInt;LList;)LList;
+
+.limit stack 10
+.limit locals 10
+
+; Move Inst start
+aload 1
+astore 3
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield Cons/car LInt;
+
+; Move Inst start
+aload 2
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield Cons/cdr LList;
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast Cons
+areturn
+
+.end method
+
+

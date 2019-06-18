@@ -1,0 +1,116 @@
+#10
+_program
+  #10
+  _class
+    A
+    Object
+    "attrin2.cl"
+    (
+    #11
+    _attr
+      x
+      Int
+      #11
+      _dispatch
+        #11
+        _object
+          self
+        : SELF_TYPE
+        foo
+        (
+        )
+      : Int
+    #12
+    _method
+      foo
+      Int
+      #12
+      _assign
+        x
+        #12
+        _plus
+          #12
+          _object
+            x
+          : Int
+          #12
+          _int
+            3
+          : Int
+        : Int
+      : Int
+    #13
+    _method
+      getX
+      Int
+      #13
+      _object
+        x
+      : Int
+    )
+  #16
+  _class
+    B
+    A
+    "attrin2.cl"
+    (
+    #17
+    _method
+      foo
+      Int
+      #17
+      _assign
+        x
+        #17
+        _plus
+          #17
+          _object
+            x
+          : Int
+          #17
+          _int
+            5
+          : Int
+        : Int
+      : Int
+    )
+  #20
+  _class
+    Main
+    IO
+    "attrin2.cl"
+    (
+    #21
+    _method
+      main
+      SELF_TYPE
+      #22
+      _let
+        b
+        B
+        #22
+        _new
+          B
+        : B
+        #23
+        _dispatch
+          #23
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #23
+          _dispatch
+            #23
+            _object
+              b
+            : B
+            getX
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

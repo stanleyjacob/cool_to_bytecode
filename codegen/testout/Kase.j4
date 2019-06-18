@@ -1,0 +1,279 @@
+
+.class public String
+.super Object
+
+.field public val Ljava/lang/String;
+
+
+.method public <init>()V
+   .limit locals 1
+   .limit stack 4
+
+   aload 0
+   invokespecial Object/<init>()V
+
+   ; Loading 4 objects onto the stack
+   aload 0
+   new java/lang/String
+   dup
+   ldc ""
+
+   invokespecial java/lang/String/<init>(Ljava/lang/String;)V
+   putfield String/val Ljava/lang/String;
+
+   return
+.end method
+
+
+.method public putval(Ljava/lang/String;)LString;
+   .limit locals 3
+   .limit stack 2
+
+   ; allocating new String wrapper object
+   new String
+   dup
+   invokespecial String/<init>()V
+   astore 2
+   aload 2
+
+   aload 1
+   ; Set the field of the new String object
+   putfield String/val Ljava/lang/String;
+
+   ; set the this String object's field
+   aload 0
+   aload 1   
+   putfield String/val Ljava/lang/String;
+   
+   ; return new String object
+   aload 2
+   areturn
+
+.end method
+
+
+.method public getval()Ljava/lang/String;
+   .limit stack 2
+   .limit locals 1
+
+   aload 0
+   getfield String/val Ljava/lang/String;
+   areturn 
+
+.end method
+
+
+.method public length()LInt;
+   .limit stack 2
+
+   aload 0
+   getfield String/val Ljava/lang/String;
+   invokestatic String/length(Ljava/lang/String;)LInt;
+   areturn
+
+.end method
+
+
+.method public static length(Ljava/lang/String;)LInt;
+   .limit stack 2
+   .limit locals 2
+
+   ; create new Int object for returning
+   new Int
+   dup
+   invokespecial Int/<init>()V
+   astore 1
+   aload 1
+
+   aload 0
+   invokevirtual java/lang/String/length()I
+   invokevirtual Int/putval(I)LInt;
+
+   areturn
+.end method
+
+
+.method public concat(LString;)LString;
+   .limit stack 3
+   .limit locals 3
+   
+   ; initialize new String object for returning
+   new String
+   dup
+   invokespecial String/<init>()V
+   astore 2
+   aload 2
+
+   aload 0
+   getfield String/val Ljava/lang/String;
+
+   aload 1
+   getfield String/val Ljava/lang/String;
+
+   invokevirtual java/lang/String/concat(Ljava/lang/String;)Ljava/lang/String;
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+
+   pop
+
+   aload 2
+   areturn
+
+.end method
+
+
+.method public substr(LInt;LInt;)LString;
+   .limit stack 5
+   .limit locals 4
+
+   ; initialize new String object for returning
+   new String
+   dup
+   invokespecial String/<init>()V
+
+   astore 3
+   aload 3
+
+   aload 0
+   getfield String/val Ljava/lang/String;
+
+   aload 1
+   invokevirtual Int/getval()I
+
+   aload 1
+   invokevirtual Int/getval()I
+
+   aload 2
+   invokevirtual Int/getval()I
+
+   ; need to calculate length
+   iadd
+
+   ; top of the stack has java String, i, and length as params
+   invokevirtual java/lang/String/substring(II)Ljava/lang/String;
+
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+
+   pop
+   aload 3
+
+   areturn
+
+.end method
+
+
+.method public static main([Ljava/lang/String;)V
+   
+   .limit stack 5
+   .limit locals 3
+   
+   new String
+   dup
+   invokespecial String/<init>()V 
+   astore 1
+
+   new IO
+   dup
+   invokespecial IO/<init>()V
+
+   astore 2
+   aload 2
+   aload 1
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+   aload 1
+   ldc "cs143"
+
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   pop
+   aload 2
+
+   new String
+   dup
+   invokespecial String/<init>()V
+   ldc "\n"
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+   aload 2
+   aload 1
+   aload 1
+   invokevirtual String/concat(LString;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+   aload 2
+
+
+   new String
+   dup
+   invokespecial String/<init>()V
+   ldc "\n"
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+
+   aload 2
+   aload 1
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+   aload 2
+
+   new String
+   dup
+   invokespecial String/<init>()V
+   ldc "\n"
+
+
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+   aload 2
+   aload 1
+   invokevirtual String/length()LInt;
+   invokevirtual IO/out_int(LInt;)LIO;
+   pop
+   aload_2 
+   new String
+
+   dup
+   invokespecial String/<init>()V
+   ldc "\n"
+
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+
+   pop
+   aload 2
+   aload 1
+   new Int
+   dup
+
+   invokespecial Int/<init>()V
+   iconst_m1
+   invokevirtual Int/putval(I)LInt;
+   
+   new Int
+   dup
+   invokespecial Int/<init>()V
+   iconst_3
+   invokevirtual Int/putval(I)LInt;
+   invokevirtual String/substr(LInt;LInt;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+   aload 2
+   new String
+   dup
+
+   invokespecial String/<init>()V
+   ldc "\n"
+   invokevirtual String/putval(Ljava/lang/String;)LString;
+   invokevirtual IO/out_string(LString;)LIO;
+   pop
+
+   return
+
+.end method

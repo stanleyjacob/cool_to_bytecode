@@ -1,0 +1,33 @@
+#7
+_program
+  #7
+  _class
+    Main
+    IO
+    "strlen.cl"
+    (
+    #8
+    _method
+      main
+      SELF_TYPE
+      #9
+      _dispatch
+        #9
+        _object
+          self
+        : SELF_TYPE
+        out_int
+        (
+        #9
+        _dispatch
+          #9
+          _string
+            "Hello, World.\n"
+          : String
+          length
+          (
+          )
+        : Int
+        )
+      : SELF_TYPE
+    )

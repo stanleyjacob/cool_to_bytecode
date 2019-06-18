@@ -1,0 +1,275 @@
+.class public EList
+.super IO
+
+.field private car LEdge;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LEdge;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Load Inst start
+aload 0
+getfield EList/car LEdge;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public tail()LEList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Return Inst start
+aload 3
+checkcast EList
+areturn
+
+.end method
+
+
+.method public cons(LEdge;)LEList;
+
+.limit stack 10
+.limit locals 10
+
+; Alloc Inst start
+new ECons
+dup
+invokespecial ECons/<init>()V
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Dispatch Inst start
+aload 2
+aload 3
+aload 4
+invokevirtual VCons/init(LEdge;LSELF_TYPE;)LVList;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+
+.method public append(LEList;)LEList;
+
+.limit stack 26
+.limit locals 26
+
+; Move Inst start
+aload 0
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual EList/isNil()LBool;
+astore 3
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 13
+
+; CondBranch Inst start
+aload 3
+aload 13
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label0
+
+
+; Move Inst start
+aload 1
+astore 4
+
+; Move Inst start
+aload 4
+astore 12
+
+; Goto Inst start
+goto label1
+
+; Label Inst start
+label0:
+
+; Move Inst start
+aload 0
+astore 5
+
+; Dispatch Inst start
+aload 5
+invokevirtual EList/tail()LEList;
+astore 6
+
+; Move Inst start
+aload 1
+astore 7
+
+; Dispatch Inst start
+aload 6
+aload 7
+invokevirtual EList/append(LEList;)LEList;
+astore 8
+
+; Move Inst start
+aload 0
+astore 9
+
+; Dispatch Inst start
+aload 9
+invokevirtual EList/head()LEdge;
+astore 10
+
+; Dispatch Inst start
+aload 8
+aload 10
+invokevirtual EList/cons(LEdge;)LEList;
+astore 11
+
+; Move Inst start
+aload 11
+astore 12
+
+; Label Inst start
+label1:
+
+; Return Inst start
+aload 12
+
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Return Inst start
+aload 3
+checkcast EList
+areturn
+
+.end method
+
+

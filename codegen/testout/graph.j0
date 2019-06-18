@@ -1,0 +1,168 @@
+.class public Graph
+.super Object
+
+.field private vertices LVList;
+.field private edges LEList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 15
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+; Alloc Inst start
+new VList
+dup
+invokespecial VList/<init>()V
+astore 1
+
+aload 0
+aload 1
+putfield Graph/vertices LVList;
+
+; Alloc Inst start
+new EList
+dup
+invokespecial EList/<init>()V
+astore 2
+
+aload 0
+aload 2
+putfield Graph/edges LEList;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 15
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public add_vertice(LVertice;)LObject;
+
+.limit stack 16
+.limit locals 16
+
+; Move Inst start
+aload 1
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual Vertice/outgoing()LEList;
+astore 3
+
+; Load Inst start
+aload 0
+getfield Graph/edges LEList;
+astore 4
+
+; Dispatch Inst start
+aload 3
+aload 4
+invokevirtual EList/append(LEList;)LEList;
+astore 5
+
+; Store Attr Inst start
+aload 0
+aload 5
+putfield Graph/edges LEList;
+
+; Load Inst start
+aload 0
+getfield Graph/vertices LVList;
+astore 6
+
+; Move Inst start
+aload 1
+astore 7
+
+; Dispatch Inst start
+aload 6
+aload 7
+invokevirtual VList/cons(LVertice;)LVList;
+astore 8
+
+; Store Attr Inst start
+aload 0
+aload 8
+putfield Graph/vertices LVList;
+
+; Return Inst start
+aload 0
+getfield Graph/vertices LVList;
+areturn
+
+.end method
+
+
+.method public print_E()LObject;
+
+.limit stack 4
+.limit locals 4
+
+; Load Inst start
+aload 0
+getfield Graph/edges LEList;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual VCons/print()LObject;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+
+.method public print_V()LObject;
+
+.limit stack 4
+.limit locals 4
+
+; Load Inst start
+aload 0
+getfield Graph/vertices LVList;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual VCons/print()LObject;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+

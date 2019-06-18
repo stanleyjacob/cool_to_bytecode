@@ -1,0 +1,327 @@
+.class public Main
+.super CellularAutomaton
+
+.field private cells LCellularAutomaton;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial CellularAutomaton/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial CellularAutomaton/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LMain;
+
+.limit stack 62
+.limit locals 62
+
+; Move Inst start
+
+; Move Inst start
+
+; Move Inst start
+aload 0
+astore 3
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "Welcome to the Game of Life.\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 4
+
+; Dispatch Inst start
+aload 3
+aload 4
+invokevirtual IO/out_string(LString;)LIO;
+astore 5
+
+; Move Inst start
+aload 0
+astore 6
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "There are many initial states to choose from. \n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 7
+
+; Dispatch Inst start
+aload 6
+aload 7
+invokevirtual IO/out_string(LString;)LIO;
+astore 8
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 30
+
+; Label Inst start
+label116:
+
+; Move Inst start
+aload 0
+astore 9
+
+; Dispatch Inst start
+aload 9
+invokevirtual CellularAutomaton/prompt2()LBool;
+astore 10
+
+; CondBranch Inst start
+aload 10
+aload 30
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label117
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 11
+
+; Move Inst start
+aload 11
+astore 1
+
+; Move Inst start
+aload 0
+astore 12
+
+; Dispatch Inst start
+aload 12
+invokevirtual CellularAutomaton/option()LString;
+astore 13
+
+; Move Inst start
+aload 13
+astore 2
+
+; Alloc Inst start
+new CellularAutomaton
+dup
+invokespecial CellularAutomaton/<init>()V
+astore 14
+
+; Move Inst start
+aload 2
+astore 15
+
+; Dispatch Inst start
+aload 14
+aload 15
+invokevirtual CellularAutomaton/init(LString;)LCellularAutomaton;
+checkcast Main
+astore 16
+
+; Store Attr Inst start
+aload 0
+aload 16
+putfield Main/cells LCellularAutomaton;
+
+; Load Inst start
+aload 0
+getfield Main/cells LCellularAutomaton;
+astore 17
+
+; Dispatch Inst start
+aload 17
+invokevirtual CellularAutomaton/print()LCellularAutomaton;
+checkcast Main
+astore 18
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 29
+
+; Label Inst start
+label114:
+
+; Move Inst start
+aload 1
+astore 19
+
+; CondBranch Inst start
+aload 19
+aload 29
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label115
+
+
+; Move Inst start
+aload 0
+astore 20
+
+; Dispatch Inst start
+aload 20
+invokevirtual CellularAutomaton/prompt()LBool;
+astore 21
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 28
+
+; CondBranch Inst start
+aload 21
+aload 28
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label112
+
+
+; Load Inst start
+aload 0
+getfield Main/cells LCellularAutomaton;
+astore 22
+
+; Dispatch Inst start
+aload 22
+invokevirtual CellularAutomaton/evolve()LCellularAutomaton;
+checkcast Main
+astore 23
+
+; Load Inst start
+aload 0
+getfield Main/cells LCellularAutomaton;
+astore 24
+
+; Dispatch Inst start
+aload 24
+invokevirtual CellularAutomaton/print()LCellularAutomaton;
+checkcast Main
+astore 25
+
+; Move Inst start
+aload 25
+astore 27
+
+; Goto Inst start
+goto label113
+
+; Label Inst start
+label112:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 26
+
+; Move Inst start
+aload 26
+astore 1
+
+; Move Inst start
+aload 1
+astore 27
+
+; Label Inst start
+label113:
+
+; Goto Inst start
+goto label114
+
+; Label Inst start
+label115:
+
+; Goto Inst start
+goto label116
+
+; Label Inst start
+label117:
+
+; Move Inst start
+aload 0
+astore 31
+
+; Move Inst start
+aload 31
+astore 32
+
+; Move Inst start
+aload 32
+astore 33
+
+; Return Inst start
+aload 33
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

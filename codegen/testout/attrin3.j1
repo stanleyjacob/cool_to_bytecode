@@ -1,0 +1,107 @@
+.class public B
+.super A
+
+.field private y LString;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+aload 0
+new String
+dup
+invokespecial String/<init>()V
+putfield B/y LString;
+
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual B/foo()LInt;
+astore 2
+
+aload 0
+aload 2
+putfield A/x LInt;
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "he"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 3
+
+aload 0
+aload 3
+putfield B/y LString;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 15
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+
+
+aload 0
+new String
+dup
+invokespecial String/<init>()V
+putfield B/y LString;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public foo()LInt;
+
+.limit stack 8
+.limit locals 8
+
+; Load Inst start
+aload 0
+getfield B/y LString;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual String/length()LInt;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+

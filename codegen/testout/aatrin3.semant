@@ -1,0 +1,108 @@
+#11
+_program
+  #11
+  _class
+    A
+    Object
+    "attrin3.cl"
+    (
+    #12
+    _attr
+      x
+      Int
+      #12
+      _dispatch
+        #12
+        _object
+          self
+        : SELF_TYPE
+        foo
+        (
+        )
+      : Int
+    #13
+    _method
+      foo
+      Int
+      #13
+      _int
+        3
+      : Int
+    #14
+    _method
+      getX
+      Int
+      #14
+      _object
+        x
+      : Int
+    )
+  #17
+  _class
+    B
+    A
+    "attrin3.cl"
+    (
+    #18
+    _attr
+      y
+      String
+      #18
+      _string
+        "he"
+      : String
+    #19
+    _method
+      foo
+      Int
+      #19
+      _dispatch
+        #19
+        _object
+          y
+        : String
+        length
+        (
+        )
+      : Int
+    )
+  #22
+  _class
+    Main
+    IO
+    "attrin3.cl"
+    (
+    #23
+    _method
+      main
+      SELF_TYPE
+      #24
+      _let
+        b
+        B
+        #24
+        _new
+          B
+        : B
+        #25
+        _dispatch
+          #25
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #25
+          _dispatch
+            #25
+            _object
+              b
+            : B
+            getX
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

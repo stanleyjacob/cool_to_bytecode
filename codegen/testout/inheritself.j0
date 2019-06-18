@@ -1,0 +1,43 @@
+.class public A
+.super Object
+
+.field private x LA;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+

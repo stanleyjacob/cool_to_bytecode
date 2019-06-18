@@ -1,0 +1,174 @@
+.class public ECons
+.super EList
+
+.field private cdr LEList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial EList/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial EList/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LEdge;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield EList/car LEdge;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public tail()LEList;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield ECons/cdr LEList;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public init(LEdge;LEList;)LEList;
+
+.limit stack 10
+.limit locals 10
+
+; Move Inst start
+aload 1
+astore 3
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield EList/car LEdge;
+
+; Move Inst start
+aload 2
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield ECons/cdr LEList;
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast ECons
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 8
+.limit locals 8
+
+; Load Inst start
+aload 0
+getfield EList/car LEdge;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual ECons/print()LObject;
+astore 2
+
+; Load Inst start
+aload 0
+getfield ECons/cdr LEList;
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual ECons/print()LObject;
+astore 4
+
+; Return Inst start
+aload 4
+
+areturn
+
+.end method
+
+

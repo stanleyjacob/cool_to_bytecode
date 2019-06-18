@@ -1,0 +1,309 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      out
+      :: Main
+      : Int
+      testee
+      :: Main
+      : Int
+      divisor
+      :: Main
+      : Int
+      stop
+      :: Main
+      : Int
+      m
+      :: Main
+      : Object
+      self
+      :: Main
+      : SELF_TYPE
+      self
+      :: null
+      : SELF_TYPE
+      2
+      :: null
+      : String
+      3
+      :: null
+      : SELF_TYPE
+      4
+      :: null
+      : Int
+      out
+      :: null
+      : Int
+      6
+      :: null
+      : Int
+      7
+      :: null
+      : Bool
+      testee
+      :: null
+      : Int
+      9
+      :: null
+      : Int
+      10
+      :: null
+      : Int
+      11
+      :: null
+      : Int
+      testee
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      15
+      :: null
+      : Int
+      16
+      :: null
+      : Bool
+      17
+      :: null
+      : Bool
+      testee
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      testee
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      22
+      :: null
+      : Int
+      23
+      :: null
+      : Int
+      24
+      :: null
+      : Int
+      25
+      :: null
+      : Int
+      26
+      :: null
+      : Bool
+      27
+      :: null
+      : Bool
+      28
+      :: null
+      : Bool
+      29
+      :: null
+      : Bool
+      30
+      :: null
+      : Bool
+      31
+      :: null
+      : Bool
+      32
+      :: null
+      : Bool
+      divisor
+      :: null
+      : Int
+      34
+      :: null
+      : Int
+      35
+      :: null
+      : Int
+      36
+      :: null
+      : Int
+      testee
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      divisor
+      :: null
+      : Int
+      40
+      :: null
+      : Int
+      41
+      :: null
+      : Bool
+      testee
+      :: null
+      : Int
+      self
+      :: null
+      : SELF_TYPE
+      out
+      :: null
+      : Int
+      45
+      :: null
+      : SELF_TYPE
+      self
+      :: null
+      : SELF_TYPE
+      47
+      :: null
+      : String
+      48
+      :: null
+      : SELF_TYPE
+      49
+      :: null
+      : Int
+      50
+      :: null
+      : Object
+      51
+      :: null
+      : Bool
+      stop
+      :: null
+      : Int
+      testee
+      :: null
+      : Int
+      54
+      :: null
+      : Bool
+      55
+      :: null
+      : String
+      56
+      :: null
+      : Object
+      57
+      :: null
+      : String
+      58
+      :: null
+      : Object
+      59
+      :: null
+      : Bool
+      60
+      :: null
+      : Int
+    _methodmap
+      _mov tmp#self, param#self
+      _mov tmp#2, imm#"2 is trivially prime.\n"
+      tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+      _mov tmp#4, imm#2
+      _load_attr tmp#out, attr#out, attr#out
+      _mov tmp#6, imm#500
+      _mov tmp#60, imm#0
+      _label 22
+      _mov tmp#7, imm#1
+      _if tmp#7 _eq tmp#60 _goto 23
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _mov tmp#9, imm#1
+      tmp#10 = tmp#testee _plus tmp#9
+      _store_attr attr#testee, attr#testee, tmp#10
+      _mov tmp#11, imm#2
+      _store_attr attr#divisor, attr#divisor, tmp#11
+      _mov tmp#36, imm#0
+      _label 16
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      tmp#15 = tmp#divisor _mul tmp#divisor
+      tmp#16 = tmp#testee _lt tmp#15
+      _mov tmp#32, imm#null
+      _if tmp#16 _eq tmp#32 _goto 14
+      _mov tmp#17, imm#0
+      _mov tmp#31, tmp#17
+      _goto 15
+      _label 14
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      tmp#22 = tmp#testee _divide tmp#divisor
+      tmp#23 = tmp#divisor _mul tmp#22
+      tmp#24 = tmp#testee _sub tmp#23
+      _mov tmp#25, imm#0
+      tmp#26 = tmp#24 _eq tmp#25
+      _mov tmp#30, imm#null
+      _if tmp#26 _eq tmp#30 _goto 12
+      _mov tmp#27, imm#0
+      _mov tmp#29, tmp#27
+      _goto 13
+      _label 12
+      _mov tmp#28, imm#1
+      _mov tmp#29, tmp#28
+      _label 13
+      _mov tmp#31, tmp#29
+      _label 15
+      _if tmp#31 _eq tmp#36 _goto 17
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      _mov tmp#34, imm#1
+      tmp#35 = tmp#divisor _plus tmp#34
+      _store_attr attr#divisor, attr#divisor, tmp#35
+      _goto 16
+      _label 17
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      _load_attr tmp#divisor, attr#divisor, attr#divisor
+      tmp#40 = tmp#divisor _mul tmp#divisor
+      tmp#41 = tmp#testee _lt tmp#40
+      _mov tmp#51, imm#null
+      _if tmp#41 _eq tmp#51 _goto 18
+      _load_attr tmp#testee, attr#testee, attr#testee
+      _store_attr attr#out, attr#out, tmp#testee
+      _mov tmp#self, param#self
+      _load_attr tmp#out, attr#out, attr#out
+      tmp#45 = _dispatch tmp#self, out_int, (tmp#out)
+      _mov tmp#self, param#self
+      _mov tmp#47, imm#" is prime.\n"
+      tmp#48 = _dispatch tmp#self, out_string, (tmp#47)
+      _mov tmp#50, tmp#48
+      _goto 19
+      _label 18
+      _mov tmp#49, imm#0
+      _mov tmp#50, tmp#49
+      _label 19
+      _load_attr tmp#stop, attr#stop, attr#stop
+      _load_attr tmp#testee, attr#testee, attr#testee
+      tmp#54 = tmp#stop _leq tmp#testee
+      _mov tmp#59, imm#null
+      _if tmp#54 _eq tmp#59 _goto 20
+      _mov tmp#55, imm#"halt"
+      tmp#56 = _dispatch tmp#55, abort, ()
+      _mov tmp#58, tmp#56
+      _goto 21
+      _label 20
+      _mov tmp#57, imm#"continue"
+      _mov tmp#58, tmp#57
+      _label 21
+      _goto 22
+      _label 23
+      main
+      :: Main
+      : Int
+    _method
+      main
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#0
+        _return tmp#1

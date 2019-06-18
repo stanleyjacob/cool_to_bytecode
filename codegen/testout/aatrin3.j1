@@ -1,0 +1,44 @@
+.class public B
+.super A
+
+.field private y LString;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 4
+
+aload 0
+invokespecial A/<init>()V
+aload 0
+aload 1
+putfield B/y LString;
+
+
+return
+
+.end method
+
+
+.method public foo()LInt;
+
+.limit stack 4
+.limit locals 4
+
+; Load Inst start
+aload 0
+getfield B/y LString;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual String/length()LInt;
+astore 2
+
+; Return Inst start
+aload 1
+areturn
+
+.end method
+
+

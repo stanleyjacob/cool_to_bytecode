@@ -1,0 +1,97 @@
+.class public Main
+.super IO
+
+.field private v LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/v LInt;
+
+
+return
+
+.end method
+
+
+.method public main()LMain;
+
+.limit stack 12
+.limit locals 12
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 2
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Store Attr Inst start
+aload 0
+aload 1
+putfield Main/v LInt;
+
+; Move Inst start
+aload 0
+astore 2
+
+; Load Inst start
+aload 0
+getfield Main/v LInt;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 42
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+; Binop Inst start
+aload 3
+aload 4
+invokevirtual Int/add(LInt;)LInt;
+astore 5
+
+
+; Dispatch Inst start
+aload 2
+aload 5
+invokevirtual IO/out_int(LInt;)LIO;
+astore 6
+
+; Return Inst start
+aload 2
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

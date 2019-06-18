@@ -1,0 +1,181 @@
+.class public Main
+.super IO
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LMain;
+
+.limit stack 34
+.limit locals 34
+
+; Move Inst start
+aload 0
+astore 1
+
+; Alloc Inst start
+new Object
+dup
+invokespecial Object/<init>()V
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual Object/type_name()LString;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 5
+
+; Dispatch Inst start
+aload 3
+aload 4
+aload 5
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 6
+
+; Dispatch Inst start
+aload 1
+aload 6
+invokevirtual IO/out_string(LString;)LIO;
+astore 7
+
+; Move Inst start
+aload 0
+astore 8
+
+; Unop Inst start
+aload 8
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(Z)LBool;
+astore 9
+
+
+; Dispatch Inst start
+aload 9
+invokevirtual Object/type_name()LString;
+astore 10
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 11
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 12
+
+; Dispatch Inst start
+aload 10
+aload 11
+aload 12
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 13
+
+; Dispatch Inst start
+aload 7
+aload 13
+invokevirtual IO/out_string(LString;)LIO;
+astore 14
+
+; Move Inst start
+aload 0
+astore 15
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 16
+
+; Dispatch Inst start
+aload 15
+aload 16
+invokevirtual IO/out_string(LString;)LIO;
+astore 17
+
+; Return Inst start
+aload 17
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

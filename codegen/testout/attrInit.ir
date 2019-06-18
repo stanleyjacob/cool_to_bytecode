@@ -1,0 +1,84 @@
+_program
+  _klass
+    A
+    <: Object
+    _attrs
+      x
+      :: A
+      : Int
+      self
+      :: A
+      : SELF_TYPE
+    _methodmap
+  _klass
+    B
+    <: A
+    _attrs
+      y
+      :: B
+      : Int
+      self
+      :: B
+      : SELF_TYPE
+      1
+      :: null
+      : Int
+      2
+      :: null
+      : Int
+      3
+      :: null
+      : Int
+    _methodmap
+      _load_attr tmp#1, attr#x, attr#x
+      _mov tmp#2, imm#1
+      tmp#3 = tmp#1 _plus tmp#2
+  _klass
+    Main
+    <: B
+    _attrs
+      io
+      :: Main
+      : IO
+      self
+      :: Main
+      : SELF_TYPE
+      1
+      :: null
+      : IO
+    _methodmap
+      _load_attr tmp#1, attr#x, attr#x
+      _mov tmp#2, imm#1
+      tmp#3 = tmp#1 _plus tmp#2
+      tmp#4 = new IO
+      main
+      :: Main
+      : IO
+    _method
+      main
+      : IO
+      _formals
+      _locals
+        1
+        : Int
+        2
+        : Int
+        3
+        : Int
+        1
+        : IO
+        2
+        : Int
+        3
+        : Int
+        4
+        : Int
+        5
+        : IO
+      _expr
+        _load_attr tmp#1, attr#io, attr#io
+        _load_attr tmp#2, attr#y, attr#y
+        _load_attr tmp#3, attr#x, attr#x
+        tmp#4 = tmp#2 _plus tmp#3
+        tmp#5 = _dispatch tmp#1, out_int, (tmp#4)
+        _return tmp#5

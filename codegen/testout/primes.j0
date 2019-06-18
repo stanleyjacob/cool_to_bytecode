@@ -1,0 +1,647 @@
+.class public Main
+.super IO
+
+.field private out LInt;
+.field private testee LInt;
+.field private divisor LInt;
+.field private stop LInt;
+.field private m LObject;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 198
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/out LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/testee LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/divisor LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/stop LInt;
+
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "2 is trivially prime.\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 2
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+aload 0
+aload 4
+putfield Main/out LInt;
+
+; Load Inst start
+aload 0
+getfield Main/out LInt;
+astore 5
+
+aload 0
+aload 5
+putfield Main/testee LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 500
+invokevirtual Int/putval(I)LInt;
+astore 6
+
+aload 0
+aload 6
+putfield Main/stop LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 60
+
+; Label Inst start
+label22:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 7
+
+; CondBranch Inst start
+aload 7
+aload 60
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label23
+
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 8
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 9
+
+; Binop Inst start
+aload 8
+aload 9
+invokevirtual Int/add(LInt;)LInt;
+astore 10
+
+
+; Store Attr Inst start
+aload 0
+aload 10
+putfield Main/testee LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 2
+invokevirtual Int/putval(I)LInt;
+astore 11
+
+; Store Attr Inst start
+aload 0
+aload 11
+putfield Main/divisor LInt;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 36
+
+; Label Inst start
+label16:
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 12
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 13
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 14
+
+; Binop Inst start
+
+
+; Binop Inst start
+aload 12
+aload 15
+invokevirtual Int/lt(LInt;)LBool;
+astore 16
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 32
+
+; CondBranch Inst start
+aload 16
+aload 32
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label14
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 17
+
+; Move Inst start
+aload 17
+astore 31
+
+; Goto Inst start
+goto label15
+
+; Label Inst start
+label14:
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 18
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 19
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 20
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 21
+
+; Binop Inst start
+aload 20
+aload 21
+invokevirtual Int/divide(LInt;)LInt;
+astore 22
+
+
+; Binop Inst start
+
+
+; Binop Inst start
+aload 18
+aload 23
+invokevirtual Int/minus(LInt;)LInt;
+astore 24
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 25
+
+; Binop Inst start
+aload 24
+aload 25
+invokevirtual Int/eq(LInt;)LBool;
+astore 26
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 30
+
+; CondBranch Inst start
+aload 26
+aload 30
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label12
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 27
+
+; Move Inst start
+aload 27
+astore 29
+
+; Goto Inst start
+goto label13
+
+; Label Inst start
+label12:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 28
+
+; Move Inst start
+aload 28
+astore 29
+
+; Label Inst start
+label13:
+
+; Move Inst start
+aload 29
+astore 31
+
+; Label Inst start
+label15:
+
+; CondBranch Inst start
+aload 31
+aload 36
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label17
+
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 33
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 34
+
+; Binop Inst start
+aload 33
+aload 34
+invokevirtual Int/add(LInt;)LInt;
+astore 35
+
+
+; Store Attr Inst start
+aload 0
+aload 35
+putfield Main/divisor LInt;
+
+; Goto Inst start
+goto label16
+
+; Label Inst start
+label17:
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 37
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 38
+
+; Load Inst start
+aload 0
+getfield Main/divisor LInt;
+astore 39
+
+; Binop Inst start
+
+
+; Binop Inst start
+aload 37
+aload 40
+invokevirtual Int/lt(LInt;)LBool;
+astore 41
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 51
+
+; CondBranch Inst start
+aload 41
+aload 51
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label18
+
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 42
+
+; Store Attr Inst start
+aload 0
+aload 42
+putfield Main/out LInt;
+
+; Move Inst start
+aload 0
+astore 43
+
+; Load Inst start
+aload 0
+getfield Main/out LInt;
+astore 44
+
+; Dispatch Inst start
+aload 43
+aload 44
+invokevirtual IO/out_int(LInt;)LIO;
+astore 45
+
+; Move Inst start
+aload 0
+astore 46
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc " is prime.\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 47
+
+; Dispatch Inst start
+aload 46
+aload 47
+invokevirtual IO/out_string(LString;)LIO;
+astore 48
+
+; Move Inst start
+aload 48
+astore 50
+
+; Goto Inst start
+goto label19
+
+; Label Inst start
+label18:
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 49
+
+; Move Inst start
+aload 49
+astore 50
+
+; Label Inst start
+label19:
+
+; Load Inst start
+aload 0
+getfield Main/stop LInt;
+astore 52
+
+; Load Inst start
+aload 0
+getfield Main/testee LInt;
+astore 53
+
+; Binop Inst start
+aload 52
+aload 53
+invokevirtual Int/leq(LInt;)LBool;
+astore 54
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 59
+
+; CondBranch Inst start
+aload 54
+aload 59
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label20
+
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "halt"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 55
+
+; Dispatch Inst start
+aload 55
+invokevirtual Object/abort()LObject;
+astore 56
+
+; Move Inst start
+aload 56
+astore 58
+
+; Goto Inst start
+goto label21
+
+; Label Inst start
+label20:
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "continue"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 57
+
+; Move Inst start
+aload 57
+astore 58
+
+; Label Inst start
+label21:
+
+; Goto Inst start
+goto label22
+
+; Label Inst start
+label23:
+
+aload 0
+aload 58
+putfield Main/m LObject;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 198
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/out LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/testee LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/divisor LInt;
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/stop LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LInt;
+pop
+
+return
+
+.end method
+
+

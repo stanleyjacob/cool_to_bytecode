@@ -1,0 +1,53 @@
+.class public A
+.super Object
+
+.field private x LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 4
+
+aload 0
+invokespecial Object/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/x LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/x LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+

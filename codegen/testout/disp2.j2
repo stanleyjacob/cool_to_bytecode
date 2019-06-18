@@ -1,0 +1,178 @@
+.class public C
+.super B
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial B/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial B/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public ma()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public work()LInt;
+
+.limit stack 38
+.limit locals 38
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual A/init()LInt;
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Dispatch Inst start
+aload 4
+invokevirtual A/mb()LInt;
+astore 5
+
+; Dispatch Inst start
+aload 3
+aload 5
+invokevirtual IO/out_int(LInt;)LIO;
+astore 6
+
+; Move Inst start
+aload 0
+astore 7
+
+; Move Inst start
+aload 0
+astore 8
+
+; Static Dispatch Inst start
+aload 8
+checkcast B
+invokevirtual B/ma()LInt;
+astore 9
+
+; Dispatch Inst start
+aload 7
+aload 9
+invokevirtual IO/out_int(LInt;)LIO;
+astore 10
+
+; Move Inst start
+aload 0
+astore 11
+
+; Move Inst start
+aload 0
+astore 12
+
+; Static Dispatch Inst start
+aload 12
+checkcast A
+invokevirtual A/ma()LInt;
+astore 13
+
+; Dispatch Inst start
+aload 11
+aload 13
+invokevirtual IO/out_int(LInt;)LIO;
+astore 14
+
+; Move Inst start
+aload 0
+astore 15
+
+; Move Inst start
+aload 0
+astore 16
+
+; Static Dispatch Inst start
+aload 16
+checkcast A
+invokevirtual A/mb()LInt;
+astore 17
+
+; Dispatch Inst start
+aload 15
+aload 17
+invokevirtual IO/out_int(LInt;)LIO;
+astore 18
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 19
+
+; Return Inst start
+aload 19
+
+areturn
+
+.end method
+
+

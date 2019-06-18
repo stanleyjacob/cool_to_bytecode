@@ -1,0 +1,104 @@
+.class public Main
+.super IO
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LMain;
+
+.limit stack 12
+.limit locals 12
+
+; Alloc Inst start
+new B
+dup
+invokespecial B/<init>()V
+astore 1
+
+; Move Inst start
+aload 1
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Move Inst start
+aload 2
+astore 4
+
+; Dispatch Inst start
+aload 4
+invokevirtual A/getX()LInt;
+astore 5
+
+; Dispatch Inst start
+aload 3
+aload 5
+invokevirtual IO/out_int(LInt;)LIO;
+astore 6
+
+; Move Inst start
+aload 6
+astore 7
+
+; Return Inst start
+aload 7
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LMain;
+pop
+
+return
+
+.end method
+
+

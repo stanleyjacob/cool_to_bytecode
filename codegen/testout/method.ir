@@ -1,0 +1,104 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      i
+      :: Main
+      : Int
+      j
+      :: Main
+      : Int
+      k
+      :: Main
+      : Int
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      init
+      :: Main
+      : SELF_TYPE
+      add
+      :: Main
+      : Int
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      init
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        2
+        : Int
+        3
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, imm#1
+        _store_attr attr#i, attr#i, tmp#1
+        _mov tmp#2, imm#2
+        _store_attr attr#j, attr#j, tmp#2
+        _mov tmp#3, param#self
+        _return tmp#3
+    _method
+      add
+      : Int
+      _formals
+        a
+        : Int
+        b
+        : Int
+      _locals
+        3
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : Int
+      _expr
+        _mov tmp#3, param#a
+        _mov tmp#4, param#b
+        tmp#5 = tmp#3 _plus tmp#4
+        _store_attr attr#k, attr#k, tmp#5
+        _load_attr tmp#6, attr#k, attr#k
+        _return tmp#6
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : SELF_TYPE
+        2
+        : SELF_TYPE
+        3
+        : SELF_TYPE
+        4
+        : Int
+        5
+        : Int
+        6
+        : Int
+        7
+        : SELF_TYPE
+        8
+        : Int
+        9
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, param#self
+        tmp#2 = _dispatch tmp#1, init, ()
+        _mov tmp#3, param#self
+        _mov tmp#4, imm#3
+        _mov tmp#5, imm#4
+        tmp#6 = _dispatch tmp#3, add, (tmp#4, tmp#5)
+        _store_attr attr#k, attr#k, tmp#6
+        _mov tmp#7, param#self
+        _load_attr tmp#8, attr#k, attr#k
+        tmp#9 = _dispatch tmp#7, out_int, (tmp#8)
+        _return tmp#9

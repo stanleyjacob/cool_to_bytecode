@@ -1,0 +1,174 @@
+.class public VCons
+.super VList
+
+.field private cdr LVList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial VList/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial VList/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LVertice;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield VList/car LVertice;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public tail()LVList;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield VCons/cdr LVList;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public init(LVertice;LVList;)LVList;
+
+.limit stack 10
+.limit locals 10
+
+; Move Inst start
+aload 1
+astore 3
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield VList/car LVertice;
+
+; Move Inst start
+aload 2
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield VCons/cdr LVList;
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast VCons
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 8
+.limit locals 8
+
+; Load Inst start
+aload 0
+getfield VList/car LVertice;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual VCons/print()LObject;
+astore 2
+
+; Load Inst start
+aload 0
+getfield VCons/cdr LVList;
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual VCons/print()LObject;
+astore 4
+
+; Return Inst start
+aload 4
+
+areturn
+
+.end method
+
+

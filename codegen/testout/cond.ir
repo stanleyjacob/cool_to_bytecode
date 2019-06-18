@@ -1,0 +1,81 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      i
+      :: Main
+      : Int
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      init
+      :: Main
+      : SELF_TYPE
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      init
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, imm#1
+        _store_attr attr#i, attr#i, tmp#1
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : SELF_TYPE
+        i
+        : Int
+        4
+        : Int
+        5
+        : Bool
+        6
+        : Int
+        7
+        : Int
+        8
+        : Int
+        9
+        : Bool
+        self
+        : SELF_TYPE
+        i
+        : Int
+        12
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, init, ()
+        _load_attr tmp#i, attr#i, attr#i
+        _mov tmp#4, imm#0
+        tmp#5 = tmp#i _lt tmp#4
+        _mov tmp#9, imm#null
+        _if tmp#5 _eq tmp#9 _goto 0
+        _mov tmp#6, imm#5
+        _mov tmp#8, tmp#6
+        _goto 1
+        _label 0
+        _mov tmp#7, imm#3
+        _mov tmp#8, tmp#7
+        _label 1
+        _store_attr attr#i, attr#i, tmp#8
+        _mov tmp#self, param#self
+        _load_attr tmp#i, attr#i, attr#i
+        tmp#12 = _dispatch tmp#self, out_int, (tmp#i)
+        _return tmp#12

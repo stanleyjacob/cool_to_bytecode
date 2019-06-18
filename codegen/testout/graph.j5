@@ -1,0 +1,182 @@
+.class public VList
+.super IO
+
+.field private car LVertice;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LVertice;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Load Inst start
+aload 0
+getfield VList/car LVertice;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public tail()LVList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Return Inst start
+aload 3
+checkcast VList
+areturn
+
+.end method
+
+
+.method public cons(LVertice;)LVList;
+
+.limit stack 10
+.limit locals 10
+
+; Alloc Inst start
+new VCons
+dup
+invokespecial VCons/<init>()V
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Dispatch Inst start
+aload 2
+aload 3
+aload 4
+invokevirtual VCons/init(LVertice;LSELF_TYPE;)LVList;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Return Inst start
+aload 3
+checkcast VList
+areturn
+
+.end method
+
+

@@ -1,0 +1,284 @@
+.class public List
+.super IO
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public cons(LInt;)LCons;
+
+.limit stack 14
+.limit locals 14
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 2
+
+; Move Inst start
+aload 2
+astore 3
+
+; Move Inst start
+aload 3
+astore 4
+
+; Move Inst start
+aload 1
+astore 5
+
+; Move Inst start
+aload 0
+astore 6
+
+; Dispatch Inst start
+aload 4
+aload 5
+aload 6
+invokevirtual Cons/init(LInt;LSELF_TYPE;)LCons;
+astore 7
+
+; Move Inst start
+aload 7
+astore 8
+
+; Return Inst start
+aload 8
+
+areturn
+
+.end method
+
+
+.method public car()LInt;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Alloc Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public cdr()LList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Alloc Inst start
+new List
+dup
+invokespecial List/<init>()V
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public rev()LList;
+
+.limit stack 4
+.limit locals 4
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual List/cdr()LList;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+
+.method public sort()LList;
+
+.limit stack 4
+.limit locals 4
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual List/cdr()LList;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+
+.method public insert(LInt;)LList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual List/cdr()LList;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public rcons(LInt;)LList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual List/cdr()LList;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public print_list()LObject;
+
+.limit stack 4
+.limit locals 4
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+

@@ -1,0 +1,220 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      i
+      :: Main
+      : Int
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      pal
+      :: Main
+      : Bool
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      pal
+      : Bool
+      _formals
+        s
+        : String
+      _locals
+        s
+        : String
+        3
+        : Int
+        4
+        : Int
+        5
+        : Bool
+        6
+        : Bool
+        s
+        : String
+        8
+        : Int
+        9
+        : Int
+        10
+        : Bool
+        11
+        : Bool
+        s
+        : String
+        13
+        : Int
+        14
+        : Int
+        15
+        : String
+        s
+        : String
+        s
+        : String
+        18
+        : Int
+        19
+        : Int
+        20
+        : Int
+        21
+        : Int
+        22
+        : String
+        23
+        : Bool
+        self
+        : SELF_TYPE
+        s
+        : String
+        26
+        : Int
+        s
+        : String
+        28
+        : Int
+        29
+        : Int
+        30
+        : Int
+        31
+        : String
+        32
+        : Bool
+        33
+        : Bool
+        34
+        : Bool
+        35
+        : Bool
+        36
+        : Bool
+        37
+        : Bool
+        38
+        : Bool
+        39
+        : Bool
+      _expr
+        _mov tmp#s, param#s
+        tmp#3 = _dispatch tmp#s, length, ()
+        _mov tmp#4, imm#0
+        tmp#5 = tmp#3 _eq tmp#4
+        _mov tmp#39, imm#null
+        _if tmp#5 _eq tmp#39 _goto 4
+        _mov tmp#6, imm#1
+        _mov tmp#38, tmp#6
+        _goto 5
+        _label 4
+        _mov tmp#s, param#s
+        tmp#8 = _dispatch tmp#s, length, ()
+        _mov tmp#9, imm#1
+        tmp#10 = tmp#8 _eq tmp#9
+        _mov tmp#37, imm#null
+        _if tmp#10 _eq tmp#37 _goto 2
+        _mov tmp#11, imm#1
+        _mov tmp#36, tmp#11
+        _goto 3
+        _label 2
+        _mov tmp#s, param#s
+        _mov tmp#13, imm#0
+        _mov tmp#14, imm#1
+        tmp#15 = _dispatch tmp#s, substr, (tmp#13, tmp#14)
+        _mov tmp#s, param#s
+        _mov tmp#s, param#s
+        tmp#18 = _dispatch tmp#s, length, ()
+        _mov tmp#19, imm#1
+        tmp#20 = tmp#18 _sub tmp#19
+        _mov tmp#21, imm#1
+        tmp#22 = _dispatch tmp#s, substr, (tmp#20, tmp#21)
+        tmp#23 = tmp#15 _eq tmp#22
+        _mov tmp#35, imm#null
+        _if tmp#23 _eq tmp#35 _goto 0
+        _mov tmp#self, param#self
+        _mov tmp#s, param#s
+        _mov tmp#26, imm#1
+        _mov tmp#s, param#s
+        tmp#28 = _dispatch tmp#s, length, ()
+        _mov tmp#29, imm#2
+        tmp#30 = tmp#28 _sub tmp#29
+        tmp#31 = _dispatch tmp#s, substr, (tmp#26, tmp#30)
+        tmp#32 = _dispatch tmp#self, pal, (tmp#31)
+        _mov tmp#34, tmp#32
+        _goto 1
+        _label 0
+        _mov tmp#33, imm#0
+        _mov tmp#34, tmp#33
+        _label 1
+        _mov tmp#36, tmp#34
+        _label 3
+        _mov tmp#38, tmp#36
+        _label 5
+        _return tmp#38
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        2
+        : Int
+        self
+        : SELF_TYPE
+        4
+        : String
+        5
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        8
+        : String
+        9
+        : Bool
+        self
+        : SELF_TYPE
+        11
+        : String
+        12
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        14
+        : String
+        15
+        : SELF_TYPE
+        16
+        : SELF_TYPE
+        17
+        : Bool
+      _expr
+        _mov tmp#1, imm#1
+        tmp#2 = _neg tmp#1
+        _store_attr attr#i, attr#i, tmp#2
+        _mov tmp#self, param#self
+        _mov tmp#4, imm#"enter a string\n"
+        tmp#5 = _dispatch tmp#self, out_string, (tmp#4)
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#8 = _dispatch tmp#self, in_string, ()
+        tmp#9 = _dispatch tmp#self, pal, (tmp#8)
+        _mov tmp#17, imm#null
+        _if tmp#9 _eq tmp#17 _goto 6
+        _mov tmp#self, param#self
+        _mov tmp#11, imm#"that was a palindrome\n"
+        tmp#12 = _dispatch tmp#self, out_string, (tmp#11)
+        _mov tmp#16, tmp#12
+        _goto 7
+        _label 6
+        _mov tmp#self, param#self
+        _mov tmp#14, imm#"that was not a palindrome\n"
+        tmp#15 = _dispatch tmp#self, out_string, (tmp#14)
+        _mov tmp#16, tmp#15
+        _label 7
+        _return tmp#16

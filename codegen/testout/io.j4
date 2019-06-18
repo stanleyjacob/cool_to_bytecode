@@ -1,0 +1,133 @@
+.class public Main
+.super IO
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LObject;
+
+.limit stack 22
+.limit locals 22
+
+; Alloc Inst start
+new A
+dup
+invokespecial A/<init>()V
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual A/out_a()LObject;
+astore 2
+
+; Alloc Inst start
+new B
+dup
+invokespecial B/<init>()V
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual B/out_b()LObject;
+astore 4
+
+; Alloc Inst start
+new C
+dup
+invokespecial C/<init>()V
+astore 5
+
+; Dispatch Inst start
+aload 5
+invokevirtual C/out_c()LObject;
+astore 6
+
+; Alloc Inst start
+new D
+dup
+invokespecial D/<init>()V
+astore 7
+
+; Dispatch Inst start
+aload 7
+invokevirtual D/out_d()LObject;
+astore 8
+
+; Move Inst start
+aload 0
+astore 9
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "Done.\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 10
+
+; Dispatch Inst start
+aload 9
+aload 10
+invokevirtual IO/out_string(LString;)LIO;
+astore 11
+
+; Return Inst start
+aload 11
+checkcast Main
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LObject;
+pop
+
+return
+
+.end method
+
+

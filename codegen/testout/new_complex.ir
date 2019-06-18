@@ -1,0 +1,421 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Complex
+        2
+        : Int
+        3
+        : Int
+        4
+        : Complex
+        c
+        : Complex
+        7
+        : Complex
+        c
+        : Complex
+        9
+        : Complex
+        10
+        : Bool
+        self
+        : SELF_TYPE
+        12
+        : String
+        13
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        15
+        : String
+        16
+        : SELF_TYPE
+        17
+        : SELF_TYPE
+        18
+        : Bool
+        c
+        : Complex
+        20
+        : Complex
+        21
+        : Complex
+        c
+        : Complex
+        23
+        : Complex
+        24
+        : Bool
+        self
+        : SELF_TYPE
+        26
+        : String
+        27
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        29
+        : String
+        30
+        : SELF_TYPE
+        31
+        : SELF_TYPE
+        32
+        : Bool
+        33
+        : SELF_TYPE
+      _expr
+        tmp#1 = new Complex
+        _mov tmp#2, imm#1
+        _mov tmp#3, imm#1
+        tmp#4 = _dispatch tmp#1, init, (tmp#2, tmp#3)
+        _mov letvar#c, tmp#4
+        _mov tmp#c, letvar#c
+        tmp#7 = _dispatch tmp#c, reflect_X, ()
+        _mov tmp#c, letvar#c
+        tmp#9 = _dispatch tmp#c, reflect_0, ()
+        tmp#10 = tmp#7 _eq tmp#9
+        _mov tmp#18, imm#null
+        _if tmp#10 _eq tmp#18 _goto 0
+        _mov tmp#self, param#self
+        _mov tmp#12, imm#"=)\n"
+        tmp#13 = _dispatch tmp#self, out_string, (tmp#12)
+        _mov tmp#17, tmp#13
+        _goto 1
+        _label 0
+        _mov tmp#self, param#self
+        _mov tmp#15, imm#"=(\n"
+        tmp#16 = _dispatch tmp#self, out_string, (tmp#15)
+        _mov tmp#17, tmp#16
+        _label 1
+        _mov tmp#c, letvar#c
+        tmp#20 = _dispatch tmp#c, reflect_X, ()
+        tmp#21 = _dispatch tmp#20, reflect_Y, ()
+        _mov tmp#c, letvar#c
+        tmp#23 = _dispatch tmp#c, reflect_0, ()
+        tmp#24 = _dispatch tmp#21, equal, (tmp#23)
+        _mov tmp#32, imm#null
+        _if tmp#24 _eq tmp#32 _goto 2
+        _mov tmp#self, param#self
+        _mov tmp#26, imm#"=)\n"
+        tmp#27 = _dispatch tmp#self, out_string, (tmp#26)
+        _mov tmp#31, tmp#27
+        _goto 3
+        _label 2
+        _mov tmp#self, param#self
+        _mov tmp#29, imm#"=(\n"
+        tmp#30 = _dispatch tmp#self, out_string, (tmp#29)
+        _mov tmp#31, tmp#30
+        _label 3
+        _mov tmp#33, tmp#31
+        _return tmp#33
+  _klass
+    Complex
+    <: IO
+    _attrs
+      x
+      :: Complex
+      : Int
+      y
+      :: Complex
+      : Int
+      self
+      :: Complex
+      : SELF_TYPE
+    _methodmap
+      init
+      :: Complex
+      : Complex
+      print
+      :: Complex
+      : Object
+      reflect_0
+      :: Complex
+      : Complex
+      reflect_X
+      :: Complex
+      : Complex
+      reflect_Y
+      :: Complex
+      : Complex
+      equal
+      :: Complex
+      : Bool
+      x_value
+      :: Complex
+      : Int
+      y_value
+      :: Complex
+      : Int
+    _method
+      init
+      : Complex
+      _formals
+        a
+        : Int
+        b
+        : Int
+      _locals
+        x
+        : Int
+        a
+        : Int
+        5
+        : Bool
+        y
+        : Int
+        b
+        : Int
+        8
+        : Bool
+        self
+        : SELF_TYPE
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _mov tmp#a, param#a
+        tmp#5 = tmp#x _eq tmp#a
+        _load_attr tmp#y, attr#y, attr#y
+        _mov tmp#b, param#b
+        tmp#8 = tmp#y _eq tmp#b
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : Object
+      _formals
+      _locals
+        y
+        : Int
+        2
+        : Int
+        3
+        : Bool
+        self
+        : SELF_TYPE
+        x
+        : Int
+        6
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        x
+        : Int
+        9
+        : SELF_TYPE
+        10
+        : String
+        11
+        : SELF_TYPE
+        y
+        : Int
+        13
+        : SELF_TYPE
+        14
+        : String
+        15
+        : SELF_TYPE
+        16
+        : SELF_TYPE
+        17
+        : Bool
+      _expr
+        _load_attr tmp#y, attr#y, attr#y
+        _mov tmp#2, imm#0
+        tmp#3 = tmp#y _eq tmp#2
+        _mov tmp#17, imm#null
+        _if tmp#3 _eq tmp#17 _goto 4
+        _mov tmp#self, param#self
+        _load_attr tmp#x, attr#x, attr#x
+        tmp#6 = _dispatch tmp#self, out_int, (tmp#x)
+        _mov tmp#16, tmp#6
+        _goto 5
+        _label 4
+        _mov tmp#self, param#self
+        _load_attr tmp#x, attr#x, attr#x
+        tmp#9 = _dispatch tmp#self, out_int, (tmp#x)
+        _mov tmp#10, imm#"+"
+        tmp#11 = _dispatch tmp#9, out_string, (tmp#10)
+        _load_attr tmp#y, attr#y, attr#y
+        tmp#13 = _dispatch tmp#11, out_int, (tmp#y)
+        _mov tmp#14, imm#"I"
+        tmp#15 = _dispatch tmp#13, out_string, (tmp#14)
+        _mov tmp#16, tmp#15
+        _label 5
+        _return tmp#16
+    _method
+      reflect_0
+      : Complex
+      _formals
+      _locals
+        x
+        : Int
+        x
+        : Int
+        3
+        : Int
+        4
+        : Bool
+        y
+        : Int
+        y
+        : Int
+        7
+        : Int
+        8
+        : Bool
+        self
+        : SELF_TYPE
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _load_attr tmp#x, attr#x, attr#x
+        tmp#3 = _neg tmp#x
+        tmp#4 = tmp#x _eq tmp#3
+        _load_attr tmp#y, attr#y, attr#y
+        _load_attr tmp#y, attr#y, attr#y
+        tmp#7 = _neg tmp#y
+        tmp#8 = tmp#y _eq tmp#7
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      reflect_X
+      : Complex
+      _formals
+      _locals
+        y
+        : Int
+        y
+        : Int
+        3
+        : Int
+        4
+        : Bool
+        self
+        : SELF_TYPE
+      _expr
+        _load_attr tmp#y, attr#y, attr#y
+        _load_attr tmp#y, attr#y, attr#y
+        tmp#3 = _neg tmp#y
+        tmp#4 = tmp#y _eq tmp#3
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      reflect_Y
+      : Complex
+      _formals
+      _locals
+        x
+        : Int
+        x
+        : Int
+        3
+        : Int
+        4
+        : Bool
+        self
+        : SELF_TYPE
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _load_attr tmp#x, attr#x, attr#x
+        tmp#3 = _neg tmp#x
+        tmp#4 = tmp#x _eq tmp#3
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      equal
+      : Bool
+      _formals
+        d
+        : Complex
+      _locals
+        x
+        : Int
+        d
+        : Complex
+        4
+        : Int
+        5
+        : Bool
+        y
+        : Int
+        d
+        : Complex
+        8
+        : Int
+        9
+        : Bool
+        10
+        : Bool
+        11
+        : Bool
+        12
+        : Bool
+        13
+        : Bool
+        14
+        : Bool
+        15
+        : Bool
+        16
+        : Bool
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _mov tmp#d, param#d
+        tmp#4 = _dispatch tmp#d, x_value, ()
+        tmp#5 = tmp#x _eq tmp#4
+        _mov tmp#16, imm#null
+        _if tmp#5 _eq tmp#16 _goto 8
+        _load_attr tmp#y, attr#y, attr#y
+        _mov tmp#d, param#d
+        tmp#8 = _dispatch tmp#d, y_value, ()
+        tmp#9 = tmp#y _eq tmp#8
+        _mov tmp#13, imm#null
+        _if tmp#9 _eq tmp#13 _goto 6
+        _mov tmp#10, imm#1
+        _mov tmp#12, tmp#10
+        _goto 7
+        _label 6
+        _mov tmp#11, imm#0
+        _mov tmp#12, tmp#11
+        _label 7
+        _mov tmp#15, tmp#12
+        _goto 9
+        _label 8
+        _mov tmp#14, imm#0
+        _mov tmp#15, tmp#14
+        _label 9
+        _return tmp#15
+    _method
+      x_value
+      : Int
+      _formals
+      _locals
+        x
+        : Int
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _return tmp#x
+    _method
+      y_value
+      : Int
+      _formals
+      _locals
+        y
+        : Int
+      _expr
+        _load_attr tmp#y, attr#y, attr#y
+        _return tmp#y

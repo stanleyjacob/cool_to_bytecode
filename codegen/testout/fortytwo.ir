@@ -1,0 +1,41 @@
+_program
+  _klass
+    Main
+    <: IO
+    _attrs
+      v
+      :: Main
+      : Int
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        2
+        : SELF_TYPE
+        3
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, imm#2
+        _store_attr attr#v, attr#v, tmp#1
+        _mov tmp#2, param#self
+        _load_attr tmp#3, attr#v, attr#v
+        _mov tmp#4, imm#42
+        tmp#5 = tmp#3 _plus tmp#4
+        tmp#6 = _dispatch tmp#2, out_int, (tmp#5)
+        _return tmp#2

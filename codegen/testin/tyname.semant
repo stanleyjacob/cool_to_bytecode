@@ -1,0 +1,36 @@
+#7
+_program
+  #7
+  _class
+    Main
+    IO
+    "tyname.cl"
+    (
+    #9
+    _method
+      main
+      SELF_TYPE
+      #10
+      _block
+        #11
+        _dispatch
+          #11
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #11
+          _dispatch
+            #11
+            _object
+              self
+            : SELF_TYPE
+            type_name
+            (
+            )
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

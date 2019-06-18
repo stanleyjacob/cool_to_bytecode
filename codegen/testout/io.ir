@@ -1,0 +1,170 @@
+_program
+  _klass
+    A
+    <: Object
+    _attrs
+      io
+      :: A
+      : IO
+      self
+      :: A
+      : SELF_TYPE
+      1
+      :: null
+      : IO
+    _methodmap
+      tmp#1 = new IO
+      out_a
+      :: A
+      : Object
+    _method
+      out_a
+      : Object
+      _formals
+      _locals
+        io
+        : IO
+        2
+        : String
+        3
+        : IO
+      _expr
+        _load_attr tmp#io, attr#io, attr#io
+        _mov tmp#2, imm#"A: Hello world\n"
+        tmp#3 = _dispatch tmp#io, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    B
+    <: A
+    _attrs
+      self
+      :: B
+      : SELF_TYPE
+    _methodmap
+      tmp#1 = new IO
+      out_b
+      :: B
+      : Object
+    _method
+      out_b
+      : Object
+      _formals
+      _locals
+        1
+        : IO
+        io
+        : IO
+        2
+        : String
+        3
+        : IO
+      _expr
+        _load_attr tmp#io, attr#io, attr#io
+        _mov tmp#2, imm#"B: Hello world\n"
+        tmp#3 = _dispatch tmp#io, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    C
+    <: IO
+    _attrs
+      self
+      :: C
+      : SELF_TYPE
+    _methodmap
+      out_c
+      :: C
+      : Object
+    _method
+      out_c
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : String
+        3
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#2, imm#"C: Hello world\n"
+        tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    D
+    <: C
+    _attrs
+      self
+      :: D
+      : SELF_TYPE
+    _methodmap
+      out_d
+      :: D
+      : Object
+    _method
+      out_d
+      : Object
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : String
+        3
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#2, imm#"D: Hello world\n"
+        tmp#3 = _dispatch tmp#self, out_string, (tmp#2)
+        _return tmp#3
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : Object
+    _method
+      main
+      : Object
+      _formals
+      _locals
+        1
+        : A
+        2
+        : Object
+        3
+        : B
+        4
+        : Object
+        5
+        : C
+        6
+        : Object
+        7
+        : D
+        8
+        : Object
+        self
+        : SELF_TYPE
+        10
+        : String
+        11
+        : SELF_TYPE
+      _expr
+        tmp#1 = new A
+        tmp#2 = _dispatch tmp#1, out_a, ()
+        tmp#3 = new B
+        tmp#4 = _dispatch tmp#3, out_b, ()
+        tmp#5 = new C
+        tmp#6 = _dispatch tmp#5, out_c, ()
+        tmp#7 = new D
+        tmp#8 = _dispatch tmp#7, out_d, ()
+        _mov tmp#self, param#self
+        _mov tmp#10, imm#"Done.\n"
+        tmp#11 = _dispatch tmp#self, out_string, (tmp#10)
+        _return tmp#11

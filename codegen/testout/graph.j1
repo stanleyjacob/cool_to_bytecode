@@ -1,0 +1,201 @@
+.class public Vertice
+.super IO
+
+.field private num LInt;
+.field private out LEList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Vertice/num LInt;
+
+
+; Alloc Inst start
+new EList
+dup
+invokespecial EList/<init>()V
+astore 1
+
+aload 0
+aload 1
+putfield Vertice/out LEList;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Vertice/num LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public outgoing()LEList;
+
+.limit stack 6
+.limit locals 6
+
+; Load Inst start
+aload 0
+getfield Vertice/out LEList;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public number()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Vertice/num LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public init(LInt;)LVertice;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 1
+astore 2
+
+; Store Attr Inst start
+aload 0
+aload 2
+putfield Vertice/num LInt;
+
+; Move Inst start
+aload 0
+astore 3
+
+; Return Inst start
+aload 3
+checkcast Vertice
+areturn
+
+.end method
+
+
+.method public add_out(LEdge;)LVertice;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield Vertice/out LEList;
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Dispatch Inst start
+aload 2
+aload 3
+invokevirtual VList/cons(LEdge;)LVList;
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield Vertice/out LEList;
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast Vertice
+areturn
+
+.end method
+
+
+.method public print()LObject;
+
+.limit stack 10
+.limit locals 10
+
+; Move Inst start
+aload 0
+astore 1
+
+; Load Inst start
+aload 0
+getfield Vertice/num LInt;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_int(LInt;)LIO;
+astore 3
+
+; Load Inst start
+aload 0
+getfield Vertice/out LEList;
+astore 4
+
+; Dispatch Inst start
+aload 4
+invokevirtual Vertice/print()LObject;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+

@@ -1,0 +1,37 @@
+#name "testin/let.cl"
+#1 CLASS
+#1 TYPEID Main
+#1 INHERITS
+#1 TYPEID IO
+#1 '{'
+#2 OBJECTID i
+#2 ':'
+#2 TYPEID Int
+#2 ';'
+#5 OBJECTID main
+#5 '('
+#5 ')'
+#5 ':'
+#5 TYPEID SELF_TYPE
+#5 '{'
+#5 '{'
+#6 LET
+#6 OBJECTID c
+#6 ':'
+#6 TYPEID Int
+#6 ASSIGN
+#6 INT_CONST 30
+#6 IN
+#6 OBJECTID i
+#6 ASSIGN
+#6 OBJECTID c
+#6 '+'
+#6 INT_CONST 1
+#6 ';'
+#7 OBJECTID self
+#7 ';'
+#8 '}'
+#8 '}'
+#8 ';'
+#9 '}'
+#9 ';'

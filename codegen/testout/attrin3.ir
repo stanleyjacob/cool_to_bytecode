@@ -1,0 +1,122 @@
+_program
+  _klass
+    A
+    <: Object
+    _attrs
+      x
+      :: A
+      : Int
+      self
+      :: A
+      : SELF_TYPE
+      self
+      :: null
+      : SELF_TYPE
+      2
+      :: null
+      : Int
+    _methodmap
+      _mov tmp#self, param#self
+      tmp#2 = _dispatch tmp#self, foo, ()
+      foo
+      :: A
+      : Int
+      getX
+      :: A
+      : Int
+    _method
+      foo
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#3
+        _return tmp#1
+    _method
+      getX
+      : Int
+      _formals
+      _locals
+        x
+        : Int
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _return tmp#x
+  _klass
+    B
+    <: A
+    _attrs
+      y
+      :: B
+      : String
+      self
+      :: B
+      : SELF_TYPE
+      1
+      :: null
+      : String
+    _methodmap
+      _mov tmp#self, param#self
+      tmp#2 = _dispatch tmp#self, foo, ()
+      _mov tmp#3, imm#"he"
+      foo
+      :: B
+      : Int
+    _method
+      foo
+      : Int
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Int
+        y
+        : String
+        2
+        : Int
+      _expr
+        _load_attr tmp#y, attr#y, attr#y
+        tmp#2 = _dispatch tmp#y, length, ()
+        _return tmp#2
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : String
+        1
+        : B
+        self
+        : SELF_TYPE
+        b
+        : B
+        5
+        : Int
+        6
+        : SELF_TYPE
+        7
+        : SELF_TYPE
+      _expr
+        tmp#1 = new B
+        _mov letvar#b, tmp#1
+        _mov tmp#self, param#self
+        _mov tmp#b, letvar#b
+        tmp#5 = _dispatch tmp#b, getX, ()
+        tmp#6 = _dispatch tmp#self, out_int, (tmp#5)
+        _mov tmp#7, tmp#6
+        _return tmp#7

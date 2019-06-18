@@ -1,0 +1,528 @@
+_program
+  _klass
+    CellularAutomaton
+    <: IO
+    _attrs
+      population_map
+      :: CellularAutomaton
+      : String
+      self
+      :: CellularAutomaton
+      : SELF_TYPE
+    _methodmap
+      init
+      :: CellularAutomaton
+      : SELF_TYPE
+      print
+      :: CellularAutomaton
+      : SELF_TYPE
+      num_cells
+      :: CellularAutomaton
+      : Int
+      cell
+      :: CellularAutomaton
+      : String
+      cell_left_neighbor
+      :: CellularAutomaton
+      : String
+      cell_right_neighbor
+      :: CellularAutomaton
+      : String
+      cell_at_next_evolution
+      :: CellularAutomaton
+      : String
+      evolve
+      :: CellularAutomaton
+      : SELF_TYPE
+    _method
+      init
+      : SELF_TYPE
+      _formals
+        map
+        : String
+      _locals
+        map
+        : String
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#map, param#map
+        _store_attr attr#population_map, attr#population_map, tmp#map
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : SELF_TYPE
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        population_map
+        : String
+        3
+        : String
+        4
+        : String
+        5
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        _mov tmp#3, imm#"\n"
+        tmp#4 = _dispatch tmp#population_map, concat, (tmp#3)
+        tmp#5 = _dispatch tmp#self, out_string, (tmp#4)
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      num_cells
+      : Int
+      _formals
+      _locals
+        population_map
+        : String
+        2
+        : Int
+      _expr
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        tmp#2 = _dispatch tmp#population_map, length, ()
+        _return tmp#2
+    _method
+      cell
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        population_map
+        : String
+        position
+        : Int
+        4
+        : Int
+        5
+        : String
+      _expr
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        _mov tmp#position, param#position
+        _mov tmp#4, imm#1
+        tmp#5 = _dispatch tmp#population_map, substr, (tmp#position, tmp#4)
+        _return tmp#5
+    _method
+      cell_left_neighbor
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        3
+        : Int
+        4
+        : Bool
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        7
+        : Int
+        8
+        : Int
+        9
+        : Int
+        10
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        13
+        : Int
+        14
+        : Int
+        15
+        : String
+        16
+        : String
+        17
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _mov tmp#3, imm#0
+        tmp#4 = tmp#position _eq tmp#3
+        _mov tmp#17, imm#null
+        _if tmp#4 _eq tmp#17 _goto 0
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#7 = _dispatch tmp#self, num_cells, ()
+        _mov tmp#8, imm#1
+        tmp#9 = tmp#7 _sub tmp#8
+        tmp#10 = _dispatch tmp#self, cell, (tmp#9)
+        _mov tmp#16, tmp#10
+        _goto 1
+        _label 0
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#13, imm#1
+        tmp#14 = tmp#position _sub tmp#13
+        tmp#15 = _dispatch tmp#self, cell, (tmp#14)
+        _mov tmp#16, tmp#15
+        _label 1
+        _return tmp#16
+    _method
+      cell_right_neighbor
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        self
+        : SELF_TYPE
+        4
+        : Int
+        5
+        : Int
+        6
+        : Int
+        7
+        : Bool
+        self
+        : SELF_TYPE
+        9
+        : Int
+        10
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        13
+        : Int
+        14
+        : Int
+        15
+        : String
+        16
+        : String
+        17
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _mov tmp#self, param#self
+        tmp#4 = _dispatch tmp#self, num_cells, ()
+        _mov tmp#5, imm#1
+        tmp#6 = tmp#4 _sub tmp#5
+        tmp#7 = tmp#position _eq tmp#6
+        _mov tmp#17, imm#null
+        _if tmp#7 _eq tmp#17 _goto 2
+        _mov tmp#self, param#self
+        _mov tmp#9, imm#0
+        tmp#10 = _dispatch tmp#self, cell, (tmp#9)
+        _mov tmp#16, tmp#10
+        _goto 3
+        _label 2
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#13, imm#1
+        tmp#14 = tmp#position _plus tmp#13
+        tmp#15 = _dispatch tmp#self, cell, (tmp#14)
+        _mov tmp#16, tmp#15
+        _label 3
+        _return tmp#16
+    _method
+      cell_at_next_evolution
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        self
+        : SELF_TYPE
+        position
+        : Int
+        4
+        : String
+        5
+        : String
+        6
+        : Bool
+        7
+        : Int
+        8
+        : Int
+        9
+        : Int
+        10
+        : Bool
+        self
+        : SELF_TYPE
+        position
+        : Int
+        13
+        : String
+        14
+        : String
+        15
+        : Bool
+        16
+        : Int
+        17
+        : Int
+        18
+        : Int
+        19
+        : Bool
+        20
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        23
+        : String
+        24
+        : String
+        25
+        : Bool
+        26
+        : Int
+        27
+        : Int
+        28
+        : Int
+        29
+        : Bool
+        30
+        : Int
+        31
+        : Int
+        32
+        : Bool
+        33
+        : String
+        34
+        : String
+        35
+        : String
+        36
+        : Bool
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#4 = _dispatch tmp#self, cell, (tmp#position)
+        _mov tmp#5, imm#"X"
+        tmp#6 = tmp#4 _eq tmp#5
+        _mov tmp#10, imm#null
+        _if tmp#6 _eq tmp#10 _goto 4
+        _mov tmp#7, imm#1
+        _mov tmp#9, tmp#7
+        _goto 5
+        _label 4
+        _mov tmp#8, imm#0
+        _mov tmp#9, tmp#8
+        _label 5
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#13 = _dispatch tmp#self, cell_left_neighbor, (tmp#position)
+        _mov tmp#14, imm#"X"
+        tmp#15 = tmp#13 _eq tmp#14
+        _mov tmp#19, imm#null
+        _if tmp#15 _eq tmp#19 _goto 6
+        _mov tmp#16, imm#1
+        _mov tmp#18, tmp#16
+        _goto 7
+        _label 6
+        _mov tmp#17, imm#0
+        _mov tmp#18, tmp#17
+        _label 7
+        tmp#20 = tmp#9 _plus tmp#18
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#23 = _dispatch tmp#self, cell_right_neighbor, (tmp#position)
+        _mov tmp#24, imm#"X"
+        tmp#25 = tmp#23 _eq tmp#24
+        _mov tmp#29, imm#null
+        _if tmp#25 _eq tmp#29 _goto 8
+        _mov tmp#26, imm#1
+        _mov tmp#28, tmp#26
+        _goto 9
+        _label 8
+        _mov tmp#27, imm#0
+        _mov tmp#28, tmp#27
+        _label 9
+        tmp#30 = tmp#20 _plus tmp#28
+        _mov tmp#31, imm#1
+        tmp#32 = tmp#30 _eq tmp#31
+        _mov tmp#36, imm#null
+        _if tmp#32 _eq tmp#36 _goto 10
+        _mov tmp#33, imm#"X"
+        _mov tmp#35, tmp#33
+        _goto 11
+        _label 10
+        _mov tmp#34, imm#"."
+        _mov tmp#35, tmp#34
+        _label 11
+        _return tmp#35
+    _method
+      evolve
+      : SELF_TYPE
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        3
+        : Int
+        position
+        : Int
+        num
+        : Int
+        8
+        : Bool
+        temp
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        12
+        : String
+        13
+        : String
+        position
+        : Int
+        15
+        : Int
+        16
+        : Int
+        17
+        : Int
+        temp
+        : String
+        self
+        : SELF_TYPE
+        20
+        : SELF_TYPE
+        21
+        : SELF_TYPE
+        22
+        : SELF_TYPE
+      _expr
+        _mov letvar#position, null
+        _mov tmp#self, param#self
+        tmp#3 = _dispatch tmp#self, num_cells, ()
+        _mov letvar#num, tmp#3
+        _mov letvar#temp, null
+        _mov tmp#17, imm#0
+        _label 12
+        _mov tmp#position, letvar#position
+        _mov tmp#num, letvar#num
+        tmp#8 = tmp#position _lt tmp#num
+        _if tmp#8 _eq tmp#17 _goto 13
+        _mov tmp#temp, letvar#temp
+        _mov tmp#self, param#self
+        _mov tmp#position, letvar#position
+        tmp#12 = _dispatch tmp#self, cell_at_next_evolution, (tmp#position)
+        tmp#13 = _dispatch tmp#temp, concat, (tmp#12)
+        _mov letvar#temp, tmp#13
+        _mov tmp#position, letvar#position
+        _mov tmp#15, imm#1
+        tmp#16 = tmp#position _plus tmp#15
+        _mov letvar#position, tmp#16
+        _goto 12
+        _label 13
+        _mov tmp#temp, letvar#temp
+        _store_attr attr#population_map, attr#population_map, tmp#temp
+        _mov tmp#self, param#self
+        _mov tmp#20, tmp#self
+        _mov tmp#21, tmp#20
+        _mov tmp#22, tmp#21
+        _return tmp#22
+  _klass
+    Main
+    <: Object
+    _attrs
+      cells
+      :: Main
+      : CellularAutomaton
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : CellularAutomaton
+        2
+        : String
+        3
+        : CellularAutomaton
+        cells
+        : CellularAutomaton
+        5
+        : CellularAutomaton
+        6
+        : Int
+        8
+        : Int
+        countdown
+        : Int
+        10
+        : Bool
+        cells
+        : CellularAutomaton
+        12
+        : CellularAutomaton
+        cells
+        : CellularAutomaton
+        14
+        : CellularAutomaton
+        countdown
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : Int
+        19
+        : Object
+        self
+        : SELF_TYPE
+      _expr
+        tmp#1 = new CellularAutomaton
+        _mov tmp#2, imm#"         X         "
+        tmp#3 = _dispatch tmp#1, init, (tmp#2)
+        _store_attr attr#cells, attr#cells, tmp#3
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#5 = _dispatch tmp#cells, print, ()
+        _mov tmp#6, imm#20
+        _mov letvar#countdown, tmp#6
+        _mov tmp#18, imm#0
+        _label 14
+        _mov tmp#8, imm#0
+        _mov tmp#countdown, letvar#countdown
+        tmp#10 = tmp#8 _lt tmp#countdown
+        _if tmp#10 _eq tmp#18 _goto 15
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#12 = _dispatch tmp#cells, evolve, ()
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#14 = _dispatch tmp#cells, print, ()
+        _mov tmp#countdown, letvar#countdown
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#countdown _sub tmp#16
+        _mov letvar#countdown, tmp#17
+        _goto 14
+        _label 15
+        _mov tmp#19, letvar#countdown
+        _mov tmp#self, param#self
+        _return tmp#self

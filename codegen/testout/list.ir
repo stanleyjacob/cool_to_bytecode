@@ -1,0 +1,320 @@
+_program
+  _klass
+    List
+    <: Object
+    _attrs
+      self
+      :: List
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: List
+      : Bool
+      head
+      :: List
+      : Int
+      tail
+      :: List
+      : List
+      cons
+      :: List
+      : List
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#1
+        _return tmp#1
+    _method
+      head
+      : Int
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        3
+        : Int
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _mov tmp#3, imm#0
+        _return tmp#3
+    _method
+      tail
+      : List
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Object
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, abort, ()
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      cons
+      : List
+      _formals
+        i
+        : Int
+      _locals
+        2
+        : Cons
+        i
+        : Int
+        self
+        : SELF_TYPE
+        5
+        : List
+      _expr
+        tmp#2 = new Cons
+        _mov tmp#i, param#i
+        _mov tmp#self, param#self
+        tmp#5 = _dispatch tmp#2, init, (tmp#i, tmp#self)
+        _return tmp#5
+  _klass
+    Cons
+    <: List
+    _attrs
+      car
+      :: Cons
+      : Int
+      cdr
+      :: Cons
+      : List
+      self
+      :: Cons
+      : SELF_TYPE
+    _methodmap
+      isNil
+      :: Cons
+      : Bool
+      head
+      :: Cons
+      : Int
+      tail
+      :: Cons
+      : List
+      init
+      :: Cons
+      : List
+    _method
+      isNil
+      : Bool
+      _formals
+      _locals
+        1
+        : Bool
+      _expr
+        _mov tmp#1, imm#0
+        _return tmp#1
+    _method
+      head
+      : Int
+      _formals
+      _locals
+        car
+        : Int
+      _expr
+        _load_attr tmp#car, attr#car, attr#car
+        _return tmp#car
+    _method
+      tail
+      : List
+      _formals
+      _locals
+        cdr
+        : List
+      _expr
+        _load_attr tmp#cdr, attr#cdr, attr#cdr
+        _return tmp#cdr
+    _method
+      init
+      : List
+      _formals
+        i
+        : Int
+        rest
+        : List
+      _locals
+        i
+        : Int
+        rest
+        : List
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#i, param#i
+        _store_attr attr#car, attr#car, tmp#i
+        _mov tmp#rest, param#rest
+        _store_attr attr#cdr, attr#cdr, tmp#rest
+        _mov tmp#self, param#self
+        _return tmp#self
+  _klass
+    Main
+    <: IO
+    _attrs
+      mylist
+      :: Main
+      : List
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      print_list
+      :: Main
+      : Object
+      main
+      :: Main
+      : Object
+    _method
+      print_list
+      : Object
+      _formals
+        l
+        : List
+      _locals
+        l
+        : List
+        3
+        : Bool
+        self
+        : SELF_TYPE
+        5
+        : String
+        6
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        l
+        : List
+        9
+        : Int
+        10
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        12
+        : String
+        13
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        l
+        : List
+        16
+        : List
+        17
+        : Object
+        18
+        : Object
+        19
+        : Bool
+      _expr
+        _mov tmp#l, param#l
+        tmp#3 = _dispatch tmp#l, isNil, ()
+        _mov tmp#19, imm#null
+        _if tmp#3 _eq tmp#19 _goto 0
+        _mov tmp#self, param#self
+        _mov tmp#5, imm#"\n"
+        tmp#6 = _dispatch tmp#self, out_string, (tmp#5)
+        _mov tmp#18, tmp#6
+        _goto 1
+        _label 0
+        _mov tmp#self, param#self
+        _mov tmp#l, param#l
+        tmp#9 = _dispatch tmp#l, head, ()
+        tmp#10 = _dispatch tmp#self, out_int, (tmp#9)
+        _mov tmp#self, param#self
+        _mov tmp#12, imm#" "
+        tmp#13 = _dispatch tmp#self, out_string, (tmp#12)
+        _mov tmp#self, param#self
+        _mov tmp#l, param#l
+        tmp#16 = _dispatch tmp#l, tail, ()
+        tmp#17 = _dispatch tmp#self, print_list, (tmp#16)
+        _mov tmp#18, tmp#17
+        _label 1
+        _return tmp#18
+    _method
+      main
+      : Object
+      _formals
+      _locals
+        1
+        : List
+        2
+        : Int
+        3
+        : List
+        4
+        : Int
+        5
+        : List
+        6
+        : Int
+        7
+        : List
+        8
+        : Int
+        9
+        : List
+        10
+        : Int
+        11
+        : List
+        mylist
+        : List
+        13
+        : Bool
+        14
+        : Bool
+        self
+        : SELF_TYPE
+        mylist
+        : List
+        17
+        : Object
+        mylist
+        : List
+        19
+        : List
+        20
+        : Int
+      _expr
+        tmp#1 = new List
+        _mov tmp#2, imm#1
+        tmp#3 = _dispatch tmp#1, cons, (tmp#2)
+        _mov tmp#4, imm#2
+        tmp#5 = _dispatch tmp#3, cons, (tmp#4)
+        _mov tmp#6, imm#3
+        tmp#7 = _dispatch tmp#5, cons, (tmp#6)
+        _mov tmp#8, imm#4
+        tmp#9 = _dispatch tmp#7, cons, (tmp#8)
+        _mov tmp#10, imm#5
+        tmp#11 = _dispatch tmp#9, cons, (tmp#10)
+        _store_attr attr#mylist, attr#mylist, tmp#11
+        _mov tmp#20, imm#0
+        _label 2
+        _load_attr tmp#mylist, attr#mylist, attr#mylist
+        tmp#13 = _dispatch tmp#mylist, isNil, ()
+        tmp#14 = _comp tmp#13
+        _if tmp#14 _eq tmp#20 _goto 3
+        _mov tmp#self, param#self
+        _load_attr tmp#mylist, attr#mylist, attr#mylist
+        tmp#17 = _dispatch tmp#self, print_list, (tmp#mylist)
+        _load_attr tmp#mylist, attr#mylist, attr#mylist
+        tmp#19 = _dispatch tmp#mylist, tail, ()
+        _store_attr attr#mylist, attr#mylist, tmp#19
+        _goto 2
+        _label 3
+        _return attr#mylist

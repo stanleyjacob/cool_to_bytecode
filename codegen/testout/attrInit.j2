@@ -1,0 +1,140 @@
+.class public Main
+.super B
+
+.field private io LIO;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial B/<init>(LObject;)V
+
+
+
+; Load Inst start
+aload 0
+getfield A/x LInt;
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Binop Inst start
+aload 1
+aload 2
+invokevirtual Int/add(LInt;)LInt;
+astore 3
+
+
+aload 0
+aload 3
+putfield B/y LInt;
+
+; Alloc Inst start
+new IO
+dup
+invokespecial IO/<init>()V
+astore 4
+
+aload 0
+aload 4
+putfield Main/io LIO;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 7
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial B/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LIO;
+
+.limit stack 16
+.limit locals 16
+
+; Load Inst start
+aload 0
+getfield Main/io LIO;
+astore 1
+
+; Load Inst start
+aload 0
+getfield B/y LInt;
+astore 2
+
+; Load Inst start
+aload 0
+getfield A/x LInt;
+astore 3
+
+; Binop Inst start
+aload 2
+aload 3
+invokevirtual Int/add(LInt;)LInt;
+astore 4
+
+
+; Dispatch Inst start
+aload 1
+aload 4
+invokevirtual IO/out_int(LInt;)LIO;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LIO;
+pop
+
+return
+
+.end method
+
+

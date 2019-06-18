@@ -1,0 +1,65 @@
+#1
+_program
+  #1
+  _class
+    Main
+    IO
+    "Kase.cl"
+    (
+    #2
+    _attr
+      i
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #3
+    _attr
+      v
+      Bool
+      #0
+      _no_expr
+      : _no_type
+    #4
+    _method
+      main
+      Bool
+      #5
+      _block
+        #6
+        _typcase
+          #6
+          _object
+            i
+          : Int
+          #7
+          _branch
+            m
+            Int
+            #7
+            _assign
+              v
+              #7
+              _bool
+                1
+              : Bool
+            : Bool
+          #8
+          _branch
+            n
+            Object
+            #8
+            _assign
+              v
+              #8
+              _bool
+                0
+              : Bool
+            : Bool
+        : Bool
+        #11
+        _object
+          v
+        : Bool
+      : Bool
+    )

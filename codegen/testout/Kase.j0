@@ -1,0 +1,116 @@
+.class public Main
+.super IO
+
+.field private i LInt;
+.field private v LBool;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 9
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/i LInt;
+aload 0
+new Bool
+dup
+invokespecial Bool/<init>()V
+putfield Main/v LBool;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 9
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Main/i LInt;
+aload 0
+new Bool
+dup
+invokespecial Bool/<init>()V
+putfield Main/v LBool;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LBool;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield Main/i LInt;
+astore 1
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 3
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield Main/v LBool;
+
+; Load Inst start
+aload 0
+getfield Main/v LBool;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LBool;
+pop
+
+return
+
+.end method
+
+

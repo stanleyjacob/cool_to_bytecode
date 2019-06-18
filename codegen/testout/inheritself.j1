@@ -1,0 +1,72 @@
+.class public B
+.super A
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial A/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public getme()LB;
+
+.limit stack 3
+.limit locals 2
+
+; Alloc Inst start
+new B
+dup
+invokespecial B/<init>()V
+astore 1
+
+; Store Attr Inst start
+aload 0
+aload 1
+putfield A/x LB;
+
+; Return Inst start
+aload 0
+getfield A/x LB;
+areturn
+
+.end method
+
+

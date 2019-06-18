@@ -1,0 +1,46 @@
+#3
+_program
+  #3
+  _class
+    Main
+    IO
+    "simple.cl"
+    (
+    #4
+    _attr
+      x
+      Int
+      #4
+      _int
+        0
+      : _no_type
+    #5
+    _method
+      main
+      Int
+      #6
+      _block
+        #7
+        _eq
+          #7
+          _object
+            x
+          : _no_type
+          #7
+          _plus
+            #7
+            _object
+              x
+            : _no_type
+            #7
+            _int
+              1
+            : _no_type
+          : _no_type
+        : _no_type
+        #8
+        _object
+          x
+        : _no_type
+      : _no_type
+    )

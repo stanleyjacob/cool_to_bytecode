@@ -1,0 +1,121 @@
+.class public Main
+.super Parse
+
+.field private g LGraph;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial Parse/<init>(LObject;)V
+
+
+
+; Alloc Inst start
+new BoolOp
+dup
+invokespecial BoolOp/<init>()V
+astore 1
+
+aload 0
+aload 1
+putfield Parse/boolop LBoolOp;
+
+; Move Inst start
+aload 0
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual Parse/read_input()LGraph;
+astore 3
+
+aload 0
+aload 3
+putfield Main/g LGraph;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 15
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial Parse/<init>(LObject;)V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public main()LObject;
+
+.limit stack 10
+.limit locals 10
+
+; Load Inst start
+aload 0
+getfield Main/g LGraph;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Graph/print_V()LObject;
+astore 2
+
+; Load Inst start
+aload 0
+getfield Main/g LGraph;
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual Graph/print_E()LObject;
+astore 4
+
+; Return Inst start
+aload 4
+
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LObject;
+pop
+
+return
+
+.end method
+
+

@@ -1,0 +1,144 @@
+#1
+_program
+  #1
+  _class
+    Main
+    IO
+    "method.cl"
+    (
+    #2
+    _attr
+      i
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #3
+    _attr
+      j
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #4
+    _attr
+      k
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #6
+    _method
+      init
+      SELF_TYPE
+      #6
+      _block
+        #7
+        _assign
+          i
+          #7
+          _int
+            1
+          : Int
+        : Int
+        #8
+        _assign
+          j
+          #8
+          _int
+            2
+          : Int
+        : Int
+        #9
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #12
+    _method
+      add
+      #12
+      _formal
+        a
+        Int
+      #12
+      _formal
+        b
+        Int
+      Int
+      #12
+      _block
+        #13
+        _assign
+          k
+          #13
+          _plus
+            #13
+            _object
+              a
+            : Int
+            #13
+            _object
+              b
+            : Int
+          : Int
+        : Int
+        #14
+        _object
+          k
+        : Int
+      : Int
+    #17
+    _method
+      main
+      SELF_TYPE
+      #17
+      _block
+        #18
+        _dispatch
+          #18
+          _object
+            self
+          : SELF_TYPE
+          init
+          (
+          )
+        : SELF_TYPE
+        #19
+        _assign
+          k
+          #19
+          _dispatch
+            #19
+            _object
+              self
+            : SELF_TYPE
+            add
+            (
+            #19
+            _int
+              3
+            : Int
+            #19
+            _int
+              4
+            : Int
+            )
+          : Int
+        : Int
+        #20
+        _dispatch
+          #20
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #20
+          _object
+            k
+          : Int
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

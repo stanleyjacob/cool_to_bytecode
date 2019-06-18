@@ -1,0 +1,199 @@
+_program
+  _klass
+    A
+    <: IO
+    _attrs
+      a
+      :: A
+      : Int
+      self
+      :: A
+      : SELF_TYPE
+    _methodmap
+      init
+      :: A
+      : Int
+      ma
+      :: A
+      : Int
+      mb
+      :: A
+      : Int
+    _method
+      init
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#1
+        _store_attr attr#a, attr#a, tmp#1
+        _return attr#a
+    _method
+      ma
+      : Int
+      _formals
+      _locals
+        a
+        : Int
+      _expr
+        _load_attr tmp#a, attr#a, attr#a
+        _return tmp#a
+    _method
+      mb
+      : Int
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Int
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, ma, ()
+        _return tmp#2
+  _klass
+    B
+    <: A
+    _attrs
+      self
+      :: B
+      : SELF_TYPE
+    _methodmap
+      ma
+      :: B
+      : Int
+    _method
+      ma
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#4
+        _return tmp#1
+  _klass
+    C
+    <: B
+    _attrs
+      self
+      :: C
+      : SELF_TYPE
+    _methodmap
+      ma
+      :: C
+      : Int
+      work
+      :: C
+      : Int
+    _method
+      ma
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#3
+        _return tmp#1
+    _method
+      work
+      : Int
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Int
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        5
+        : Int
+        6
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        9
+        : Int
+        10
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        13
+        : Int
+        14
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        17
+        : Int
+        18
+        : SELF_TYPE
+        19
+        : Int
+      _expr
+        _mov tmp#self, param#self
+        tmp#2 = _dispatch tmp#self, init, ()
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#5 = _dispatch tmp#self, mb, ()
+        tmp#6 = _dispatch tmp#self, out_int, (tmp#5)
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#9 = _staticdispatch tmp#self, B@ma, ()
+        tmp#10 = _dispatch tmp#self, out_int, (tmp#9)
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#13 = _staticdispatch tmp#self, A@ma, ()
+        tmp#14 = _dispatch tmp#self, out_int, (tmp#13)
+        _mov tmp#self, param#self
+        _mov tmp#self, param#self
+        tmp#17 = _staticdispatch tmp#self, A@mb, ()
+        tmp#18 = _dispatch tmp#self, out_int, (tmp#17)
+        _mov tmp#19, imm#0
+        _return tmp#19
+  _klass
+    Main
+    <: Object
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        2
+        : C
+        c
+        : C
+        4
+        : Int
+        self
+        : SELF_TYPE
+        6
+        : SELF_TYPE
+      _expr
+        _mov letvar#c, null
+        tmp#2 = new C
+        _mov letvar#c, tmp#2
+        _mov tmp#c, letvar#c
+        tmp#4 = _dispatch tmp#c, work, ()
+        _mov tmp#self, param#self
+        _mov tmp#6, tmp#self
+        _return tmp#6

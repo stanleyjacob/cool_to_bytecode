@@ -1,0 +1,119 @@
+.class public A
+.super IO
+
+.field private a LInt;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/a LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield A/a LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public init()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 1
+
+; Store Attr Inst start
+aload 0
+aload 1
+putfield A/a LInt;
+
+; Return Inst start
+aload 0
+getfield A/a LInt;
+areturn
+
+.end method
+
+
+.method public ma()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield A/a LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public mb()LInt;
+
+.limit stack 4
+.limit locals 4
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual A/ma()LInt;
+astore 2
+
+; Return Inst start
+aload 2
+
+areturn
+
+.end method
+
+

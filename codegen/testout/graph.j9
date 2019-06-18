@@ -1,0 +1,166 @@
+.class public BoolOp
+.super Object
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public and(LBool;LBool;)LBool;
+
+.limit stack 18
+.limit locals 18
+
+; Move Inst start
+aload 1
+astore 3
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 7
+
+; CondBranch Inst start
+aload 3
+aload 7
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label40
+
+
+; Move Inst start
+aload 2
+astore 4
+
+; Move Inst start
+aload 4
+astore 6
+
+; Goto Inst start
+goto label41
+
+; Label Inst start
+label40:
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 5
+
+; Move Inst start
+aload 5
+astore 6
+
+; Label Inst start
+label41:
+
+; Return Inst start
+aload 6
+
+areturn
+
+.end method
+
+
+.method public or(LBool;LBool;)LBool;
+
+.limit stack 14
+.limit locals 14
+
+; Move Inst start
+aload 1
+astore 3
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 7
+
+; CondBranch Inst start
+aload 3
+aload 7
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label42
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 4
+
+; Move Inst start
+aload 4
+astore 6
+
+; Goto Inst start
+goto label43
+
+; Label Inst start
+label42:
+
+; Move Inst start
+aload 2
+astore 5
+
+; Move Inst start
+aload 5
+astore 6
+
+; Label Inst start
+label43:
+
+; Return Inst start
+aload 6
+
+areturn
+
+.end method
+
+

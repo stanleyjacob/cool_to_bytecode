@@ -1,0 +1,1955 @@
+.class public Parse
+.super IO
+
+.field private boolop LBoolOp;
+.field private rest LString;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+aload 0
+new String
+dup
+invokespecial String/<init>()V
+putfield Parse/rest LString;
+
+
+; Alloc Inst start
+new BoolOp
+dup
+invokespecial BoolOp/<init>()V
+astore 1
+
+aload 0
+aload 1
+putfield Parse/boolop LBoolOp;
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 12
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+aload 0
+new String
+dup
+invokespecial String/<init>()V
+putfield Parse/rest LString;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public read_input()LGraph;
+
+.limit stack 48
+.limit locals 48
+
+; Alloc Inst start
+new Graph
+dup
+invokespecial Graph/<init>()V
+astore 1
+
+; Move Inst start
+aload 1
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Dispatch Inst start
+aload 3
+invokevirtual IO/in_string()LString;
+astore 4
+
+; Move Inst start
+aload 4
+astore 5
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 23
+
+; Label Inst start
+label2:
+
+; Load Inst start
+aload 0
+getfield Parse/boolop LBoolOp;
+astore 6
+
+; Move Inst start
+aload 5
+astore 7
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 8
+
+; Binop Inst start
+aload 7
+aload 8
+invokevirtual String/eq(LString;)LBool;
+astore 9
+
+
+; Unop Inst start
+
+
+; Move Inst start
+aload 5
+astore 11
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ""
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 12
+
+; Binop Inst start
+aload 11
+aload 12
+invokevirtual String/eq(LString;)LBool;
+astore 13
+
+
+; Unop Inst start
+
+
+; Dispatch Inst start
+aload 6
+aload 10
+aload 14
+invokevirtual BoolOp/and(LBool;LBool;)LBool;
+astore 15
+
+; CondBranch Inst start
+aload 15
+aload 23
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label3
+
+
+; Move Inst start
+aload 2
+astore 16
+
+; Move Inst start
+aload 0
+astore 17
+
+; Move Inst start
+aload 5
+astore 18
+
+; Dispatch Inst start
+aload 17
+aload 18
+invokevirtual Parse/parse_line(LString;)LVertice;
+astore 19
+
+; Dispatch Inst start
+aload 16
+aload 19
+invokevirtual Graph/add_vertice(LVertice;)LObject;
+astore 20
+
+; Move Inst start
+aload 0
+astore 21
+
+; Dispatch Inst start
+aload 21
+invokevirtual IO/in_string()LString;
+astore 22
+
+; Move Inst start
+aload 22
+astore 5
+
+; Goto Inst start
+goto label2
+
+; Label Inst start
+label3:
+
+; Move Inst start
+aload 5
+astore 24
+
+; Move Inst start
+aload 2
+astore 25
+
+; Move Inst start
+aload 25
+astore 26
+
+; Return Inst start
+aload 26
+
+areturn
+
+.end method
+
+
+.method public parse_line(LString;)LVertice;
+
+.limit stack 60
+.limit locals 60
+
+; Alloc Inst start
+new Vertice
+dup
+invokespecial Vertice/<init>()V
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Move Inst start
+aload 1
+astore 4
+
+; Dispatch Inst start
+aload 3
+aload 4
+invokevirtual Parse/a2i(LString;)LInt;
+astore 5
+
+; Dispatch Inst start
+aload 2
+aload 5
+invokevirtual VCons/init(LInt;)LVList;
+astore 6
+
+; Move Inst start
+aload 6
+astore 7
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 31
+
+; Label Inst start
+label4:
+
+; Load Inst start
+aload 0
+getfield Parse/rest LString;
+astore 8
+
+; Dispatch Inst start
+aload 8
+invokevirtual String/length()LInt;
+astore 9
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 10
+
+; Binop Inst start
+aload 9
+aload 10
+invokevirtual Int/eq(LInt;)LBool;
+astore 11
+
+
+; Unop Inst start
+
+
+; CondBranch Inst start
+aload 12
+aload 31
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label5
+
+
+; Move Inst start
+aload 0
+astore 13
+
+; Load Inst start
+aload 0
+getfield Parse/rest LString;
+astore 14
+
+; Dispatch Inst start
+aload 13
+aload 14
+invokevirtual Parse/a2i(LString;)LInt;
+astore 15
+
+; Move Inst start
+aload 15
+astore 16
+
+; Move Inst start
+aload 0
+astore 17
+
+; Load Inst start
+aload 0
+getfield Parse/rest LString;
+astore 18
+
+; Dispatch Inst start
+aload 17
+aload 18
+invokevirtual Parse/a2i(LString;)LInt;
+astore 19
+
+; Move Inst start
+aload 19
+astore 20
+
+; Move Inst start
+aload 7
+astore 21
+
+; Alloc Inst start
+new Edge
+dup
+invokespecial Edge/<init>()V
+astore 22
+
+; Move Inst start
+aload 7
+astore 23
+
+; Dispatch Inst start
+aload 23
+invokevirtual Vertice/number()LInt;
+astore 24
+
+; Move Inst start
+aload 16
+astore 25
+
+; Move Inst start
+aload 20
+astore 26
+
+; Dispatch Inst start
+aload 22
+aload 24
+aload 25
+aload 26
+invokevirtual VCons/init(LInt;LInt;LInt;)LVList;
+astore 27
+
+; Dispatch Inst start
+aload 21
+aload 27
+invokevirtual Vertice/add_out(LEdge;)LVertice;
+checkcast Parse
+astore 28
+
+; Move Inst start
+aload 28
+astore 29
+
+; Move Inst start
+aload 29
+astore 30
+
+; Goto Inst start
+goto label4
+
+; Label Inst start
+label5:
+
+; Move Inst start
+aload 7
+astore 32
+
+; Move Inst start
+aload 32
+astore 33
+
+; Return Inst start
+aload 33
+
+areturn
+
+.end method
+
+
+.method public c2i(LString;)LInt;
+
+.limit stack 128
+.limit locals 128
+
+; Move Inst start
+aload 1
+astore 2
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "0"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 3
+
+; Binop Inst start
+aload 2
+aload 3
+invokevirtual String/eq(LString;)LBool;
+astore 4
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 64
+
+; CondBranch Inst start
+aload 4
+aload 64
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label24
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 5
+
+; Move Inst start
+aload 5
+astore 63
+
+; Goto Inst start
+goto label25
+
+; Label Inst start
+label24:
+
+; Move Inst start
+aload 1
+astore 6
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "1"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 7
+
+; Binop Inst start
+aload 6
+aload 7
+invokevirtual String/eq(LString;)LBool;
+astore 8
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 62
+
+; CondBranch Inst start
+aload 8
+aload 62
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label22
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 9
+
+; Move Inst start
+aload 9
+astore 61
+
+; Goto Inst start
+goto label23
+
+; Label Inst start
+label22:
+
+; Move Inst start
+aload 1
+astore 10
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "2"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 11
+
+; Binop Inst start
+aload 10
+aload 11
+invokevirtual String/eq(LString;)LBool;
+astore 12
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 60
+
+; CondBranch Inst start
+aload 12
+aload 60
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label20
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 2
+invokevirtual Int/putval(I)LInt;
+astore 13
+
+; Move Inst start
+aload 13
+astore 59
+
+; Goto Inst start
+goto label21
+
+; Label Inst start
+label20:
+
+; Move Inst start
+aload 1
+astore 14
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "3"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 15
+
+; Binop Inst start
+aload 14
+aload 15
+invokevirtual String/eq(LString;)LBool;
+astore 16
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 58
+
+; CondBranch Inst start
+aload 16
+aload 58
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label18
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 3
+invokevirtual Int/putval(I)LInt;
+astore 17
+
+; Move Inst start
+aload 17
+astore 57
+
+; Goto Inst start
+goto label19
+
+; Label Inst start
+label18:
+
+; Move Inst start
+aload 1
+astore 18
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "4"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 19
+
+; Binop Inst start
+aload 18
+aload 19
+invokevirtual String/eq(LString;)LBool;
+astore 20
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 56
+
+; CondBranch Inst start
+aload 20
+aload 56
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label16
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 4
+invokevirtual Int/putval(I)LInt;
+astore 21
+
+; Move Inst start
+aload 21
+astore 55
+
+; Goto Inst start
+goto label17
+
+; Label Inst start
+label16:
+
+; Move Inst start
+aload 1
+astore 22
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "5"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 23
+
+; Binop Inst start
+aload 22
+aload 23
+invokevirtual String/eq(LString;)LBool;
+astore 24
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 54
+
+; CondBranch Inst start
+aload 24
+aload 54
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label14
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 5
+invokevirtual Int/putval(I)LInt;
+astore 25
+
+; Move Inst start
+aload 25
+astore 53
+
+; Goto Inst start
+goto label15
+
+; Label Inst start
+label14:
+
+; Move Inst start
+aload 1
+astore 26
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "6"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 27
+
+; Binop Inst start
+aload 26
+aload 27
+invokevirtual String/eq(LString;)LBool;
+astore 28
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 52
+
+; CondBranch Inst start
+aload 28
+aload 52
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label12
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 6
+invokevirtual Int/putval(I)LInt;
+astore 29
+
+; Move Inst start
+aload 29
+astore 51
+
+; Goto Inst start
+goto label13
+
+; Label Inst start
+label12:
+
+; Move Inst start
+aload 1
+astore 30
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "7"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 31
+
+; Binop Inst start
+aload 30
+aload 31
+invokevirtual String/eq(LString;)LBool;
+astore 32
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 50
+
+; CondBranch Inst start
+aload 32
+aload 50
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label10
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 7
+invokevirtual Int/putval(I)LInt;
+astore 33
+
+; Move Inst start
+aload 33
+astore 49
+
+; Goto Inst start
+goto label11
+
+; Label Inst start
+label10:
+
+; Move Inst start
+aload 1
+astore 34
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "8"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 35
+
+; Binop Inst start
+aload 34
+aload 35
+invokevirtual String/eq(LString;)LBool;
+astore 36
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 48
+
+; CondBranch Inst start
+aload 36
+aload 48
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label8
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 8
+invokevirtual Int/putval(I)LInt;
+astore 37
+
+; Move Inst start
+aload 37
+astore 47
+
+; Goto Inst start
+goto label9
+
+; Label Inst start
+label8:
+
+; Move Inst start
+aload 1
+astore 38
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "9"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 39
+
+; Binop Inst start
+aload 38
+aload 39
+invokevirtual String/eq(LString;)LBool;
+astore 40
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 46
+
+; CondBranch Inst start
+aload 40
+aload 46
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label6
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 9
+invokevirtual Int/putval(I)LInt;
+astore 41
+
+; Move Inst start
+aload 41
+astore 45
+
+; Goto Inst start
+goto label7
+
+; Label Inst start
+label6:
+
+; Move Inst start
+aload 0
+astore 42
+
+; Dispatch Inst start
+aload 42
+invokevirtual Object/abort()LObject;
+astore 43
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 44
+
+; Move Inst start
+aload 44
+astore 45
+
+; Label Inst start
+label7:
+
+; Move Inst start
+aload 45
+astore 47
+
+; Label Inst start
+label9:
+
+; Move Inst start
+aload 47
+astore 49
+
+; Label Inst start
+label11:
+
+; Move Inst start
+aload 49
+astore 51
+
+; Label Inst start
+label13:
+
+; Move Inst start
+aload 51
+astore 53
+
+; Label Inst start
+label15:
+
+; Move Inst start
+aload 53
+astore 55
+
+; Label Inst start
+label17:
+
+; Move Inst start
+aload 55
+astore 57
+
+; Label Inst start
+label19:
+
+; Move Inst start
+aload 57
+astore 59
+
+; Label Inst start
+label21:
+
+; Move Inst start
+aload 59
+astore 61
+
+; Label Inst start
+label23:
+
+; Move Inst start
+aload 61
+astore 63
+
+; Label Inst start
+label25:
+
+; Return Inst start
+aload 63
+
+areturn
+
+.end method
+
+
+.method public a2i(LString;)LInt;
+
+.limit stack 92
+.limit locals 92
+
+; Move Inst start
+aload 1
+astore 2
+
+; Dispatch Inst start
+aload 2
+invokevirtual String/length()LInt;
+astore 3
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 4
+
+; Binop Inst start
+aload 3
+aload 4
+invokevirtual Int/eq(LInt;)LBool;
+astore 5
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 46
+
+; CondBranch Inst start
+aload 5
+aload 46
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label30
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 6
+
+; Move Inst start
+aload 6
+astore 45
+
+; Goto Inst start
+goto label31
+
+; Label Inst start
+label30:
+
+; Move Inst start
+aload 1
+astore 7
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 8
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 9
+
+; Dispatch Inst start
+aload 7
+aload 8
+aload 9
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 10
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "-"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 11
+
+; Binop Inst start
+aload 10
+aload 11
+invokevirtual String/eq(LString;)LBool;
+astore 12
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 44
+
+; CondBranch Inst start
+aload 12
+aload 44
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label28
+
+
+; Move Inst start
+aload 0
+astore 13
+
+; Move Inst start
+aload 1
+astore 14
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 15
+
+; Move Inst start
+aload 1
+astore 16
+
+; Dispatch Inst start
+aload 16
+invokevirtual String/length()LInt;
+astore 17
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 18
+
+; Binop Inst start
+aload 17
+aload 18
+invokevirtual Int/minus(LInt;)LInt;
+astore 19
+
+
+; Dispatch Inst start
+aload 14
+aload 15
+aload 19
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 20
+
+; Dispatch Inst start
+aload 13
+aload 20
+invokevirtual Parse/a2i_aux(LString;)LInt;
+astore 21
+
+; Unop Inst start
+aload 21
+invokevirtual Int/neg()LInt;
+astore 22
+
+
+
+; Move Inst start
+aload 22
+astore 43
+
+; Goto Inst start
+goto label29
+
+; Label Inst start
+label28:
+
+; Move Inst start
+aload 1
+astore 23
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 24
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 25
+
+; Dispatch Inst start
+aload 23
+aload 24
+aload 25
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 26
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc " "
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 27
+
+; Binop Inst start
+aload 26
+aload 27
+invokevirtual String/eq(LString;)LBool;
+astore 28
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 42
+
+; CondBranch Inst start
+aload 28
+aload 42
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label26
+
+
+; Move Inst start
+aload 0
+astore 29
+
+; Move Inst start
+aload 1
+astore 30
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 31
+
+; Move Inst start
+aload 1
+astore 32
+
+; Dispatch Inst start
+aload 32
+invokevirtual String/length()LInt;
+astore 33
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 34
+
+; Binop Inst start
+aload 33
+aload 34
+invokevirtual Int/minus(LInt;)LInt;
+astore 35
+
+
+; Dispatch Inst start
+aload 30
+aload 31
+aload 35
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 36
+
+; Dispatch Inst start
+aload 29
+aload 36
+invokevirtual Parse/a2i(LString;)LInt;
+astore 37
+
+; Move Inst start
+aload 37
+astore 41
+
+; Goto Inst start
+goto label27
+
+; Label Inst start
+label26:
+
+; Move Inst start
+aload 0
+astore 38
+
+; Move Inst start
+aload 1
+astore 39
+
+; Dispatch Inst start
+aload 38
+aload 39
+invokevirtual Parse/a2i_aux(LString;)LInt;
+astore 40
+
+; Move Inst start
+aload 40
+astore 41
+
+; Label Inst start
+label27:
+
+; Move Inst start
+aload 41
+astore 43
+
+; Label Inst start
+label29:
+
+; Move Inst start
+aload 43
+astore 45
+
+; Label Inst start
+label31:
+
+; Return Inst start
+aload 45
+
+areturn
+
+.end method
+
+
+.method public a2i_aux(LString;)LInt;
+
+.limit stack 144
+.limit locals 144
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 2
+
+; Move Inst start
+aload 2
+astore 3
+
+; Move Inst start
+aload 1
+astore 4
+
+; Dispatch Inst start
+aload 4
+invokevirtual String/length()LInt;
+astore 5
+
+; Move Inst start
+aload 5
+astore 6
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 7
+
+; Move Inst start
+aload 7
+astore 8
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 72
+
+; Label Inst start
+label38:
+
+; Move Inst start
+aload 8
+astore 9
+
+; Move Inst start
+aload 6
+astore 10
+
+; Binop Inst start
+aload 9
+aload 10
+invokevirtual Int/lt(LInt;)LBool;
+astore 11
+
+
+; CondBranch Inst start
+aload 11
+aload 72
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label39
+
+
+; Move Inst start
+aload 1
+astore 12
+
+; Move Inst start
+aload 8
+astore 13
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 14
+
+; Dispatch Inst start
+aload 12
+aload 13
+aload 14
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 15
+
+; Move Inst start
+aload 15
+astore 16
+
+; Move Inst start
+aload 16
+astore 17
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc " "
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 18
+
+; Binop Inst start
+aload 17
+aload 18
+invokevirtual String/eq(LString;)LBool;
+astore 19
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 70
+
+; CondBranch Inst start
+aload 19
+aload 70
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label36
+
+
+; Move Inst start
+aload 1
+astore 20
+
+; Move Inst start
+aload 8
+astore 21
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 22
+
+; Binop Inst start
+aload 21
+aload 22
+invokevirtual Int/add(LInt;)LInt;
+astore 23
+
+
+; Move Inst start
+aload 1
+astore 24
+
+; Dispatch Inst start
+aload 24
+invokevirtual String/length()LInt;
+astore 25
+
+; Move Inst start
+aload 8
+astore 26
+
+; Binop Inst start
+aload 25
+aload 26
+invokevirtual Int/minus(LInt;)LInt;
+astore 27
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 28
+
+; Binop Inst start
+aload 27
+aload 28
+invokevirtual Int/minus(LInt;)LInt;
+astore 29
+
+
+; Dispatch Inst start
+aload 20
+aload 23
+aload 29
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 30
+
+; Store Attr Inst start
+aload 0
+aload 30
+putfield Parse/rest LString;
+
+; Move Inst start
+aload 6
+astore 31
+
+; Move Inst start
+aload 31
+astore 8
+
+; Move Inst start
+aload 8
+astore 69
+
+; Goto Inst start
+goto label37
+
+; Label Inst start
+label36:
+
+; Move Inst start
+aload 16
+astore 32
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ","
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 33
+
+; Binop Inst start
+aload 32
+aload 33
+invokevirtual String/eq(LString;)LBool;
+astore 34
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 68
+
+; CondBranch Inst start
+aload 34
+aload 68
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label34
+
+
+; Move Inst start
+aload 1
+astore 35
+
+; Move Inst start
+aload 8
+astore 36
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 37
+
+; Binop Inst start
+aload 36
+aload 37
+invokevirtual Int/add(LInt;)LInt;
+astore 38
+
+
+; Move Inst start
+aload 1
+astore 39
+
+; Dispatch Inst start
+aload 39
+invokevirtual String/length()LInt;
+astore 40
+
+; Move Inst start
+aload 8
+astore 41
+
+; Binop Inst start
+aload 40
+aload 41
+invokevirtual Int/minus(LInt;)LInt;
+astore 42
+
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 43
+
+; Binop Inst start
+aload 42
+aload 43
+invokevirtual Int/minus(LInt;)LInt;
+astore 44
+
+
+; Dispatch Inst start
+aload 35
+aload 38
+aload 44
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 45
+
+; Store Attr Inst start
+aload 0
+aload 45
+putfield Parse/rest LString;
+
+; Move Inst start
+aload 6
+astore 46
+
+; Move Inst start
+aload 46
+astore 8
+
+; Move Inst start
+aload 8
+astore 67
+
+; Goto Inst start
+goto label35
+
+; Label Inst start
+label34:
+
+; Move Inst start
+aload 3
+astore 47
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 10
+invokevirtual Int/putval(I)LInt;
+astore 48
+
+; Binop Inst start
+
+
+; Move Inst start
+aload 0
+astore 50
+
+; Move Inst start
+aload 1
+astore 51
+
+; Move Inst start
+aload 8
+astore 52
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 53
+
+; Dispatch Inst start
+aload 51
+aload 52
+aload 53
+invokevirtual String/substr(LInt;LInt;)LString;
+astore 54
+
+; Dispatch Inst start
+aload 50
+aload 54
+invokevirtual Parse/c2i(LString;)LInt;
+astore 55
+
+; Binop Inst start
+aload 49
+aload 55
+invokevirtual Int/add(LInt;)LInt;
+astore 56
+
+
+; Move Inst start
+aload 56
+astore 3
+
+; Move Inst start
+aload 8
+astore 57
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 58
+
+; Binop Inst start
+aload 57
+aload 58
+invokevirtual Int/add(LInt;)LInt;
+astore 59
+
+
+; Move Inst start
+aload 59
+astore 8
+
+; Move Inst start
+aload 8
+astore 60
+
+; Move Inst start
+aload 6
+astore 61
+
+; Binop Inst start
+aload 60
+aload 61
+invokevirtual Int/eq(LInt;)LBool;
+astore 62
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 66
+
+; CondBranch Inst start
+aload 62
+aload 66
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label32
+
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ""
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 63
+
+; Store Attr Inst start
+aload 0
+aload 63
+putfield Parse/rest LString;
+
+; Move Inst start
+getfield Parse/rest LString;
+astore 65
+
+; Goto Inst start
+goto label33
+
+; Label Inst start
+label32:
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc ""
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 64
+
+; Move Inst start
+aload 64
+astore 65
+
+; Label Inst start
+label33:
+
+; Move Inst start
+aload 65
+astore 67
+
+; Label Inst start
+label35:
+
+; Move Inst start
+aload 67
+astore 69
+
+; Label Inst start
+label37:
+
+; Move Inst start
+aload 69
+astore 71
+
+; Goto Inst start
+goto label38
+
+; Label Inst start
+label39:
+
+; Move Inst start
+aload 71
+astore 73
+
+; Move Inst start
+aload 73
+astore 74
+
+; Move Inst start
+aload 3
+astore 75
+
+; Move Inst start
+aload 75
+astore 76
+
+; Return Inst start
+aload 76
+
+areturn
+
+.end method
+
+

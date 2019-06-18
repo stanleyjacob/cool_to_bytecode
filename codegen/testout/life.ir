@@ -1,0 +1,2608 @@
+_program
+  _klass
+    Board
+    <: IO
+    _attrs
+      rows
+      :: Board
+      : Int
+      columns
+      :: Board
+      : Int
+      board_size
+      :: Board
+      : Int
+      self
+      :: Board
+      : SELF_TYPE
+    _methodmap
+      size_of_board
+      :: Board
+      : Int
+      board_init
+      :: Board
+      : SELF_TYPE
+    _method
+      size_of_board
+      : Int
+      _formals
+        initial
+        : String
+      _locals
+        initial
+        : String
+        3
+        : Int
+      _expr
+        _mov tmp#initial, param#initial
+        tmp#3 = _dispatch tmp#initial, length, ()
+        _return tmp#3
+    _method
+      board_init
+      : SELF_TYPE
+      _formals
+        start
+        : String
+      _locals
+        self
+        : SELF_TYPE
+        start
+        : String
+        4
+        : Int
+        size
+        : Int
+        7
+        : Int
+        8
+        : Bool
+        9
+        : Int
+        10
+        : Int
+        size
+        : Int
+        size
+        : Int
+        13
+        : Int
+        14
+        : Bool
+        15
+        : Int
+        16
+        : Int
+        size
+        : Int
+        size
+        : Int
+        19
+        : Int
+        20
+        : Bool
+        21
+        : Int
+        22
+        : Int
+        size
+        : Int
+        size
+        : Int
+        25
+        : Int
+        26
+        : Bool
+        27
+        : Int
+        28
+        : Int
+        size
+        : Int
+        size
+        : Int
+        31
+        : Int
+        32
+        : Bool
+        33
+        : Int
+        34
+        : Int
+        size
+        : Int
+        size
+        : Int
+        37
+        : Int
+        38
+        : Bool
+        39
+        : Int
+        40
+        : Int
+        size
+        : Int
+        42
+        : Int
+        43
+        : Int
+        size
+        : Int
+        45
+        : Int
+        46
+        : Bool
+        47
+        : Int
+        48
+        : Bool
+        49
+        : Int
+        50
+        : Bool
+        51
+        : Int
+        52
+        : Bool
+        53
+        : Int
+        54
+        : Bool
+        55
+        : Int
+        56
+        : Bool
+        self
+        : SELF_TYPE
+        58
+        : SELF_TYPE
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#start, param#start
+        tmp#4 = _dispatch tmp#self, size_of_board, (tmp#start)
+        _mov letvar#size, tmp#4
+        _mov tmp#size, letvar#size
+        _mov tmp#7, imm#15
+        tmp#8 = tmp#size _eq tmp#7
+        _mov tmp#56, imm#null
+        _if tmp#8 _eq tmp#56 _goto 10
+        _mov tmp#9, imm#3
+        _store_attr attr#rows, attr#rows, tmp#9
+        _mov tmp#10, imm#5
+        _store_attr attr#columns, attr#columns, tmp#10
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#55, attr#board_size
+        _goto 11
+        _label 10
+        _mov tmp#size, letvar#size
+        _mov tmp#13, imm#16
+        tmp#14 = tmp#size _eq tmp#13
+        _mov tmp#54, imm#null
+        _if tmp#14 _eq tmp#54 _goto 8
+        _mov tmp#15, imm#4
+        _store_attr attr#rows, attr#rows, tmp#15
+        _mov tmp#16, imm#4
+        _store_attr attr#columns, attr#columns, tmp#16
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#53, attr#board_size
+        _goto 9
+        _label 8
+        _mov tmp#size, letvar#size
+        _mov tmp#19, imm#20
+        tmp#20 = tmp#size _eq tmp#19
+        _mov tmp#52, imm#null
+        _if tmp#20 _eq tmp#52 _goto 6
+        _mov tmp#21, imm#4
+        _store_attr attr#rows, attr#rows, tmp#21
+        _mov tmp#22, imm#5
+        _store_attr attr#columns, attr#columns, tmp#22
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#51, attr#board_size
+        _goto 7
+        _label 6
+        _mov tmp#size, letvar#size
+        _mov tmp#25, imm#21
+        tmp#26 = tmp#size _eq tmp#25
+        _mov tmp#50, imm#null
+        _if tmp#26 _eq tmp#50 _goto 4
+        _mov tmp#27, imm#3
+        _store_attr attr#rows, attr#rows, tmp#27
+        _mov tmp#28, imm#7
+        _store_attr attr#columns, attr#columns, tmp#28
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#49, attr#board_size
+        _goto 5
+        _label 4
+        _mov tmp#size, letvar#size
+        _mov tmp#31, imm#25
+        tmp#32 = tmp#size _eq tmp#31
+        _mov tmp#48, imm#null
+        _if tmp#32 _eq tmp#48 _goto 2
+        _mov tmp#33, imm#5
+        _store_attr attr#rows, attr#rows, tmp#33
+        _mov tmp#34, imm#5
+        _store_attr attr#columns, attr#columns, tmp#34
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#47, attr#board_size
+        _goto 3
+        _label 2
+        _mov tmp#size, letvar#size
+        _mov tmp#37, imm#28
+        tmp#38 = tmp#size _eq tmp#37
+        _mov tmp#46, imm#null
+        _if tmp#38 _eq tmp#46 _goto 0
+        _mov tmp#39, imm#7
+        _store_attr attr#rows, attr#rows, tmp#39
+        _mov tmp#40, imm#4
+        _store_attr attr#columns, attr#columns, tmp#40
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#45, attr#board_size
+        _goto 1
+        _label 0
+        _mov tmp#42, imm#5
+        _store_attr attr#rows, attr#rows, tmp#42
+        _mov tmp#43, imm#5
+        _store_attr attr#columns, attr#columns, tmp#43
+        _mov tmp#size, letvar#size
+        _store_attr attr#board_size, attr#board_size, tmp#size
+        _mov tmp#45, attr#board_size
+        _label 1
+        _mov tmp#47, tmp#45
+        _label 3
+        _mov tmp#49, tmp#47
+        _label 5
+        _mov tmp#51, tmp#49
+        _label 7
+        _mov tmp#53, tmp#51
+        _label 9
+        _mov tmp#55, tmp#53
+        _label 11
+        _mov tmp#self, param#self
+        _mov tmp#58, tmp#self
+        _return tmp#58
+  _klass
+    CellularAutomaton
+    <: Board
+    _attrs
+      population_map
+      :: CellularAutomaton
+      : String
+      self
+      :: CellularAutomaton
+      : SELF_TYPE
+    _methodmap
+      init
+      :: CellularAutomaton
+      : SELF_TYPE
+      print
+      :: CellularAutomaton
+      : SELF_TYPE
+      num_cells
+      :: CellularAutomaton
+      : Int
+      cell
+      :: CellularAutomaton
+      : String
+      north
+      :: CellularAutomaton
+      : String
+      south
+      :: CellularAutomaton
+      : String
+      east
+      :: CellularAutomaton
+      : String
+      west
+      :: CellularAutomaton
+      : String
+      northwest
+      :: CellularAutomaton
+      : String
+      northeast
+      :: CellularAutomaton
+      : String
+      southeast
+      :: CellularAutomaton
+      : String
+      southwest
+      :: CellularAutomaton
+      : String
+      neighbors
+      :: CellularAutomaton
+      : Int
+      cell_at_next_evolution
+      :: CellularAutomaton
+      : String
+      evolve
+      :: CellularAutomaton
+      : SELF_TYPE
+      option
+      :: CellularAutomaton
+      : String
+      prompt
+      :: CellularAutomaton
+      : Bool
+      prompt2
+      :: CellularAutomaton
+      : Bool
+    _method
+      init
+      : SELF_TYPE
+      _formals
+        map
+        : String
+      _locals
+        map
+        : String
+        self
+        : SELF_TYPE
+        map
+        : String
+        5
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+      _expr
+        _mov tmp#map, param#map
+        _store_attr attr#population_map, attr#population_map, tmp#map
+        _mov tmp#self, param#self
+        _mov tmp#map, param#map
+        tmp#5 = _dispatch tmp#self, board_init, (tmp#map)
+        _mov tmp#self, param#self
+        _return tmp#self
+    _method
+      print
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        board_size
+        : Int
+        self
+        : SELF_TYPE
+        6
+        : String
+        7
+        : SELF_TYPE
+        i
+        : Int
+        num
+        : Int
+        10
+        : Bool
+        self
+        : SELF_TYPE
+        population_map
+        : String
+        i
+        : Int
+        columns
+        : Int
+        15
+        : String
+        16
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        18
+        : String
+        19
+        : SELF_TYPE
+        i
+        : Int
+        columns
+        : Int
+        22
+        : Int
+        23
+        : Int
+        self
+        : SELF_TYPE
+        25
+        : String
+        26
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        28
+        : SELF_TYPE
+        29
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, imm#0
+        _mov letvar#i, tmp#1
+        _load_attr tmp#board_size, attr#board_size, attr#board_size
+        _mov letvar#num, tmp#board_size
+        _mov tmp#self, param#self
+        _mov tmp#6, imm#"\n"
+        tmp#7 = _dispatch tmp#self, out_string, (tmp#6)
+        _mov tmp#23, imm#0
+        _label 12
+        _mov tmp#i, letvar#i
+        _mov tmp#num, letvar#num
+        tmp#10 = tmp#i _lt tmp#num
+        _if tmp#10 _eq tmp#23 _goto 13
+        _mov tmp#self, param#self
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        _mov tmp#i, letvar#i
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#15 = _dispatch tmp#population_map, substr, (tmp#i, tmp#columns)
+        tmp#16 = _dispatch tmp#self, out_string, (tmp#15)
+        _mov tmp#self, param#self
+        _mov tmp#18, imm#"\n"
+        tmp#19 = _dispatch tmp#self, out_string, (tmp#18)
+        _mov tmp#i, letvar#i
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#22 = tmp#i _plus tmp#columns
+        _mov letvar#i, tmp#22
+        _goto 12
+        _label 13
+        _mov tmp#self, param#self
+        _mov tmp#25, imm#"\n"
+        tmp#26 = _dispatch tmp#self, out_string, (tmp#25)
+        _mov tmp#self, param#self
+        _mov tmp#28, tmp#self
+        _mov tmp#29, tmp#28
+        _return tmp#29
+    _method
+      num_cells
+      : Int
+      _formals
+      _locals
+        population_map
+        : String
+        2
+        : Int
+      _expr
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        tmp#2 = _dispatch tmp#population_map, length, ()
+        _return tmp#2
+    _method
+      cell
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        board_size
+        : Int
+        3
+        : Int
+        4
+        : Int
+        position
+        : Int
+        6
+        : Bool
+        7
+        : String
+        population_map
+        : String
+        position
+        : Int
+        10
+        : Int
+        11
+        : String
+        12
+        : String
+        13
+        : Bool
+      _expr
+        _load_attr tmp#board_size, attr#board_size, attr#board_size
+        _mov tmp#3, imm#1
+        tmp#4 = tmp#board_size _sub tmp#3
+        _mov tmp#position, param#position
+        tmp#6 = tmp#4 _lt tmp#position
+        _mov tmp#13, imm#null
+        _if tmp#6 _eq tmp#13 _goto 14
+        _mov tmp#7, imm#" "
+        _mov tmp#12, tmp#7
+        _goto 15
+        _label 14
+        _load_attr tmp#population_map, attr#population_map, attr#population_map
+        _mov tmp#position, param#position
+        _mov tmp#10, imm#1
+        tmp#11 = _dispatch tmp#population_map, substr, (tmp#position, tmp#10)
+        _mov tmp#12, tmp#11
+        _label 15
+        _return tmp#12
+    _method
+      north
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        columns
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        columns
+        : Int
+        11
+        : Int
+        12
+        : String
+        13
+        : String
+        14
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#4 = tmp#position _sub tmp#columns
+        _mov tmp#5, imm#0
+        tmp#6 = tmp#4 _lt tmp#5
+        _mov tmp#14, imm#null
+        _if tmp#6 _eq tmp#14 _goto 16
+        _mov tmp#7, imm#" "
+        _mov tmp#13, tmp#7
+        _goto 17
+        _label 16
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#11 = tmp#position _sub tmp#columns
+        tmp#12 = _dispatch tmp#self, cell, (tmp#11)
+        _mov tmp#13, tmp#12
+        _label 17
+        _return tmp#13
+    _method
+      south
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        board_size
+        : Int
+        position
+        : Int
+        columns
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        columns
+        : Int
+        11
+        : Int
+        12
+        : String
+        13
+        : String
+        14
+        : Bool
+      _expr
+        _load_attr tmp#board_size, attr#board_size, attr#board_size
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#5 = tmp#position _plus tmp#columns
+        tmp#6 = tmp#board_size _lt tmp#5
+        _mov tmp#14, imm#null
+        _if tmp#6 _eq tmp#14 _goto 18
+        _mov tmp#7, imm#" "
+        _mov tmp#13, tmp#7
+        _goto 19
+        _label 18
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#11 = tmp#position _plus tmp#columns
+        tmp#12 = _dispatch tmp#self, cell, (tmp#11)
+        _mov tmp#13, tmp#12
+        _label 19
+        _return tmp#13
+    _method
+      east
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        3
+        : Int
+        4
+        : Int
+        columns
+        : Int
+        6
+        : Int
+        columns
+        : Int
+        8
+        : Int
+        position
+        : Int
+        10
+        : Int
+        11
+        : Int
+        12
+        : Bool
+        13
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : String
+        19
+        : String
+        20
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _mov tmp#3, imm#1
+        tmp#4 = tmp#position _plus tmp#3
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#6 = tmp#4 _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#8 = tmp#6 _mul tmp#columns
+        _mov tmp#position, param#position
+        _mov tmp#10, imm#1
+        tmp#11 = tmp#position _plus tmp#10
+        tmp#12 = tmp#8 _eq tmp#11
+        _mov tmp#20, imm#null
+        _if tmp#12 _eq tmp#20 _goto 20
+        _mov tmp#13, imm#" "
+        _mov tmp#19, tmp#13
+        _goto 21
+        _label 20
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#position _plus tmp#16
+        tmp#18 = _dispatch tmp#self, cell, (tmp#17)
+        _mov tmp#19, tmp#18
+        _label 21
+        _return tmp#19
+    _method
+      west
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        3
+        : Int
+        4
+        : Bool
+        5
+        : String
+        position
+        : Int
+        columns
+        : Int
+        8
+        : Int
+        columns
+        : Int
+        10
+        : Int
+        position
+        : Int
+        12
+        : Bool
+        13
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : String
+        19
+        : String
+        20
+        : Bool
+        21
+        : String
+        22
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _mov tmp#3, imm#0
+        tmp#4 = tmp#position _eq tmp#3
+        _mov tmp#22, imm#null
+        _if tmp#4 _eq tmp#22 _goto 24
+        _mov tmp#5, imm#" "
+        _mov tmp#21, tmp#5
+        _goto 25
+        _label 24
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#8 = tmp#position _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#10 = tmp#8 _mul tmp#columns
+        _mov tmp#position, param#position
+        tmp#12 = tmp#10 _eq tmp#position
+        _mov tmp#20, imm#null
+        _if tmp#12 _eq tmp#20 _goto 22
+        _mov tmp#13, imm#" "
+        _mov tmp#19, tmp#13
+        _goto 23
+        _label 22
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#position _sub tmp#16
+        tmp#18 = _dispatch tmp#self, cell, (tmp#17)
+        _mov tmp#19, tmp#18
+        _label 23
+        _mov tmp#21, tmp#19
+        _label 25
+        _return tmp#21
+    _method
+      northwest
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        columns
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        position
+        : Int
+        columns
+        : Int
+        10
+        : Int
+        columns
+        : Int
+        12
+        : Int
+        position
+        : Int
+        14
+        : Bool
+        15
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        18
+        : Int
+        19
+        : Int
+        20
+        : String
+        21
+        : String
+        22
+        : Bool
+        23
+        : String
+        24
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#4 = tmp#position _sub tmp#columns
+        _mov tmp#5, imm#0
+        tmp#6 = tmp#4 _lt tmp#5
+        _mov tmp#24, imm#null
+        _if tmp#6 _eq tmp#24 _goto 28
+        _mov tmp#7, imm#" "
+        _mov tmp#23, tmp#7
+        _goto 29
+        _label 28
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#10 = tmp#position _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#12 = tmp#10 _mul tmp#columns
+        _mov tmp#position, param#position
+        tmp#14 = tmp#12 _eq tmp#position
+        _mov tmp#22, imm#null
+        _if tmp#14 _eq tmp#22 _goto 26
+        _mov tmp#15, imm#" "
+        _mov tmp#21, tmp#15
+        _goto 27
+        _label 26
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#18, imm#1
+        tmp#19 = tmp#position _sub tmp#18
+        tmp#20 = _dispatch tmp#self, north, (tmp#19)
+        _mov tmp#21, tmp#20
+        _label 27
+        _mov tmp#23, tmp#21
+        _label 29
+        _return tmp#23
+    _method
+      northeast
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        position
+        : Int
+        columns
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        position
+        : Int
+        9
+        : Int
+        10
+        : Int
+        columns
+        : Int
+        12
+        : Int
+        columns
+        : Int
+        14
+        : Int
+        position
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : Bool
+        19
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        22
+        : Int
+        23
+        : Int
+        24
+        : String
+        25
+        : String
+        26
+        : Bool
+        27
+        : String
+        28
+        : Bool
+      _expr
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#4 = tmp#position _sub tmp#columns
+        _mov tmp#5, imm#0
+        tmp#6 = tmp#4 _lt tmp#5
+        _mov tmp#28, imm#null
+        _if tmp#6 _eq tmp#28 _goto 32
+        _mov tmp#7, imm#" "
+        _mov tmp#27, tmp#7
+        _goto 33
+        _label 32
+        _mov tmp#position, param#position
+        _mov tmp#9, imm#1
+        tmp#10 = tmp#position _plus tmp#9
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#12 = tmp#10 _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#14 = tmp#12 _mul tmp#columns
+        _mov tmp#position, param#position
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#position _plus tmp#16
+        tmp#18 = tmp#14 _eq tmp#17
+        _mov tmp#26, imm#null
+        _if tmp#18 _eq tmp#26 _goto 30
+        _mov tmp#19, imm#" "
+        _mov tmp#25, tmp#19
+        _goto 31
+        _label 30
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#22, imm#1
+        tmp#23 = tmp#position _plus tmp#22
+        tmp#24 = _dispatch tmp#self, north, (tmp#23)
+        _mov tmp#25, tmp#24
+        _label 31
+        _mov tmp#27, tmp#25
+        _label 33
+        _return tmp#27
+    _method
+      southeast
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        board_size
+        : Int
+        position
+        : Int
+        columns
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        position
+        : Int
+        9
+        : Int
+        10
+        : Int
+        columns
+        : Int
+        12
+        : Int
+        columns
+        : Int
+        14
+        : Int
+        position
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : Bool
+        19
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        22
+        : Int
+        23
+        : Int
+        24
+        : String
+        25
+        : String
+        26
+        : Bool
+        27
+        : String
+        28
+        : Bool
+      _expr
+        _load_attr tmp#board_size, attr#board_size, attr#board_size
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#5 = tmp#position _plus tmp#columns
+        tmp#6 = tmp#board_size _lt tmp#5
+        _mov tmp#28, imm#null
+        _if tmp#6 _eq tmp#28 _goto 36
+        _mov tmp#7, imm#" "
+        _mov tmp#27, tmp#7
+        _goto 37
+        _label 36
+        _mov tmp#position, param#position
+        _mov tmp#9, imm#1
+        tmp#10 = tmp#position _plus tmp#9
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#12 = tmp#10 _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#14 = tmp#12 _mul tmp#columns
+        _mov tmp#position, param#position
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#position _plus tmp#16
+        tmp#18 = tmp#14 _eq tmp#17
+        _mov tmp#26, imm#null
+        _if tmp#18 _eq tmp#26 _goto 34
+        _mov tmp#19, imm#" "
+        _mov tmp#25, tmp#19
+        _goto 35
+        _label 34
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#22, imm#1
+        tmp#23 = tmp#position _plus tmp#22
+        tmp#24 = _dispatch tmp#self, south, (tmp#23)
+        _mov tmp#25, tmp#24
+        _label 35
+        _mov tmp#27, tmp#25
+        _label 37
+        _return tmp#27
+    _method
+      southwest
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        board_size
+        : Int
+        position
+        : Int
+        columns
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        position
+        : Int
+        columns
+        : Int
+        10
+        : Int
+        columns
+        : Int
+        12
+        : Int
+        position
+        : Int
+        14
+        : Bool
+        15
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        18
+        : Int
+        19
+        : Int
+        20
+        : String
+        21
+        : String
+        22
+        : Bool
+        23
+        : String
+        24
+        : Bool
+      _expr
+        _load_attr tmp#board_size, attr#board_size, attr#board_size
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#5 = tmp#position _plus tmp#columns
+        tmp#6 = tmp#board_size _lt tmp#5
+        _mov tmp#24, imm#null
+        _if tmp#6 _eq tmp#24 _goto 40
+        _mov tmp#7, imm#" "
+        _mov tmp#23, tmp#7
+        _goto 41
+        _label 40
+        _mov tmp#position, param#position
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#10 = tmp#position _divide tmp#columns
+        _load_attr tmp#columns, attr#columns, attr#columns
+        tmp#12 = tmp#10 _mul tmp#columns
+        _mov tmp#position, param#position
+        tmp#14 = tmp#12 _eq tmp#position
+        _mov tmp#22, imm#null
+        _if tmp#14 _eq tmp#22 _goto 38
+        _mov tmp#15, imm#" "
+        _mov tmp#21, tmp#15
+        _goto 39
+        _label 38
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        _mov tmp#18, imm#1
+        tmp#19 = tmp#position _sub tmp#18
+        tmp#20 = _dispatch tmp#self, south, (tmp#19)
+        _mov tmp#21, tmp#20
+        _label 39
+        _mov tmp#23, tmp#21
+        _label 41
+        _return tmp#23
+    _method
+      neighbors
+      : Int
+      _formals
+        position
+        : Int
+      _locals
+        self
+        : SELF_TYPE
+        position
+        : Int
+        4
+        : String
+        5
+        : String
+        6
+        : Bool
+        7
+        : Int
+        8
+        : Int
+        9
+        : Int
+        10
+        : Bool
+        self
+        : SELF_TYPE
+        position
+        : Int
+        13
+        : String
+        14
+        : String
+        15
+        : Bool
+        16
+        : Int
+        17
+        : Int
+        18
+        : Int
+        19
+        : Bool
+        20
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        23
+        : String
+        24
+        : String
+        25
+        : Bool
+        26
+        : Int
+        27
+        : Int
+        28
+        : Int
+        29
+        : Bool
+        30
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        33
+        : String
+        34
+        : String
+        35
+        : Bool
+        36
+        : Int
+        37
+        : Int
+        38
+        : Int
+        39
+        : Bool
+        40
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        43
+        : String
+        44
+        : String
+        45
+        : Bool
+        46
+        : Int
+        47
+        : Int
+        48
+        : Int
+        49
+        : Bool
+        50
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        53
+        : String
+        54
+        : String
+        55
+        : Bool
+        56
+        : Int
+        57
+        : Int
+        58
+        : Int
+        59
+        : Bool
+        60
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        63
+        : String
+        64
+        : String
+        65
+        : Bool
+        66
+        : Int
+        67
+        : Int
+        68
+        : Int
+        69
+        : Bool
+        70
+        : Int
+        self
+        : SELF_TYPE
+        position
+        : Int
+        73
+        : String
+        74
+        : String
+        75
+        : Bool
+        76
+        : Int
+        77
+        : Int
+        78
+        : Int
+        79
+        : Bool
+        80
+        : Int
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#4 = _dispatch tmp#self, north, (tmp#position)
+        _mov tmp#5, imm#"X"
+        tmp#6 = tmp#4 _eq tmp#5
+        _mov tmp#10, imm#null
+        _if tmp#6 _eq tmp#10 _goto 42
+        _mov tmp#7, imm#1
+        _mov tmp#9, tmp#7
+        _goto 43
+        _label 42
+        _mov tmp#8, imm#0
+        _mov tmp#9, tmp#8
+        _label 43
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#13 = _dispatch tmp#self, south, (tmp#position)
+        _mov tmp#14, imm#"X"
+        tmp#15 = tmp#13 _eq tmp#14
+        _mov tmp#19, imm#null
+        _if tmp#15 _eq tmp#19 _goto 44
+        _mov tmp#16, imm#1
+        _mov tmp#18, tmp#16
+        _goto 45
+        _label 44
+        _mov tmp#17, imm#0
+        _mov tmp#18, tmp#17
+        _label 45
+        tmp#20 = tmp#9 _plus tmp#18
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#23 = _dispatch tmp#self, east, (tmp#position)
+        _mov tmp#24, imm#"X"
+        tmp#25 = tmp#23 _eq tmp#24
+        _mov tmp#29, imm#null
+        _if tmp#25 _eq tmp#29 _goto 46
+        _mov tmp#26, imm#1
+        _mov tmp#28, tmp#26
+        _goto 47
+        _label 46
+        _mov tmp#27, imm#0
+        _mov tmp#28, tmp#27
+        _label 47
+        tmp#30 = tmp#20 _plus tmp#28
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#33 = _dispatch tmp#self, west, (tmp#position)
+        _mov tmp#34, imm#"X"
+        tmp#35 = tmp#33 _eq tmp#34
+        _mov tmp#39, imm#null
+        _if tmp#35 _eq tmp#39 _goto 48
+        _mov tmp#36, imm#1
+        _mov tmp#38, tmp#36
+        _goto 49
+        _label 48
+        _mov tmp#37, imm#0
+        _mov tmp#38, tmp#37
+        _label 49
+        tmp#40 = tmp#30 _plus tmp#38
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#43 = _dispatch tmp#self, northeast, (tmp#position)
+        _mov tmp#44, imm#"X"
+        tmp#45 = tmp#43 _eq tmp#44
+        _mov tmp#49, imm#null
+        _if tmp#45 _eq tmp#49 _goto 50
+        _mov tmp#46, imm#1
+        _mov tmp#48, tmp#46
+        _goto 51
+        _label 50
+        _mov tmp#47, imm#0
+        _mov tmp#48, tmp#47
+        _label 51
+        tmp#50 = tmp#40 _plus tmp#48
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#53 = _dispatch tmp#self, northwest, (tmp#position)
+        _mov tmp#54, imm#"X"
+        tmp#55 = tmp#53 _eq tmp#54
+        _mov tmp#59, imm#null
+        _if tmp#55 _eq tmp#59 _goto 52
+        _mov tmp#56, imm#1
+        _mov tmp#58, tmp#56
+        _goto 53
+        _label 52
+        _mov tmp#57, imm#0
+        _mov tmp#58, tmp#57
+        _label 53
+        tmp#60 = tmp#50 _plus tmp#58
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#63 = _dispatch tmp#self, southeast, (tmp#position)
+        _mov tmp#64, imm#"X"
+        tmp#65 = tmp#63 _eq tmp#64
+        _mov tmp#69, imm#null
+        _if tmp#65 _eq tmp#69 _goto 54
+        _mov tmp#66, imm#1
+        _mov tmp#68, tmp#66
+        _goto 55
+        _label 54
+        _mov tmp#67, imm#0
+        _mov tmp#68, tmp#67
+        _label 55
+        tmp#70 = tmp#60 _plus tmp#68
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#73 = _dispatch tmp#self, southwest, (tmp#position)
+        _mov tmp#74, imm#"X"
+        tmp#75 = tmp#73 _eq tmp#74
+        _mov tmp#79, imm#null
+        _if tmp#75 _eq tmp#79 _goto 56
+        _mov tmp#76, imm#1
+        _mov tmp#78, tmp#76
+        _goto 57
+        _label 56
+        _mov tmp#77, imm#0
+        _mov tmp#78, tmp#77
+        _label 57
+        tmp#80 = tmp#70 _plus tmp#78
+        _return tmp#80
+    _method
+      cell_at_next_evolution
+      : String
+      _formals
+        position
+        : Int
+      _locals
+        self
+        : SELF_TYPE
+        position
+        : Int
+        4
+        : Int
+        5
+        : Int
+        6
+        : Bool
+        7
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        10
+        : Int
+        11
+        : Int
+        12
+        : Bool
+        self
+        : SELF_TYPE
+        position
+        : Int
+        15
+        : String
+        16
+        : String
+        17
+        : Bool
+        18
+        : String
+        19
+        : String
+        20
+        : String
+        21
+        : Bool
+        22
+        : String
+        23
+        : String
+        24
+        : Bool
+        25
+        : String
+        26
+        : Bool
+      _expr
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#4 = _dispatch tmp#self, neighbors, (tmp#position)
+        _mov tmp#5, imm#3
+        tmp#6 = tmp#4 _eq tmp#5
+        _mov tmp#26, imm#null
+        _if tmp#6 _eq tmp#26 _goto 62
+        _mov tmp#7, imm#"X"
+        _mov tmp#25, tmp#7
+        _goto 63
+        _label 62
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#10 = _dispatch tmp#self, neighbors, (tmp#position)
+        _mov tmp#11, imm#2
+        tmp#12 = tmp#10 _eq tmp#11
+        _mov tmp#24, imm#null
+        _if tmp#12 _eq tmp#24 _goto 60
+        _mov tmp#self, param#self
+        _mov tmp#position, param#position
+        tmp#15 = _dispatch tmp#self, cell, (tmp#position)
+        _mov tmp#16, imm#"X"
+        tmp#17 = tmp#15 _eq tmp#16
+        _mov tmp#21, imm#null
+        _if tmp#17 _eq tmp#21 _goto 58
+        _mov tmp#18, imm#"X"
+        _mov tmp#20, tmp#18
+        _goto 59
+        _label 58
+        _mov tmp#19, imm#"-"
+        _mov tmp#20, tmp#19
+        _label 59
+        _mov tmp#23, tmp#20
+        _goto 61
+        _label 60
+        _mov tmp#22, imm#"-"
+        _mov tmp#23, tmp#22
+        _label 61
+        _mov tmp#25, tmp#23
+        _label 63
+        _return tmp#25
+    _method
+      evolve
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : Int
+        self
+        : SELF_TYPE
+        4
+        : Int
+        position
+        : Int
+        num
+        : Int
+        9
+        : Bool
+        temp
+        : String
+        self
+        : SELF_TYPE
+        position
+        : Int
+        13
+        : String
+        14
+        : String
+        position
+        : Int
+        16
+        : Int
+        17
+        : Int
+        18
+        : Int
+        temp
+        : String
+        self
+        : SELF_TYPE
+        21
+        : SELF_TYPE
+        22
+        : SELF_TYPE
+        23
+        : SELF_TYPE
+      _expr
+        _mov tmp#1, imm#0
+        _mov letvar#position, tmp#1
+        _mov tmp#self, param#self
+        tmp#4 = _dispatch tmp#self, num_cells, ()
+        _mov letvar#num, tmp#4
+        _mov letvar#temp, null
+        _mov tmp#18, imm#0
+        _label 64
+        _mov tmp#position, letvar#position
+        _mov tmp#num, letvar#num
+        tmp#9 = tmp#position _lt tmp#num
+        _if tmp#9 _eq tmp#18 _goto 65
+        _mov tmp#temp, letvar#temp
+        _mov tmp#self, param#self
+        _mov tmp#position, letvar#position
+        tmp#13 = _dispatch tmp#self, cell_at_next_evolution, (tmp#position)
+        tmp#14 = _dispatch tmp#temp, concat, (tmp#13)
+        _mov letvar#temp, tmp#14
+        _mov tmp#position, letvar#position
+        _mov tmp#16, imm#1
+        tmp#17 = tmp#position _plus tmp#16
+        _mov letvar#position, tmp#17
+        _goto 64
+        _label 65
+        _mov tmp#temp, letvar#temp
+        _store_attr attr#population_map, attr#population_map, tmp#temp
+        _mov tmp#self, param#self
+        _mov tmp#21, tmp#self
+        _mov tmp#22, tmp#21
+        _mov tmp#23, tmp#22
+        _return tmp#23
+    _method
+      option
+      : String
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        3
+        : String
+        4
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        6
+        : String
+        7
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        9
+        : String
+        10
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        12
+        : String
+        13
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        15
+        : String
+        16
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        18
+        : String
+        19
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        21
+        : String
+        22
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        24
+        : String
+        25
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        27
+        : String
+        28
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        30
+        : String
+        31
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        33
+        : String
+        34
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        36
+        : String
+        37
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        39
+        : String
+        40
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        42
+        : String
+        43
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        45
+        : String
+        46
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        48
+        : String
+        49
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        51
+        : String
+        52
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        54
+        : String
+        55
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        57
+        : String
+        58
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        60
+        : String
+        61
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        63
+        : String
+        64
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        66
+        : String
+        67
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        69
+        : String
+        70
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        72
+        : Int
+        self
+        : SELF_TYPE
+        74
+        : String
+        75
+        : SELF_TYPE
+        num
+        : Int
+        77
+        : Int
+        78
+        : Bool
+        79
+        : String
+        num
+        : Int
+        81
+        : Int
+        82
+        : Bool
+        83
+        : String
+        num
+        : Int
+        85
+        : Int
+        86
+        : Bool
+        87
+        : String
+        num
+        : Int
+        89
+        : Int
+        90
+        : Bool
+        91
+        : String
+        num
+        : Int
+        93
+        : Int
+        94
+        : Bool
+        95
+        : String
+        num
+        : Int
+        97
+        : Int
+        98
+        : Bool
+        99
+        : String
+        num
+        : Int
+        101
+        : Int
+        102
+        : Bool
+        103
+        : String
+        num
+        : Int
+        105
+        : Int
+        106
+        : Bool
+        107
+        : String
+        num
+        : Int
+        109
+        : Int
+        110
+        : Bool
+        111
+        : String
+        num
+        : Int
+        113
+        : Int
+        114
+        : Bool
+        115
+        : String
+        num
+        : Int
+        117
+        : Int
+        118
+        : Bool
+        119
+        : String
+        num
+        : Int
+        121
+        : Int
+        122
+        : Bool
+        123
+        : String
+        num
+        : Int
+        125
+        : Int
+        126
+        : Bool
+        127
+        : String
+        num
+        : Int
+        129
+        : Int
+        130
+        : Bool
+        131
+        : String
+        num
+        : Int
+        133
+        : Int
+        134
+        : Bool
+        135
+        : String
+        num
+        : Int
+        137
+        : Int
+        138
+        : Bool
+        139
+        : String
+        num
+        : Int
+        141
+        : Int
+        142
+        : Bool
+        143
+        : String
+        num
+        : Int
+        145
+        : Int
+        146
+        : Bool
+        147
+        : String
+        num
+        : Int
+        149
+        : Int
+        150
+        : Bool
+        151
+        : String
+        num
+        : Int
+        153
+        : Int
+        154
+        : Bool
+        155
+        : String
+        num
+        : Int
+        157
+        : Int
+        158
+        : Bool
+        159
+        : String
+        160
+        : String
+        161
+        : String
+        162
+        : Bool
+        163
+        : String
+        164
+        : Bool
+        165
+        : String
+        166
+        : Bool
+        167
+        : String
+        168
+        : Bool
+        169
+        : String
+        170
+        : Bool
+        171
+        : String
+        172
+        : Bool
+        173
+        : String
+        174
+        : Bool
+        175
+        : String
+        176
+        : Bool
+        177
+        : String
+        178
+        : Bool
+        179
+        : String
+        180
+        : Bool
+        181
+        : String
+        182
+        : Bool
+        183
+        : String
+        184
+        : Bool
+        185
+        : String
+        186
+        : Bool
+        187
+        : String
+        188
+        : Bool
+        189
+        : String
+        190
+        : Bool
+        191
+        : String
+        192
+        : Bool
+        193
+        : String
+        194
+        : Bool
+        195
+        : String
+        196
+        : Bool
+        197
+        : String
+        198
+        : Bool
+        199
+        : String
+        200
+        : Bool
+        201
+        : String
+        202
+        : Bool
+        203
+        : String
+      _expr
+        _mov letvar#num, null
+        _mov tmp#self, param#self
+        _mov tmp#3, imm#"\nPlease chose a number:\n"
+        tmp#4 = _dispatch tmp#self, out_string, (tmp#3)
+        _mov tmp#self, param#self
+        _mov tmp#6, imm#"\t1: A cross\n"
+        tmp#7 = _dispatch tmp#self, out_string, (tmp#6)
+        _mov tmp#self, param#self
+        _mov tmp#9, imm#"\t2: A slash from the upper left to lower right\n"
+        tmp#10 = _dispatch tmp#self, out_string, (tmp#9)
+        _mov tmp#self, param#self
+        _mov tmp#12, imm#"\t3: A slash from the upper right to lower left\n"
+        tmp#13 = _dispatch tmp#self, out_string, (tmp#12)
+        _mov tmp#self, param#self
+        _mov tmp#15, imm#"\t4: An X\n"
+        tmp#16 = _dispatch tmp#self, out_string, (tmp#15)
+        _mov tmp#self, param#self
+        _mov tmp#18, imm#"\t5: A greater than sign \n"
+        tmp#19 = _dispatch tmp#self, out_string, (tmp#18)
+        _mov tmp#self, param#self
+        _mov tmp#21, imm#"\t6: A less than sign\n"
+        tmp#22 = _dispatch tmp#self, out_string, (tmp#21)
+        _mov tmp#self, param#self
+        _mov tmp#24, imm#"\t7: Two greater than signs\n"
+        tmp#25 = _dispatch tmp#self, out_string, (tmp#24)
+        _mov tmp#self, param#self
+        _mov tmp#27, imm#"\t8: Two less than signs\n"
+        tmp#28 = _dispatch tmp#self, out_string, (tmp#27)
+        _mov tmp#self, param#self
+        _mov tmp#30, imm#"\t9: A 'V'\n"
+        tmp#31 = _dispatch tmp#self, out_string, (tmp#30)
+        _mov tmp#self, param#self
+        _mov tmp#33, imm#"\t10: An inverse 'V'\n"
+        tmp#34 = _dispatch tmp#self, out_string, (tmp#33)
+        _mov tmp#self, param#self
+        _mov tmp#36, imm#"\t11: Numbers 9 and 10 combined\n"
+        tmp#37 = _dispatch tmp#self, out_string, (tmp#36)
+        _mov tmp#self, param#self
+        _mov tmp#39, imm#"\t12: A full grid\n"
+        tmp#40 = _dispatch tmp#self, out_string, (tmp#39)
+        _mov tmp#self, param#self
+        _mov tmp#42, imm#"\t13: A 'T'\n"
+        tmp#43 = _dispatch tmp#self, out_string, (tmp#42)
+        _mov tmp#self, param#self
+        _mov tmp#45, imm#"\t14: A plus '+'\n"
+        tmp#46 = _dispatch tmp#self, out_string, (tmp#45)
+        _mov tmp#self, param#self
+        _mov tmp#48, imm#"\t15: A 'W'\n"
+        tmp#49 = _dispatch tmp#self, out_string, (tmp#48)
+        _mov tmp#self, param#self
+        _mov tmp#51, imm#"\t16: An 'M'\n"
+        tmp#52 = _dispatch tmp#self, out_string, (tmp#51)
+        _mov tmp#self, param#self
+        _mov tmp#54, imm#"\t17: An 'E'\n"
+        tmp#55 = _dispatch tmp#self, out_string, (tmp#54)
+        _mov tmp#self, param#self
+        _mov tmp#57, imm#"\t18: A '3'\n"
+        tmp#58 = _dispatch tmp#self, out_string, (tmp#57)
+        _mov tmp#self, param#self
+        _mov tmp#60, imm#"\t19: An 'O'\n"
+        tmp#61 = _dispatch tmp#self, out_string, (tmp#60)
+        _mov tmp#self, param#self
+        _mov tmp#63, imm#"\t20: An '8'\n"
+        tmp#64 = _dispatch tmp#self, out_string, (tmp#63)
+        _mov tmp#self, param#self
+        _mov tmp#66, imm#"\t21: An 'S'\n"
+        tmp#67 = _dispatch tmp#self, out_string, (tmp#66)
+        _mov tmp#self, param#self
+        _mov tmp#69, imm#"Your choice => "
+        tmp#70 = _dispatch tmp#self, out_string, (tmp#69)
+        _mov tmp#self, param#self
+        tmp#72 = _dispatch tmp#self, in_int, ()
+        _mov letvar#num, tmp#72
+        _mov tmp#self, param#self
+        _mov tmp#74, imm#"\n"
+        tmp#75 = _dispatch tmp#self, out_string, (tmp#74)
+        _mov tmp#num, letvar#num
+        _mov tmp#77, imm#1
+        tmp#78 = tmp#num _eq tmp#77
+        _mov tmp#202, imm#null
+        _if tmp#78 _eq tmp#202 _goto 106
+        _mov tmp#79, imm#" XX  XXXX XXXX  XX  "
+        _mov tmp#201, tmp#79
+        _goto 107
+        _label 106
+        _mov tmp#num, letvar#num
+        _mov tmp#81, imm#2
+        tmp#82 = tmp#num _eq tmp#81
+        _mov tmp#200, imm#null
+        _if tmp#82 _eq tmp#200 _goto 104
+        _mov tmp#83, imm#"    X   X   X   X   X    "
+        _mov tmp#199, tmp#83
+        _goto 105
+        _label 104
+        _mov tmp#num, letvar#num
+        _mov tmp#85, imm#3
+        tmp#86 = tmp#num _eq tmp#85
+        _mov tmp#198, imm#null
+        _if tmp#86 _eq tmp#198 _goto 102
+        _mov tmp#87, imm#"X     X     X     X     X"
+        _mov tmp#197, tmp#87
+        _goto 103
+        _label 102
+        _mov tmp#num, letvar#num
+        _mov tmp#89, imm#4
+        tmp#90 = tmp#num _eq tmp#89
+        _mov tmp#196, imm#null
+        _if tmp#90 _eq tmp#196 _goto 100
+        _mov tmp#91, imm#"X   X X X   X   X X X   X"
+        _mov tmp#195, tmp#91
+        _goto 101
+        _label 100
+        _mov tmp#num, letvar#num
+        _mov tmp#93, imm#5
+        tmp#94 = tmp#num _eq tmp#93
+        _mov tmp#194, imm#null
+        _if tmp#94 _eq tmp#194 _goto 98
+        _mov tmp#95, imm#"X     X     X   X   X    "
+        _mov tmp#193, tmp#95
+        _goto 99
+        _label 98
+        _mov tmp#num, letvar#num
+        _mov tmp#97, imm#6
+        tmp#98 = tmp#num _eq tmp#97
+        _mov tmp#192, imm#null
+        _if tmp#98 _eq tmp#192 _goto 96
+        _mov tmp#99, imm#"    X   X   X     X     X"
+        _mov tmp#191, tmp#99
+        _goto 97
+        _label 96
+        _mov tmp#num, letvar#num
+        _mov tmp#101, imm#7
+        tmp#102 = tmp#num _eq tmp#101
+        _mov tmp#190, imm#null
+        _if tmp#102 _eq tmp#190 _goto 94
+        _mov tmp#103, imm#"X  X  X  XX  X      "
+        _mov tmp#189, tmp#103
+        _goto 95
+        _label 94
+        _mov tmp#num, letvar#num
+        _mov tmp#105, imm#8
+        tmp#106 = tmp#num _eq tmp#105
+        _mov tmp#188, imm#null
+        _if tmp#106 _eq tmp#188 _goto 92
+        _mov tmp#107, imm#" X  XX  X  X  X     "
+        _mov tmp#187, tmp#107
+        _goto 93
+        _label 92
+        _mov tmp#num, letvar#num
+        _mov tmp#109, imm#9
+        tmp#110 = tmp#num _eq tmp#109
+        _mov tmp#186, imm#null
+        _if tmp#110 _eq tmp#186 _goto 90
+        _mov tmp#111, imm#"X   X X X   X  "
+        _mov tmp#185, tmp#111
+        _goto 91
+        _label 90
+        _mov tmp#num, letvar#num
+        _mov tmp#113, imm#10
+        tmp#114 = tmp#num _eq tmp#113
+        _mov tmp#184, imm#null
+        _if tmp#114 _eq tmp#184 _goto 88
+        _mov tmp#115, imm#"  X   X X X   X"
+        _mov tmp#183, tmp#115
+        _goto 89
+        _label 88
+        _mov tmp#num, letvar#num
+        _mov tmp#117, imm#11
+        tmp#118 = tmp#num _eq tmp#117
+        _mov tmp#182, imm#null
+        _if tmp#118 _eq tmp#182 _goto 86
+        _mov tmp#119, imm#"X X X X X X X X"
+        _mov tmp#181, tmp#119
+        _goto 87
+        _label 86
+        _mov tmp#num, letvar#num
+        _mov tmp#121, imm#12
+        tmp#122 = tmp#num _eq tmp#121
+        _mov tmp#180, imm#null
+        _if tmp#122 _eq tmp#180 _goto 84
+        _mov tmp#123, imm#"XXXXXXXXXXXXXXXXXXXXXXXXX"
+        _mov tmp#179, tmp#123
+        _goto 85
+        _label 84
+        _mov tmp#num, letvar#num
+        _mov tmp#125, imm#13
+        tmp#126 = tmp#num _eq tmp#125
+        _mov tmp#178, imm#null
+        _if tmp#126 _eq tmp#178 _goto 82
+        _mov tmp#127, imm#"XXXXX  X    X    X    X  "
+        _mov tmp#177, tmp#127
+        _goto 83
+        _label 82
+        _mov tmp#num, letvar#num
+        _mov tmp#129, imm#14
+        tmp#130 = tmp#num _eq tmp#129
+        _mov tmp#176, imm#null
+        _if tmp#130 _eq tmp#176 _goto 80
+        _mov tmp#131, imm#"  X    X  XXXXX  X    X  "
+        _mov tmp#175, tmp#131
+        _goto 81
+        _label 80
+        _mov tmp#num, letvar#num
+        _mov tmp#133, imm#15
+        tmp#134 = tmp#num _eq tmp#133
+        _mov tmp#174, imm#null
+        _if tmp#134 _eq tmp#174 _goto 78
+        _mov tmp#135, imm#"X     X X X X   X X  "
+        _mov tmp#173, tmp#135
+        _goto 79
+        _label 78
+        _mov tmp#num, letvar#num
+        _mov tmp#137, imm#16
+        tmp#138 = tmp#num _eq tmp#137
+        _mov tmp#172, imm#null
+        _if tmp#138 _eq tmp#172 _goto 76
+        _mov tmp#139, imm#"  X X   X X X X     X"
+        _mov tmp#171, tmp#139
+        _goto 77
+        _label 76
+        _mov tmp#num, letvar#num
+        _mov tmp#141, imm#17
+        tmp#142 = tmp#num _eq tmp#141
+        _mov tmp#170, imm#null
+        _if tmp#142 _eq tmp#170 _goto 74
+        _mov tmp#143, imm#"XXXXX   X   XXXXX   X   XXXX"
+        _mov tmp#169, tmp#143
+        _goto 75
+        _label 74
+        _mov tmp#num, letvar#num
+        _mov tmp#145, imm#18
+        tmp#146 = tmp#num _eq tmp#145
+        _mov tmp#168, imm#null
+        _if tmp#146 _eq tmp#168 _goto 72
+        _mov tmp#147, imm#"XXX    X   X  X    X   XXXX "
+        _mov tmp#167, tmp#147
+        _goto 73
+        _label 72
+        _mov tmp#num, letvar#num
+        _mov tmp#149, imm#19
+        tmp#150 = tmp#num _eq tmp#149
+        _mov tmp#166, imm#null
+        _if tmp#150 _eq tmp#166 _goto 70
+        _mov tmp#151, imm#" XX X  XX  X XX "
+        _mov tmp#165, tmp#151
+        _goto 71
+        _label 70
+        _mov tmp#num, letvar#num
+        _mov tmp#153, imm#20
+        tmp#154 = tmp#num _eq tmp#153
+        _mov tmp#164, imm#null
+        _if tmp#154 _eq tmp#164 _goto 68
+        _mov tmp#155, imm#" XX X  XX  X XX X  XX  X XX "
+        _mov tmp#163, tmp#155
+        _goto 69
+        _label 68
+        _mov tmp#num, letvar#num
+        _mov tmp#157, imm#21
+        tmp#158 = tmp#num _eq tmp#157
+        _mov tmp#162, imm#null
+        _if tmp#158 _eq tmp#162 _goto 66
+        _mov tmp#159, imm#" XXXX   X    XX    X   XXXX "
+        _mov tmp#161, tmp#159
+        _goto 67
+        _label 66
+        _mov tmp#160, imm#"                         "
+        _mov tmp#161, tmp#160
+        _label 67
+        _mov tmp#163, tmp#161
+        _label 69
+        _mov tmp#165, tmp#163
+        _label 71
+        _mov tmp#167, tmp#165
+        _label 73
+        _mov tmp#169, tmp#167
+        _label 75
+        _mov tmp#171, tmp#169
+        _label 77
+        _mov tmp#173, tmp#171
+        _label 79
+        _mov tmp#175, tmp#173
+        _label 81
+        _mov tmp#177, tmp#175
+        _label 83
+        _mov tmp#179, tmp#177
+        _label 85
+        _mov tmp#181, tmp#179
+        _label 87
+        _mov tmp#183, tmp#181
+        _label 89
+        _mov tmp#185, tmp#183
+        _label 91
+        _mov tmp#187, tmp#185
+        _label 93
+        _mov tmp#189, tmp#187
+        _label 95
+        _mov tmp#191, tmp#189
+        _label 97
+        _mov tmp#193, tmp#191
+        _label 99
+        _mov tmp#195, tmp#193
+        _label 101
+        _mov tmp#197, tmp#195
+        _label 103
+        _mov tmp#199, tmp#197
+        _label 105
+        _mov tmp#201, tmp#199
+        _label 107
+        _mov tmp#203, tmp#201
+        _return tmp#203
+    _method
+      prompt
+      : Bool
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        3
+        : String
+        4
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        6
+        : String
+        7
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        9
+        : String
+        self
+        : SELF_TYPE
+        11
+        : String
+        12
+        : SELF_TYPE
+        ans
+        : String
+        14
+        : String
+        15
+        : Bool
+        16
+        : Bool
+        17
+        : Bool
+        18
+        : Bool
+        19
+        : Bool
+        20
+        : Bool
+      _expr
+        _mov letvar#ans, null
+        _mov tmp#self, param#self
+        _mov tmp#3, imm#"Would you like to continue with the next generation? \n"
+        tmp#4 = _dispatch tmp#self, out_string, (tmp#3)
+        _mov tmp#self, param#self
+        _mov tmp#6, imm#"Please use lowercase y or n for your answer [y]: "
+        tmp#7 = _dispatch tmp#self, out_string, (tmp#6)
+        _mov tmp#self, param#self
+        tmp#9 = _dispatch tmp#self, in_string, ()
+        _mov letvar#ans, tmp#9
+        _mov tmp#self, param#self
+        _mov tmp#11, imm#"\n"
+        tmp#12 = _dispatch tmp#self, out_string, (tmp#11)
+        _mov tmp#ans, letvar#ans
+        _mov tmp#14, imm#"n"
+        tmp#15 = tmp#ans _eq tmp#14
+        _mov tmp#19, imm#null
+        _if tmp#15 _eq tmp#19 _goto 108
+        _mov tmp#16, imm#0
+        _mov tmp#18, tmp#16
+        _goto 109
+        _label 108
+        _mov tmp#17, imm#1
+        _mov tmp#18, tmp#17
+        _label 109
+        _mov tmp#20, tmp#18
+        _return tmp#20
+    _method
+      prompt2
+      : Bool
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        3
+        : String
+        4
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        6
+        : String
+        7
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        9
+        : String
+        10
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        12
+        : String
+        ans
+        : String
+        14
+        : String
+        15
+        : Bool
+        16
+        : Bool
+        17
+        : Bool
+        18
+        : Bool
+        19
+        : Bool
+        20
+        : Bool
+      _expr
+        _mov letvar#ans, null
+        _mov tmp#self, param#self
+        _mov tmp#3, imm#"\n\n"
+        tmp#4 = _dispatch tmp#self, out_string, (tmp#3)
+        _mov tmp#self, param#self
+        _mov tmp#6, imm#"Would you like to choose a background pattern? \n"
+        tmp#7 = _dispatch tmp#self, out_string, (tmp#6)
+        _mov tmp#self, param#self
+        _mov tmp#9, imm#"Please use lowercase y or n for your answer [n]: "
+        tmp#10 = _dispatch tmp#self, out_string, (tmp#9)
+        _mov tmp#self, param#self
+        tmp#12 = _dispatch tmp#self, in_string, ()
+        _mov letvar#ans, tmp#12
+        _mov tmp#ans, letvar#ans
+        _mov tmp#14, imm#"y"
+        tmp#15 = tmp#ans _eq tmp#14
+        _mov tmp#19, imm#null
+        _if tmp#15 _eq tmp#19 _goto 110
+        _mov tmp#16, imm#1
+        _mov tmp#18, tmp#16
+        _goto 111
+        _label 110
+        _mov tmp#17, imm#0
+        _mov tmp#18, tmp#17
+        _label 111
+        _mov tmp#20, tmp#18
+        _return tmp#20
+  _klass
+    Main
+    <: CellularAutomaton
+    _attrs
+      cells
+      :: Main
+      : CellularAutomaton
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        4
+        : String
+        5
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        7
+        : String
+        8
+        : SELF_TYPE
+        self
+        : SELF_TYPE
+        10
+        : Bool
+        11
+        : Bool
+        self
+        : SELF_TYPE
+        13
+        : String
+        14
+        : CellularAutomaton
+        choice
+        : String
+        16
+        : CellularAutomaton
+        cells
+        : CellularAutomaton
+        18
+        : CellularAutomaton
+        continue
+        : Bool
+        self
+        : SELF_TYPE
+        21
+        : Bool
+        cells
+        : CellularAutomaton
+        23
+        : CellularAutomaton
+        cells
+        : CellularAutomaton
+        25
+        : CellularAutomaton
+        26
+        : Bool
+        27
+        : Object
+        28
+        : Bool
+        29
+        : Int
+        30
+        : Int
+        self
+        : SELF_TYPE
+        32
+        : SELF_TYPE
+        33
+        : SELF_TYPE
+      _expr
+        _mov letvar#continue, null
+        _mov letvar#choice, null
+        _mov tmp#self, param#self
+        _mov tmp#4, imm#"Welcome to the Game of Life.\n"
+        tmp#5 = _dispatch tmp#self, out_string, (tmp#4)
+        _mov tmp#self, param#self
+        _mov tmp#7, imm#"There are many initial states to choose from. \n"
+        tmp#8 = _dispatch tmp#self, out_string, (tmp#7)
+        _mov tmp#30, imm#0
+        _label 116
+        _mov tmp#self, param#self
+        tmp#10 = _dispatch tmp#self, prompt2, ()
+        _if tmp#10 _eq tmp#30 _goto 117
+        _mov tmp#11, imm#1
+        _mov letvar#continue, tmp#11
+        _mov tmp#self, param#self
+        tmp#13 = _dispatch tmp#self, option, ()
+        _mov letvar#choice, tmp#13
+        tmp#14 = new CellularAutomaton
+        _mov tmp#choice, letvar#choice
+        tmp#16 = _dispatch tmp#14, init, (tmp#choice)
+        _store_attr attr#cells, attr#cells, tmp#16
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#18 = _dispatch tmp#cells, print, ()
+        _mov tmp#29, imm#0
+        _label 114
+        _mov tmp#continue, letvar#continue
+        _if tmp#continue _eq tmp#29 _goto 115
+        _mov tmp#self, param#self
+        tmp#21 = _dispatch tmp#self, prompt, ()
+        _mov tmp#28, imm#null
+        _if tmp#21 _eq tmp#28 _goto 112
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#23 = _dispatch tmp#cells, evolve, ()
+        _load_attr tmp#cells, attr#cells, attr#cells
+        tmp#25 = _dispatch tmp#cells, print, ()
+        _mov tmp#27, tmp#25
+        _goto 113
+        _label 112
+        _mov tmp#26, imm#0
+        _mov letvar#continue, tmp#26
+        _mov tmp#27, letvar#continue
+        _label 113
+        _goto 114
+        _label 115
+        _goto 116
+        _label 117
+        _mov tmp#self, param#self
+        _mov tmp#32, tmp#self
+        _mov tmp#33, tmp#32
+        _return tmp#33

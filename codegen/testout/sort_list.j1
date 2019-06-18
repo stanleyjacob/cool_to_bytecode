@@ -1,0 +1,438 @@
+.class public Cons
+.super List
+
+.field private xcar LInt;
+.field private xcdr LList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial List/<init>(LObject;)V
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Cons/xcar LInt;
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 9
+
+aload 0
+new Object
+dup
+invokespecial Object/<init>()V
+invokespecial List/<init>(LObject;)V
+
+
+
+aload 0
+new Int
+dup
+invokespecial Int/<init>()V
+putfield Cons/xcar LInt;
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 0
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public init(LInt;LList;)LCons;
+
+.limit stack 10
+.limit locals 10
+
+; Move Inst start
+aload 1
+astore 3
+
+; Store Attr Inst start
+aload 0
+aload 3
+putfield Cons/xcar LInt;
+
+; Move Inst start
+aload 2
+astore 4
+
+; Store Attr Inst start
+aload 0
+aload 4
+putfield Cons/xcdr LList;
+
+; Move Inst start
+aload 0
+astore 5
+
+; Return Inst start
+aload 5
+checkcast Cons
+areturn
+
+.end method
+
+
+.method public car()LInt;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public cdr()LList;
+
+.limit stack 3
+.limit locals 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public rev()LList;
+
+.limit stack 8
+.limit locals 8
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Cons/rev()LList;
+astore 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 3
+
+; Dispatch Inst start
+aload 2
+aload 3
+invokevirtual Cons/rcons(LInt;)LList;
+astore 4
+
+; Return Inst start
+aload 4
+
+areturn
+
+.end method
+
+
+.method public sort()LList;
+
+.limit stack 8
+.limit locals 8
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Cons/sort()LList;
+astore 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 3
+
+; Dispatch Inst start
+aload 2
+aload 3
+invokevirtual Cons/insert(LInt;)LList;
+astore 4
+
+; Return Inst start
+aload 4
+
+areturn
+
+.end method
+
+
+.method public insert(LInt;)LList;
+
+.limit stack 32
+.limit locals 32
+
+; Move Inst start
+aload 1
+astore 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 3
+
+; Binop Inst start
+aload 2
+aload 3
+invokevirtual Int/lt(LInt;)LBool;
+astore 4
+
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+iconst_0
+invokevirtual Bool/putval(I)LBool;
+astore 16
+
+; CondBranch Inst start
+aload 4
+aload 16
+invokevirtual Bool/eq(LBool;)I
+iconst_0
+if_icmpne label0
+
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 5
+
+; Move Inst start
+aload 1
+astore 6
+
+; Move Inst start
+aload 0
+astore 7
+
+; Dispatch Inst start
+aload 5
+aload 6
+aload 7
+invokevirtual Cons/init(LInt;LSELF_TYPE;)LCons;
+astore 8
+
+; Move Inst start
+aload 8
+astore 15
+
+; Goto Inst start
+goto label1
+
+; Label Inst start
+label0:
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 9
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 10
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 11
+
+; Move Inst start
+aload 1
+astore 12
+
+; Dispatch Inst start
+aload 11
+aload 12
+invokevirtual Cons/insert(LInt;)LList;
+astore 13
+
+; Dispatch Inst start
+aload 9
+aload 10
+aload 13
+invokevirtual Cons/init(LInt;LList;)LCons;
+astore 14
+
+; Move Inst start
+aload 14
+astore 15
+
+; Label Inst start
+label1:
+
+; Return Inst start
+aload 15
+
+areturn
+
+.end method
+
+
+.method public rcons(LInt;)LList;
+
+.limit stack 14
+.limit locals 14
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 2
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 3
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 4
+
+; Move Inst start
+aload 1
+astore 5
+
+; Dispatch Inst start
+aload 4
+aload 5
+invokevirtual Cons/rcons(LInt;)LList;
+astore 6
+
+; Dispatch Inst start
+aload 2
+aload 3
+aload 6
+invokevirtual Cons/init(LInt;LList;)LCons;
+astore 7
+
+; Return Inst start
+aload 7
+
+areturn
+
+.end method
+
+
+.method public print_list()LObject;
+
+.limit stack 16
+.limit locals 16
+
+; Move Inst start
+aload 0
+astore 1
+
+; Load Inst start
+aload 0
+getfield Cons/xcar LInt;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_int(LInt;)LIO;
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "\n"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 5
+
+; Dispatch Inst start
+aload 4
+aload 5
+invokevirtual IO/out_string(LString;)LIO;
+astore 6
+
+; Load Inst start
+aload 0
+getfield Cons/xcdr LList;
+astore 7
+
+; Dispatch Inst start
+aload 7
+invokevirtual Cons/print_list()LObject;
+astore 8
+
+; Return Inst start
+aload 8
+
+areturn
+
+.end method
+
+

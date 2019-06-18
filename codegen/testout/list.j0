@@ -1,0 +1,153 @@
+.class public List
+.super Object
+
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 3
+
+aload 0
+invokespecial Object/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public isNil()LBool;
+
+.limit stack 3
+.limit locals 2
+
+; Move Inst start
+new Bool
+dup
+invokespecial Bool/<init>()V
+bipush 1
+invokevirtual Bool/putval(I)LBool;
+astore 1
+
+; Return Inst start
+aload 1
+
+areturn
+
+.end method
+
+
+.method public head()LInt;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 3
+
+; Return Inst start
+aload 3
+
+areturn
+
+.end method
+
+
+.method public tail()LList;
+
+.limit stack 6
+.limit locals 6
+
+; Move Inst start
+aload 0
+astore 1
+
+; Dispatch Inst start
+aload 1
+invokevirtual Object/abort()LObject;
+astore 2
+
+; Move Inst start
+aload 0
+astore 3
+
+; Return Inst start
+aload 3
+checkcast List
+areturn
+
+.end method
+
+
+.method public cons(LInt;)LList;
+
+.limit stack 10
+.limit locals 10
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 2
+
+; Move Inst start
+aload 1
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Dispatch Inst start
+aload 2
+aload 3
+aload 4
+invokevirtual Cons/init(LInt;LSELF_TYPE;)LList;
+astore 5
+
+; Return Inst start
+aload 5
+
+areturn
+
+.end method
+
+

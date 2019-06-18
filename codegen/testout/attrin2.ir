@@ -1,0 +1,124 @@
+_program
+  _klass
+    A
+    <: Object
+    _attrs
+      x
+      :: A
+      : Int
+      self
+      :: A
+      : SELF_TYPE
+      1
+      :: null
+      : SELF_TYPE
+      2
+      :: null
+      : Int
+    _methodmap
+      _mov tmp#1, param#self
+      tmp#2 = _dispatch tmp#1, foo, ()
+      foo
+      :: A
+      : Int
+      getX
+      :: A
+      : Int
+    _method
+      foo
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+        2
+        : Int
+        3
+        : Int
+      _expr
+        _load_attr tmp#1, attr#x, attr#x
+        _mov tmp#2, imm#3
+        tmp#3 = tmp#1 _plus tmp#2
+        _store_attr attr#x, attr#x, tmp#3
+        _return attr#x
+    _method
+      getX
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _load_attr tmp#1, attr#x, attr#x
+        _return tmp#1
+  _klass
+    B
+    <: A
+    _attrs
+      self
+      :: B
+      : SELF_TYPE
+    _methodmap
+      _mov tmp#1, param#self
+      tmp#2 = _dispatch tmp#1, foo, ()
+      foo
+      :: B
+      : Int
+    _method
+      foo
+      : Int
+      _formals
+      _locals
+        1
+        : SELF_TYPE
+        2
+        : Int
+        1
+        : Int
+        2
+        : Int
+        3
+        : Int
+      _expr
+        _load_attr tmp#1, attr#x, attr#x
+        _mov tmp#2, imm#5
+        tmp#3 = tmp#1 _plus tmp#2
+        _store_attr attr#x, attr#x, tmp#3
+        _return attr#x
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        1
+        : B
+        3
+        : SELF_TYPE
+        4
+        : B
+        5
+        : Int
+        6
+        : SELF_TYPE
+        7
+        : SELF_TYPE
+      _expr
+        tmp#1 = new B
+        _mov letvar#b, tmp#1
+        _mov tmp#3, param#self
+        _mov tmp#4, letvar#b
+        tmp#5 = _dispatch tmp#4, getX, ()
+        tmp#6 = _dispatch tmp#3, out_int, (tmp#5)
+        _mov tmp#7, tmp#6
+        _return tmp#7

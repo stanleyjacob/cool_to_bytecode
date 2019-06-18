@@ -1,0 +1,259 @@
+.class public Main
+.super IO
+
+.field private l LList;
+
+
+.method public <init>()V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+return
+
+.end method
+
+
+
+
+.method public <init>(LObject;)V
+.limit stack 3
+.limit locals 6
+
+aload 0
+invokespecial IO/<init>()V
+
+
+
+
+
+
+
+return
+
+.end method
+
+
+
+
+
+.method public iota(LInt;)LList;
+
+.limit stack 32
+.limit locals 32
+
+; Alloc Inst start
+new Nil
+dup
+invokespecial Nil/<init>()V
+astore 2
+
+; Store Attr Inst start
+aload 0
+aload 2
+putfield Main/l LList;
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 3
+
+; Move Inst start
+aload 3
+astore 4
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 0
+invokevirtual Int/putval(I)LInt;
+astore 15
+
+; Label Inst start
+label2:
+
+; Move Inst start
+aload 4
+astore 5
+
+; Move Inst start
+aload 1
+astore 6
+
+; Binop Inst start
+aload 5
+aload 6
+invokevirtual Int/lt(LInt;)LBool;
+astore 7
+
+
+; CondBranch Inst start
+aload 7
+aload 15
+invokevirtual Bool/eq(LInt;)I
+iconst_0
+if_icmpne label3
+
+
+; Alloc Inst start
+new Cons
+dup
+invokespecial Cons/<init>()V
+astore 8
+
+; Move Inst start
+aload 4
+astore 9
+
+; Load Inst start
+aload 0
+getfield Main/l LList;
+astore 10
+
+; Dispatch Inst start
+aload 8
+aload 9
+aload 10
+invokevirtual Cons/init(LInt;LList;)LCons;
+astore 11
+
+; Store Attr Inst start
+aload 0
+aload 11
+putfield Main/l LList;
+
+; Move Inst start
+aload 4
+astore 12
+
+; Move Inst start
+new Int
+dup
+invokespecial Int/<init>()V
+bipush 1
+invokevirtual Int/putval(I)LInt;
+astore 13
+
+; Binop Inst start
+aload 12
+aload 13
+invokevirtual Int/add(LInt;)LInt;
+astore 14
+
+
+; Move Inst start
+aload 14
+astore 4
+
+; Goto Inst start
+goto label2
+
+; Label Inst start
+label3:
+
+; Move Inst start
+aload 4
+astore 16
+
+; Load Inst start
+aload 0
+getfield Main/l LList;
+astore 17
+
+; Return Inst start
+aload 17
+
+areturn
+
+.end method
+
+
+.method public main()LObject;
+
+.limit stack 20
+.limit locals 20
+
+; Move Inst start
+aload 0
+astore 1
+
+; Move Inst start
+new String
+dup
+invokespecial String/<init>()V
+ldc "How many numbers to sort?"
+invokevirtual String/putval(Ljava/lang/String;)LString;
+astore 2
+
+; Dispatch Inst start
+aload 1
+aload 2
+invokevirtual IO/out_string(LString;)LIO;
+astore 3
+
+; Move Inst start
+aload 0
+astore 4
+
+; Move Inst start
+aload 0
+astore 5
+
+; Dispatch Inst start
+aload 5
+invokevirtual IO/in_int()LInt;
+astore 6
+
+; Dispatch Inst start
+aload 4
+aload 6
+invokevirtual Main/iota(LInt;)LList;
+astore 7
+
+; Dispatch Inst start
+aload 7
+invokevirtual List/rev()LList;
+astore 8
+
+; Dispatch Inst start
+aload 8
+invokevirtual List/sort()LList;
+astore 9
+
+; Dispatch Inst start
+aload 9
+invokevirtual List/print_list()LObject;
+astore 10
+
+; Return Inst start
+aload 10
+
+areturn
+
+.end method
+
+
+
+.method public static main([Ljava/lang/String;)V
+
+.limit stack 2
+.limit locals 1
+new Main
+dup
+invokespecial Main/<init>()V
+invokevirtual Main/main()LObject;
+pop
+
+return
+
+.end method
+
+

@@ -1,0 +1,113 @@
+_program
+  _klass
+    B
+    <: Object
+    _attrs
+      self
+      :: B
+      : SELF_TYPE
+    _methodmap
+      bar
+      :: B
+      : Int
+    _method
+      bar
+      : Int
+      _formals
+      _locals
+        1
+        : Int
+      _expr
+        _mov tmp#1, imm#5
+        _return tmp#1
+  _klass
+    A
+    <: Object
+    _attrs
+      x
+      :: A
+      : Int
+      y
+      :: A
+      : String
+      self
+      :: A
+      : SELF_TYPE
+      self
+      :: null
+      : SELF_TYPE
+      2
+      :: null
+      : Int
+      3
+      :: null
+      : String
+    _methodmap
+      _mov tmp#self, param#self
+      tmp#2 = _dispatch tmp#self, foo, ()
+      _mov tmp#3, imm#"Hello"
+      foo
+      :: A
+      : Int
+    _method
+      foo
+      : Int
+      _formals
+      _locals
+        x
+        : Int
+        y
+        : String
+        3
+        : Int
+        4
+        : Int
+      _expr
+        _load_attr tmp#x, attr#x, attr#x
+        _load_attr tmp#y, attr#y, attr#y
+        tmp#3 = _dispatch tmp#y, length, ()
+        tmp#4 = tmp#x _plus tmp#3
+        _return tmp#4
+  _klass
+    Main
+    <: IO
+    _attrs
+      self
+      :: Main
+      : SELF_TYPE
+    _methodmap
+      main
+      :: Main
+      : SELF_TYPE
+    _method
+      main
+      : SELF_TYPE
+      _formals
+      _locals
+        self
+        : SELF_TYPE
+        2
+        : Int
+        3
+        : String
+        1
+        : A
+        self
+        : SELF_TYPE
+        a
+        : A
+        5
+        : Int
+        6
+        : SELF_TYPE
+        7
+        : SELF_TYPE
+      _expr
+        tmp#1 = new A
+        _mov letvar#a, tmp#1
+        _mov tmp#self, param#self
+        _mov tmp#a, letvar#a
+        tmp#5 = _dispatch tmp#a, foo, ()
+        tmp#6 = _dispatch tmp#self, out_int, (tmp#5)
+        _mov tmp#7, tmp#6
+        _return tmp#7
