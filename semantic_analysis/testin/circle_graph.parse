@@ -1,0 +1,139 @@
+#2
+_program
+  #2
+  _class
+    A
+    IO
+    "circle_graph.cl"
+    (
+    #4
+    _method
+      foo
+      #4
+      _formal
+        x
+        C
+      SELF_TYPE
+      #5
+      _dispatch
+        #5
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #5
+        _string
+          "class A"
+        : _no_type
+        )
+      : _no_type
+    )
+  #10
+  _class
+    B
+    A
+    "circle_graph.cl"
+    (
+    #12
+    _method
+      foo
+      #12
+      _formal
+        x
+        C
+      SELF_TYPE
+      #13
+      _dispatch
+        #13
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #13
+        _string
+          "class B"
+        : _no_type
+        )
+      : _no_type
+    )
+  #18
+  _class
+    C
+    E
+    "circle_graph.cl"
+    (
+    #19
+    _attr
+      y
+      Int
+      #0
+      _no_expr
+      : _no_type
+    )
+  #23
+  _class
+    E
+    C
+    "circle_graph.cl"
+    (
+    )
+  #27
+  _class
+    Main
+    IO
+    "circle_graph.cl"
+    (
+    #28
+    _attr
+      x
+      A
+      #0
+      _no_expr
+      : _no_type
+    #29
+    _attr
+      y
+      C
+      #0
+      _no_expr
+      : _no_type
+    #30
+    _method
+      main
+      A
+      #30
+      _block
+        #31
+        _assign
+          x
+          #31
+          _new
+            B
+          : _no_type
+        : _no_type
+        #32
+        _assign
+          y
+          #32
+          _new
+            C
+          : _no_type
+        : _no_type
+        #33
+        _dispatch
+          #33
+          _object
+            x
+          : _no_type
+          foo
+          (
+          #33
+          _object
+            y
+          : _no_type
+          )
+        : _no_type
+      : _no_type
+    )

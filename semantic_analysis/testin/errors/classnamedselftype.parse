@@ -1,0 +1,32 @@
+#2
+_program
+  #2
+  _class
+    SELF_TYPE
+    Object
+    "classnamedselftype.cl"
+    (
+    #3
+    _method
+      foo
+      Int
+      #3
+      _int
+        2
+      : _no_type
+    )
+  #6
+  _class
+    Main
+    Object
+    "classnamedselftype.cl"
+    (
+    #7
+    _method
+      main
+      Object
+      #7
+      _int
+        2
+      : _no_type
+    )

@@ -1,0 +1,150 @@
+#3
+_program
+  #3
+  _class
+    A
+    Object
+    "attr_err2.cl"
+    (
+    #4
+    _attr
+      x
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #5
+    _attr
+      x
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #6
+    _method
+      foo
+      #6
+      _formal
+        x
+        Int
+      Int
+      #7
+      _plus
+        #7
+        _object
+          x
+        : _no_type
+        #7
+        _object
+          x
+        : _no_type
+      : _no_type
+    )
+  #12
+  _class
+    B
+    A
+    "attr_err2.cl"
+    (
+    )
+  #16
+  _class
+    Main
+    IO
+    "attr_err2.cl"
+    (
+    #17
+    _attr
+      x
+      A
+      #0
+      _no_expr
+      : _no_type
+    #18
+    _attr
+      y
+      B
+      #0
+      _no_expr
+      : _no_type
+    #19
+    _attr
+      n
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #20
+    _attr
+      r
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #22
+    _method
+      main
+      SELF_TYPE
+      #24
+      _block
+        #25
+        _let
+          int
+          Int
+          #25
+          _int
+            0
+          : _no_type
+          #25
+          _dispatch
+            #25
+            _object
+              self
+            : _no_type
+            out_int
+            (
+            #25
+            _object
+              int
+            : _no_type
+            )
+          : _no_type
+        : _no_type
+        #27
+        _assign
+          x
+          #27
+          _new
+            A
+          : _no_type
+        : _no_type
+        #28
+        _dispatch
+          #28
+          _object
+            self
+          : _no_type
+          out_int
+          (
+          #28
+          _dispatch
+            #28
+            _object
+              x
+            : _no_type
+            foo
+            (
+            #28
+            _int
+              15
+            : _no_type
+            )
+          : _no_type
+          )
+        : _no_type
+        #29
+        _object
+          self
+        : _no_type
+      : _no_type
+    )

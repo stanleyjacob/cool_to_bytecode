@@ -1,0 +1,166 @@
+#2
+_program
+  #2
+  _class
+    A
+    Object
+    "kase_err.cl"
+    (
+    #3
+    _attr
+      x
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #5
+    _method
+      foo
+      #5
+      _formal
+        x
+        Int
+      Int
+      #6
+      _plus
+        #6
+        _object
+          x
+        : Int
+        #6
+        _object
+          x
+        : Int
+      : Int
+    )
+  #11
+  _class
+    B
+    A
+    "kase_err.cl"
+    (
+    )
+  #16
+  _class
+    Main
+    IO
+    "kase_err.cl"
+    (
+    #17
+    _attr
+      x
+      A
+      #0
+      _no_expr
+      : _no_type
+    #18
+    _attr
+      y
+      B
+      #0
+      _no_expr
+      : _no_type
+    #19
+    _attr
+      n
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #20
+    _attr
+      r
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #22
+    _method
+      main
+      SELF_TYPE
+      #24
+      _block
+        #25
+        _let
+          int
+          Int
+          #25
+          _int
+            0
+          : Int
+          #25
+          _dispatch
+            #25
+            _object
+              self
+            : SELF_TYPE
+            out_int
+            (
+            #25
+            _object
+              int
+            : Int
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+        #28
+        _typcase
+          #28
+          _object
+            r
+          : Int
+          #28
+          _branch
+            nd
+            Bool
+            #28
+            _new
+              A
+            : A
+          #29
+          _branch
+            mx
+            Int
+            #29
+            _object
+              nd
+            : Bool
+        : Object
+        #32
+        _assign
+          x
+          #32
+          _new
+            A
+          : A
+        : A
+        #33
+        _dispatch
+          #33
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #33
+          _dispatch
+            #33
+            _object
+              x
+            : A
+            foo
+            (
+            #33
+            _int
+              15
+            : Int
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #34
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )

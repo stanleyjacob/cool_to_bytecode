@@ -1,0 +1,32 @@
+#2
+_program
+  #2
+  _class
+    Foo
+    Object
+    "Mainnomain.cl"
+    (
+    #3
+    _method
+      main
+      Object
+      #3
+      _int
+        2
+      : _no_type
+    )
+  #6
+  _class
+    Main
+    Object
+    "Mainnomain.cl"
+    (
+    #7
+    _method
+      foo
+      Int
+      #7
+      _int
+        2
+      : _no_type
+    )

@@ -1,0 +1,146 @@
+#2
+_program
+  #2
+  _class
+    A
+    IO
+    "redef.cl"
+    (
+    #4
+    _method
+      foo
+      #4
+      _formal
+        x
+        C
+      SELF_TYPE
+      #5
+      _dispatch
+        #5
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #5
+        _string
+          "class A"
+        : _no_type
+        )
+      : _no_type
+    )
+  #10
+  _class
+    B
+    A
+    "redef.cl"
+    (
+    #12
+    _method
+      foo
+      #12
+      _formal
+        x
+        C
+      SELF_TYPE
+      #13
+      _dispatch
+        #13
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #13
+        _string
+          "class B"
+        : _no_type
+        )
+      : _no_type
+    )
+  #18
+  _class
+    C
+    E
+    "redef.cl"
+    (
+    #19
+    _attr
+      y
+      Int
+      #0
+      _no_expr
+      : _no_type
+    )
+  #22
+  _class
+    D
+    C
+    "redef.cl"
+    (
+    )
+  #26
+  _class
+    C
+    Object
+    "redef.cl"
+    (
+    )
+  #30
+  _class
+    Main
+    IO
+    "redef.cl"
+    (
+    #31
+    _attr
+      x
+      A
+      #0
+      _no_expr
+      : _no_type
+    #32
+    _attr
+      y
+      C
+      #0
+      _no_expr
+      : _no_type
+    #33
+    _method
+      main
+      A
+      #33
+      _block
+        #34
+        _assign
+          x
+          #34
+          _new
+            B
+          : _no_type
+        : _no_type
+        #35
+        _assign
+          y
+          #35
+          _new
+            C
+          : _no_type
+        : _no_type
+        #36
+        _dispatch
+          #36
+          _object
+            x
+          : _no_type
+          foo
+          (
+          #36
+          _object
+            y
+          : _no_type
+          )
+        : _no_type
+      : _no_type
+    )

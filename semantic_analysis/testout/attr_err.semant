@@ -1,0 +1,150 @@
+#3
+_program
+  #3
+  _class
+    A
+    Object
+    "attr_err.cl"
+    (
+    #4
+    _attr
+      x
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #6
+    _method
+      foo
+      #6
+      _formal
+        x
+        Int
+      Int
+      #7
+      _plus
+        #7
+        _object
+          x
+        : Int
+        #7
+        _object
+          x
+        : Int
+      : Int
+    )
+  #12
+  _class
+    B
+    A
+    "attr_err.cl"
+    (
+    #13
+    _attr
+      x
+      Int
+      #0
+      _no_expr
+      : _no_type
+    )
+  #17
+  _class
+    Main
+    IO
+    "attr_err.cl"
+    (
+    #18
+    _attr
+      x
+      A
+      #0
+      _no_expr
+      : _no_type
+    #19
+    _attr
+      y
+      B
+      #0
+      _no_expr
+      : _no_type
+    #20
+    _attr
+      n
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #21
+    _attr
+      r
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #23
+    _method
+      main
+      SELF_TYPE
+      #25
+      _block
+        #26
+        _let
+          int
+          Int
+          #26
+          _int
+            0
+          : Int
+          #26
+          _dispatch
+            #26
+            _object
+              self
+            : SELF_TYPE
+            out_int
+            (
+            #26
+            _object
+              int
+            : Int
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+        #28
+        _assign
+          x
+          #28
+          _new
+            A
+          : A
+        : A
+        #29
+        _dispatch
+          #29
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #29
+          _dispatch
+            #29
+            _object
+              x
+            : A
+            foo
+            (
+            #29
+            _int
+              15
+            : Int
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #30
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
